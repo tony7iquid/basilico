@@ -36,8 +36,8 @@ function basilico_add_cpt_support($cpt_support) {
 }
 
 
-add_filter( 'pxl_extra_post_types', 'basilico_add_posttype' );
-function basilico_add_posttype( $postypes ) {
+add_filter( 'pxl_extra_post_types', 'basilico_add_post_type' );
+function basilico_add_post_type( $postypes ) {
     $postypes['portfolio'] = array(
         'status' => false,
         'args' => array(

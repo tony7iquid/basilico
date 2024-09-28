@@ -11,7 +11,7 @@
         $post_content_classes = '';
     }
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class('pxl-single-posttype pxl-service'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('pxl-single-post-type pxl-service'); ?>>
     <div class="pxl-entry-content clearfix">
             <div class="content-inner clearfix <?php echo esc_attr($post_content_classes);?>"><?php
                 the_content();
