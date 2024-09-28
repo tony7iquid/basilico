@@ -26,7 +26,8 @@ $pm_menu = basilico()->get_opt('pm_menu','-1');
     ?>
     <div id="<?php echo esc_attr($html_id); ?>" class="pxl-nav-menu pxl-nav-menu-main style-<?php echo esc_attr($style_cls) ?> <?php echo esc_attr($show_arrow_cls.' '.$show_underline) ?>">
     <?php 
-        if(!empty($menu_pd)) { 
+        if(!empty($menu_pd)) {
+            var_dump(wp_get_nav_menu_object($menu_pd)); 
             wp_nav_menu(
                 array(
                     'menu_id'    => 'pxl-primary-menu-'.$html_id,
