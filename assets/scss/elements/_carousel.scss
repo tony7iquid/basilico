@@ -4455,7 +4455,16 @@
                 left: 52px;
                 right: 52px;
                 border: 1px solid $primary_color;
+                opacity: 0;
+                @include transition(opacity 0.3s ease);
             }
+        }
+        .swiper-slide-active {
+            .item-featured {
+                &:before {
+                    opacity: 1;
+                }
+            }   
         }
         .content-inner {
             opacity: 0;
