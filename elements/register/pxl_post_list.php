@@ -50,8 +50,8 @@ pxl_add_custom_widget(
                                 'default'  => 'term_selected'
                             ) 
                         ),
-                        basilico_get_grid_term_by_posttype($pt_supports, ['custom_condition' => ['select_post_by' => 'term_selected']]),
-                        basilico_get_grid_ids_by_posttype($pt_supports, ['custom_condition' => ['select_post_by' => 'post_selected']]),
+                        basilico_get_grid_term_by_post_type($pt_supports, ['custom_condition' => ['select_post_by' => 'term_selected']]),
+                        basilico_get_grid_ids_by_post_type($pt_supports, ['custom_condition' => ['select_post_by' => 'post_selected']]),
                         array(
                             array(
                                 'name'    => 'orderby',

@@ -141,9 +141,9 @@ function basilico_get_post_grid_layout($pt_supports = []){
     return $result;
 }
 
-function basilico_get_grid_layout_options($posttype_name){
+function basilico_get_grid_layout_options($post_type_name){
     $option_layouts = [];
-    switch ($posttype_name) {
+    switch ($post_type_name) {
         case 'pxl-portfolio':
         $option_layouts = [
             'pxl-portfolio-1' => [
@@ -217,9 +217,9 @@ function basilico_get_post_list_layout($pt_supports = []){
     return $result;
 }
 
-function basilico_get_list_layout_options($posttype_name){
+function basilico_get_list_layout_options($post_type_name){
     $option_layouts = [];
-    switch ($posttype_name) {
+    switch ($post_type_name) {
         case 'pxl-portfolio':
         $option_layouts = [
             'pxl-portfolio-list-1' => [
@@ -273,9 +273,9 @@ function basilico_get_create_list_layout($pt_supports = []){
     return $result;
 }
 
-function basilico_get_create_layout_options($posttype_name){
+function basilico_get_create_layout_options($post_type_name){
     $option_layouts = [];
-    switch ($posttype_name) {
+    switch ($post_type_name) {
         case 'post':
         $option_layouts = [
             'post-create-1' => [
@@ -288,7 +288,7 @@ function basilico_get_create_layout_options($posttype_name){
     return $option_layouts;
 }
 
-function basilico_get_grid_term_by_posttype($pt_supports = [], $args = []){
+function basilico_get_grid_term_by_post_type($pt_supports = [], $args = []){
     $args = wp_parse_args($args, ['condition' => 'post_type', 'custom_condition' => []]);
     $post_types = basilico_get_post_type_options($pt_supports);
     $result = [];
@@ -320,7 +320,7 @@ function basilico_get_grid_term_by_posttype($pt_supports = [], $args = []){
     return $result;
 }
 
-function basilico_get_grid_ids_by_posttype($pt_supports = [], $args = []){
+function basilico_get_grid_ids_by_post_type($pt_supports = [], $args = []){
     $args = wp_parse_args($args, ['condition' => 'post_type', 'custom_condition' => []]);
     $post_types = basilico_get_post_type_options($pt_supports);
     $result = [];
@@ -370,9 +370,9 @@ function basilico_get_post_carousel_layout($pt_supports = []){
     return $result;
 }
 
-function basilico_get_carousel_layout_options($posttype_name){
+function basilico_get_carousel_layout_options($post_type_name){
     $option_layouts = [];
-    switch ($posttype_name) {
+    switch ($post_type_name) {
         case 'post':
         $option_layouts = [
             'post-1' => [
@@ -461,7 +461,7 @@ function basilico_get_carousel_layout_options($posttype_name){
     return $option_layouts;
 }
 
-function basilico_get_carousel_term_by_posttype($pt_supports = [], $args = []){
+function basilico_get_carousel_term_by_post_type($pt_supports = [], $args = []){
     $args = wp_parse_args($args, ['condition' => 'post_type', 'custom_condition' => []]);
     $post_types = basilico_get_post_type_options($pt_supports);
     $result = [];
@@ -492,7 +492,7 @@ function basilico_get_carousel_term_by_posttype($pt_supports = [], $args = []){
     return $result;
 }
 
-function basilico_get_carousel_ids_by_posttype($pt_supports = [], $args = []){
+function basilico_get_carousel_ids_by_post_type($pt_supports = [], $args = []){
     $args = wp_parse_args($args, ['condition' => 'post_type', 'custom_condition' => []]);
     $post_types = basilico_get_post_type_options($pt_supports);
     $result = [];
