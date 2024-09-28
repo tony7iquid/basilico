@@ -2843,10 +2843,13 @@
             backface-visibility:hidden
         }
     }
+    &.zoom-in-out-custom {
+        overflow: hidden;
+    }
     .parallax-inner{
         background-image: var(--pxl-image-bg-parallax-inner);
     }
-} 
+}
 
 .framed-image .pxl-image-wg {
     padding: 13px;
