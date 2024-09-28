@@ -35,7 +35,7 @@ defined( 'ABSPATH' ) || exit;
 				<div class="cart-list-item row gx-0 <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 					<div class="cart-item-thumbnail col-auto">
 						<?php $image_border = basilico()->get_theme_opt('image_product_border', '0'); ?>
-						<div class="product-thumbnail <?php echo $image_border == '1' ? 'border' : ''; ?>">
+						<div class="product-thumbnail <?php echo esc_attr($image_border) == '1' ? 'border' : ''; ?>">
 							<?php
 							$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
 							if ( ! $product_permalink ) {

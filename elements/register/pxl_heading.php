@@ -110,8 +110,8 @@ pxl_add_custom_widget(
                                 'type' => \Elementor\Controls_Manager::SELECT,
                                 'label_block' => true,
                                 'options' => [
-                                    'style-1' => esc_html__('Line Between'),
-                                    'style-2' => esc_html__('Coffee Bean'),
+                                    'style-1' => esc_html__('Line Between', 'basilico'),
+                                    'style-2' => esc_html__('Coffee Bean', 'basilico'),
                                 ],
                                 'default' => 'style-1',
                                 'condition' => [
@@ -200,8 +200,8 @@ pxl_add_custom_widget(
                                 'type' => \Elementor\Controls_Manager::SELECT,
                                 'label_block' => true,
                                 'options' => [
-                                    'style-1' => esc_html__('Line Between'),
-                                    'style-2' => esc_html__('Coffee Bean'),
+                                    'style-1' => esc_html__('Line Between', 'basilico'),
+                                    'style-2' => esc_html__('Coffee Bean', 'basilico'),
                                 ],
                                 'default' => 'style-1',
                                 'condition' => [

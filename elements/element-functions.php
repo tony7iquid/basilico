@@ -717,9 +717,9 @@ function basilico_arrow_settings(){
             'label' => esc_html__('Arrows Style', 'basilico'),
             'type' => \Elementor\Controls_Manager::SELECT,
             'options' => [
-                'style-1' => esc_html__('Style 1'),
-                'style-2' => esc_html__('Style 2'),
-                'style-3' => esc_html__('Style 3'),
+                'style-1' => esc_html__('Style 1', 'basilico'),
+                'style-2' => esc_html__('Style 2', 'basilico'),
+                'style-3' => esc_html__('Style 3', 'basilico'),
             ],
             'default' => 'style-1',
         ),

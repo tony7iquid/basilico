@@ -502,7 +502,7 @@ if (!class_exists('Basilico_Blog')) {
             $post = get_post($post_id);
             ?>
             <div class="post-shares d-flex align-items-center">
-                <span class="label"><?php echo esc_html__('Share'. $count_number .':', 'basilico'); ?></span>
+                <span class="label"><?php echo esc_html__('Share', 'basilico') . $count_number .':'; ?></span>
                 <div class="social-share">
                     <div class="d-flex">
                         <?php if (in_array('facebook', $share_icons)) : ?>

@@ -165,8 +165,8 @@ Redux::setSection($opt_name, array(
         array(
             'id'        => 'custom_cursor',
             'type'      => 'switch',
-            'title'     => esc_html__('Custom Cursor', 'finsa'),
-            'subtitle'  => esc_html__('Custom default cursor.', 'finsa'),
+            'title'     => esc_html__('Custom Cursor', 'basilico'),
+            'subtitle'  => esc_html__('Custom default cursor.', 'basilico'),
             'default'   => false
         ),
     )
@@ -1362,8 +1362,8 @@ if(class_exists('Woocommerce')) {
                     'title'    => esc_html__('Quick View Style', 'basilico'),
                     'type'     => 'select',
                     'options' => array(
-                        'style-1' => esc_html__('Style 1'),
-                        'style-2' => esc_html__('Style 2'),
+                        'style-1' => esc_html__('Style 1', 'basilico'),
+                        'style-2' => esc_html__('Style 2', 'basilico'),
                     ),
                     'default' => 'style-1',
                     'required' => [
