@@ -57,7 +57,7 @@ basilico()->add_render_attribute( 'carousel', [
 if ( $related_products ) : ?>
 	<section class="related products">
 		<?php
-		$heading = apply_filters( 'woocommerce_product_related_products_heading', __( 'Related products', 'woocommerce' ) );
+		$heading = apply_filters( 'woocommerce_product_related_products_heading', __( 'Related products', 'basilico' ) );
 		$relate_title = basilico()->get_theme_opt('related_title', '');
 		if (!empty($relate_title)){
 			$heading = $relate_title;
