@@ -6,13 +6,6 @@
  * @package Basilico
  */
 
-if (!function_exists('pxl_print_html')) {
-    function pxl_print_html($content)
-    {
-        echo $content;
-    }
-}
-
 //* Resize image
 if (!function_exists('pxl_stringify_attributes')) {
     function pxl_stringify_attributes($attributes)

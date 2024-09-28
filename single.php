@@ -13,7 +13,7 @@ $pxl_sidebar = basilico()->get_sidebar_args(['type' => 'post', 'content_col' => 
     <div class="container">
         <div class="row <?php echo esc_attr($pxl_sidebar['wrap_class']) ?>">
             <div id="pxl-content-area" class="<?php echo esc_attr($pxl_sidebar['content_class']) ?>">
-                <main id="pxl-content-main" class="pxl-content-main <?php echo esc_attr($post_style); ?> <?php echo $pxl_sidebar['sidebar_class'] ? '' : 'no-sidebar' ;?>">
+                <main id="pxl-content-main" class="pxl-content-main <?php echo esc_attr($post_style); ?> <?php echo esc_attr($pxl_sidebar['sidebar_class']) ? '' : 'no-sidebar' ;?>">
                     <?php while (have_posts()) {
                         the_post();
                         get_template_part( 'template-parts/content/content-single-'.$post_style, get_post_format());

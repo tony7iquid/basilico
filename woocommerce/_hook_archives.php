@@ -128,12 +128,12 @@ function pxl_product_quickview() {
         <div id="product-<?php echo esc_attr( $product_id ); ?>" <?php wc_product_class( '', $product ); ?>>
             <div class="content-left">
                 <div class="product-content">
-                    <h3 class="product-title"><?php echo $product->get_name(); ?></h3>
+                    <h3 class="product-title"><?php echo esc_attr($product->get_name()); ?></h3>
                     <div class="pxl-divider"></div>
-                    <div class="product-price"><?php echo $product->get_price_html(); ?></div>
-                    <div class="product-description"><?php echo $product->get_short_description(); ?></div>     
+                    <div class="product-price"><?php echo esc_attr($product->get_price_html()); ?></div>
+                    <div class="product-description"><?php echo esc_attr($product->get_short_description()); ?></div>     
                 </div>
-                <div class="product-images"><?php echo $product->get_image(); ?></div>
+                <div class="product-images"><?php echo esc_attr($product->get_image()); ?></div>
             </div>
             <div class="content-right">
                 <?php
