@@ -85,9 +85,9 @@
 		<div class="pxl-iconbox">
 			<div class="pxl-icon-container">
 				<?php if ( $item['status'] ) : ?>
-					<img src="<?php echo get_template_directory_uri() . '/inc/admin/assets/img/check.png' ?>" alt="<?php esc_attr_e( 'Check', 'basilico' ); ?>">
+					<img src="<?php echo esc_url(get_template_directory_uri()) . '/inc/admin/assets/img/check.png' ?>" alt="<?php esc_attr_e( 'Check', 'basilico' ); ?>">
 				<?php else : ?>
-					<img src="<?php echo get_template_directory_uri() . '/inc/admin/assets/img/crossed.png' ?>" alt="<?php esc_attr_e( 'Un Check', 'basilico' ); ?>">
+					<img src="<?php echo esc_url(get_template_directory_uri()) . '/inc/admin/assets/img/crossed.png' ?>" alt="<?php esc_attr_e( 'Un Check', 'basilico' ); ?>">
 				<?php endif; ?>
 			</div>
 			<div class="pxl-iconbox-contents">

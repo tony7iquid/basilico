@@ -68,7 +68,7 @@ if ( ! empty( $settings['loadmore_link']['url'] ) ) {
     if ( $settings['loadmore_link']['nofollow'] ) {
         $widget->add_render_attribute( 'loadmore', 'rel', 'nofollow' );
     }
-    $loadmore_text = !empty( $loadmore_text ) ? $loadmore_text : esc_html__( 'Load More', 'powerlegal' );
+    $loadmore_text = !empty( $loadmore_text ) ? $loadmore_text : esc_html__( 'Load More', 'basilico' );
     $widget->add_render_attribute( 'loadmore', 'class', 'btn');
 }
 

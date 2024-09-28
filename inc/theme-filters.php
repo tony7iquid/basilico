@@ -221,7 +221,7 @@ function basilico_support_awesome_pro() {
 
 add_filter( 'redux_pxl_iconpicker_field/get_icons', 'basilico_add_icons_to_pxl_iconpicker_field' );
 function basilico_add_icons_to_pxl_iconpicker_field($icons){
-	$custom_icons = []; //'Flaticon' => array(array('flaticon-marker' => 'flaticon-marker')),
+	$custom_icons = [];
 	$icons = array_merge($custom_icons, $icons);
 	return $icons;
 }
@@ -229,7 +229,7 @@ function basilico_add_icons_to_pxl_iconpicker_field($icons){
 
 add_filter("pxl_mega_menu/get_icons", "basilico_add_icons_to_megamenu");
 function basilico_add_icons_to_megamenu($icons){
-	$custom_icons = []; //'Flaticon' => array(array('flaticon-marker' => 'flaticon-marker')),
+	$custom_icons = [];
 	$icons = array_merge($custom_icons, $icons);
 	return $icons;
 }

@@ -125,7 +125,6 @@ function basilico_scripts() {
 
     /* Icons Lib */
     wp_enqueue_style( 'basilico-icon', get_template_directory_uri() . '/assets/fonts/pixelart/style.css', array(), '1.0.0');
-    wp_enqueue_style( 'flaticon', get_template_directory_uri() . '/assets/fonts/flaticon/css/flaticon.css', array(), '1.0.0');
     wp_enqueue_style( 'material', get_template_directory_uri() . '/assets/fonts/material/css/font-material.min.css', array(), '1.0.0');
     wp_enqueue_style( 'magnific-popup', get_template_directory_uri() . '/assets/css/magnific-popup.css', array(), '1.0.0' );
 	wp_enqueue_style( 'basilico-grid', get_template_directory_uri() . '/assets/css/grid.css', array(), basilico()->get_version() );
@@ -161,7 +160,6 @@ add_action('admin_enqueue_scripts', 'basilico_admin_style');
 function basilico_admin_style() {
     wp_enqueue_style('basilico-admin', get_template_directory_uri() . '/assets/css/admin.css', array(), '1.0.0');
     wp_enqueue_style('basilico-icon', get_template_directory_uri() . '/assets/fonts/pixelart/style.css', array(), '1.0.0');
-    wp_enqueue_style('flaticon', get_template_directory_uri() . '/assets/fonts/flaticon/css/flaticon.css', array(), '1.0.0');
     wp_enqueue_style('material', get_template_directory_uri() . '/assets/fonts/material/css/font-material.min.css', array(), '1.0.0');
     wp_enqueue_script( 'admin-widget', get_template_directory_uri() . '/inc/admin/assets/js/widget.js', array( 'jquery' ), array( 'jquery' ), '1.0.0', true );
 }
@@ -169,7 +167,6 @@ function basilico_admin_style() {
 add_action( 'elementor/editor/before_enqueue_scripts', function() {
     wp_enqueue_style( 'basilico-custom-editor', get_template_directory_uri() . '/assets/css/custom-editor.css', array(), '1.0.0' );
     wp_enqueue_style( 'admin-basilico-icon', get_template_directory_uri() . '/assets/fonts/pixelart/style.css', array(), '1.0.0' );
-    wp_enqueue_style( 'admin-flaticon', get_template_directory_uri() . '/assets/fonts/flaticon/css/flaticon.css', array(), '1.0.0' );
     wp_enqueue_style( 'admin-material', get_template_directory_uri() . '/assets/fonts/material/css/font-material.min.css', array(), '1.0.0' );
 } );
 

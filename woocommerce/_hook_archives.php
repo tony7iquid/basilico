@@ -18,7 +18,7 @@ add_filter('woocommerce_sale_flash', 'basilico_custom_sale_text', 10, 3);
 function basilico_custom_sale_text($text, $post, $_product)
 {
     $onsale_text = basilico()->get_theme_opt('onsale_text', 'Sale Off');
-    return '<span class="onsale">'.esc_attr__($onsale_text, 'basilico').'</span>';
+    return '<span class="onsale">'.esc_attr__($onsale_text).'</span>';
 }
 
 /* Add and Remove function hook in woocommerce/templates/content-product.php */
@@ -57,7 +57,7 @@ if(!function_exists('basilico_woocommerce_catalog_result')){
             <?php if ($style_shop == 'layout-1' || $style_shop == 'layout-2' || $style_shop == 'layout-5') : ?>
                 <div class="pxl-view-layout-wrap col-12 col-sm-auto order-md-3">
                     <ul class="pxl-view-layout d-flex align-items-center">
-                        <li class="lbl"><?php echo esc_html__( 'View','basilico' ) ?></li>
+                        <li class="lbl"><?php echo esc_html__( 'View', 'basilico' ); ?></li>
                         <li class="view-icon view-grid <?php echo esc_attr($active_grid) ?>"><a href="javascript:void(0);" class="pxl-ttip tt-top-left" data-cls="products <?php echo implode(' ', $row_cols_class);?>" data-col="grid"><span class="tt-txt"><?php echo esc_html__('View Grid','basilico') ?></span><span class="pxli-grid"></span></a></li>
                         <li class="view-icon view-list <?php echo esc_attr($active_list) ?>"><a href="javascript:void(0);" class="pxl-ttip tt-top-left" data-cls="products shop-view-list" data-col="list"><span class="tt-txt"><?php echo esc_html__('View List','basilico') ?></span><span class="pxli-list"></span></a></li>
                     </ul>
@@ -79,7 +79,7 @@ add_filter('woocommerce_loop_add_to_cart_link', 'basilico_woocommerce_loop_add_t
 add_filter( 'woocommerce_add_to_cart_form_action', '__return_empty_string' );
 function basilico_woocommerce_loop_add_to_cart_link($button, $product, $args){
     if (class_exists( 'YITH_WAPO' ) && !empty(YITH_WAPO_DB()->yith_wapo_get_blocks_by_product($product->get_id()))) {
-        return '<a href="#" class="pxl-btn button pxl-quickview" data-product_id="' . get_the_ID() . '">' . esc_html__('Order Online') . '</a>';
+        return '<a href="#" class="pxl-btn button pxl-quickview" data-product_id="' . get_the_ID() . '">' . esc_html__('Order Online', 'basilico') . '</a>';
     }
 
     $product_layout = basilico()->get_theme_opt('product_layout', 'layout-1');

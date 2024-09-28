@@ -68,10 +68,6 @@ pxl_add_custom_widget(
                             'name'             => 'selected_icon',
                             'label'            => esc_html__( 'Icon', 'basilico' ),
                             'type'             => 'icons',
-                            'default'          => [
-                                'library' => 'flaticon',
-                                'value'   => 'flaticon-calling'
-                            ],
                             'condition' => ['layout!' => '7']
                         ),
                         array(

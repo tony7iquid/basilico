@@ -53,18 +53,6 @@ if (!function_exists('basilico_register_custom_icon_library')) {
                 'fetchJson' => get_template_directory_uri() . '/assets/fonts/pixelart/pixelarts.js',
                 'native' => true,
             ],
-            'flaticon' => [
-                'name' => 'flaticon',
-                'label' => esc_html__('Flaticon', 'basilico'),
-                'url' => false,
-                'enqueue' => false,
-                'prefix' => 'flaticon-',
-                'displayPrefix' => 'flaticon',
-                'labelIcon' => 'fas fa-user-plus',
-                'ver' => '1.0.0',
-                'fetchJson' => get_template_directory_uri() . '/assets/fonts/flaticon/flaticon.js',
-                'native' => true,
-            ],
             'material' => [
                 'name' => 'material',
                 'label' => esc_html__( 'Material Design Iconic', 'basilico' ),
