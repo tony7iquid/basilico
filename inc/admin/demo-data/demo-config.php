@@ -5,10 +5,34 @@ $pxl_server_info = apply_filters( 'pxl_server_info', ['demo_url' => ''] ) ;
 // Demos
 $demos = array(
 	// Elementor Demos
-	'basilico' => array(
-		'title'       => 'Basilico',
+	'basilico-main' => array(
+		'title'       => 'Main',
 		'description' => '',
-		'screenshot'  => $uri . 'basilico.jpg',
+		'screenshot'  => $uri . 'main.jpg',
+		'preview'     => $pxl_server_info['demo_url'],
+	),
+	'basilico-luxury' => array(
+		'title'       => 'Luxury',
+		'description' => '',
+		'screenshot'  => $uri . 'luxury.jpg',
+		'preview'     => $pxl_server_info['demo_url'],
+	),
+	'basilico-coffee' => array(
+		'title'       => 'Coffee',
+		'description' => '',
+		'screenshot'  => $uri . 'coffee.jpg',
+		'preview'     => $pxl_server_info['demo_url'],
+	),
+	'basilico-pizza' => array(
+		'title'       => 'Pizza',
+		'description' => '',
+		'screenshot'  => $uri . 'pizza.jpg',
+		'preview'     => $pxl_server_info['demo_url'],
+	),
+	'basilico-fastfood' => array(
+		'title'       => 'Fastfood',
+		'description' => '',
+		'screenshot'  => $uri . 'fastfood.jpg',
 		'preview'     => $pxl_server_info['demo_url'],
 	),
 );
