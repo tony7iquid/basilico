@@ -8,10 +8,10 @@
 add_filter( 'pxl_server_info', 'basilico_add_server_info');
 function basilico_add_server_info($infos){
     $infos = [
-        'api_url' => 'https://api.7iquid.com/',
-        'docs_url' => 'https://doc.7iquid.com/basilico/',
+        'api_url' => 'https://api.7iquid.tech/',
+        'docs_url' => 'https://doc.7iquid.tech/basilico/',
         'plugin_url' => 'https://7iquid.com/plugins/',
-        'demo_url' => 'https://demo.7iquid.com/basilico/',
+        'demo_url' => 'https://demo.7iquid.tech/basilico/',
         'support_url' => '#',
         'help_url' => '#',
         'email_support' => '7iquid.agency@gmail.com',
