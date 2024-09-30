@@ -114,7 +114,7 @@ $pm_menu = basilico()->get_opt('pm_menu','-1');
 <?php elseif($settings['type'] == '4'): ?>
     <div id="<?php echo esc_attr($html_id); ?>" class="pxl-nav-menu e-sidebar-widget">
         <?php if(!empty($settings['el_title'])) : ?>
-            <h3 class="widget-title"><?php echo esc_attr($settings['el_title']); ?></h3>
+            <h3 class="widget-title"><?php echo esc_html($settings['el_title']); ?></h3>
         <?php endif;
         if(!empty($settings['menu'])) {
             $menu_parametter = array(

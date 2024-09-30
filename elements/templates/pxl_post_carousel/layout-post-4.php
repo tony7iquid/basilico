@@ -26,9 +26,7 @@ extract(pxl_get_posts_of_grid(
     $tax
 ));
 
-$arrows = $widget->get_setting('arrows','false');
 $arrows_style = $widget->get_setting('arrows_style', 'style-1');
-$dots = $widget->get_setting('dots','false');
 
 $opts = [
     'slide_direction'               => 'horizontal',
@@ -188,12 +186,8 @@ $button_text = !empty($button_text) ? $button_text : esc_html__('Read more', 'ba
                 <?php endforeach; ?>
             </div>
         </div>
-        <?php if ($arrows !== 'false') :
-            basilico_arrow_template($settings, 'zmdi zmdi-arrow-left', 'zmdi zmdi-arrow-right');
-        endif; ?>
-        <?php if($dots !== 'false'): ?>
-            <div class="pxl-swiper-dots"></div>
-        <?php endif; ?>
+        <?php basilico_arrow_template($settings, 'zmdi zmdi-arrow-left', 'zmdi zmdi-arrow-right'); ?>
+        <div class="pxl-swiper-dots"></div>
     </div>
 </div>
 <?php endif; ?>

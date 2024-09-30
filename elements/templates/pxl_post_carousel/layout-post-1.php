@@ -119,7 +119,7 @@ $button_text = !empty($button_text) ? $button_text : esc_html__('READ MORE', 'ba
                                         </div>
                                     <?php endif; ?>
                                     <h3 class="item-title">
-                                        <a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_attr(get_the_title($post->ID)); ?></a>
+                                        <a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_html(get_the_title($post->ID)); ?></a>
                                     </h3>
                                     <?php if ($show_excerpt == true) : ?>
                                         <div class="item-excerpt">

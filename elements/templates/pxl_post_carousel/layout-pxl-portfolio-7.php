@@ -141,7 +141,7 @@ if ( !empty( $item_animation) ) {
                             <div class="item-content remove-cursor d-flex <?php echo esc_attr($item_anm_cls) ?>" <?php pxl_print_html($data_settings); ?>>
                                 <div class="content-inner">
                                     <h4 class="item-title">
-                                        <a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_attr(get_the_title($post->ID)); ?></a>
+                                        <a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_html(get_the_title($post->ID)); ?></a>
                                     </h4>
                                     <?php if ($show_category == 'true') : ?>
                                         <div class="item-tags">
@@ -168,7 +168,7 @@ if ( !empty( $item_animation) ) {
                                     <?php if ($show_button == 'true') : ?>
                                         <div class="item-readmore">
                                             <a class="btn-more style-2" href="<?php echo esc_url(get_permalink($post->ID)); ?>">
-                                                <span><?php echo esc_attr($loadmore_text, 'basilico'); ?></span>
+                                                <span><?php echo esc_html($loadmore_text); ?></span>
                                                 <i class="zmdi zmdi-arrow-right"></i>
                                             </a>
                                         </div>

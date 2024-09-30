@@ -154,7 +154,7 @@ $button_text = !empty($button_text) ? $button_text : esc_html__('Read more', 'ba
                                         </div>
                                     </div>
                                 <?php endif; ?>
-                                <h4 class="item-title"><a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_attr(get_the_title($post->ID)); ?></a></h4>
+                                <h4 class="item-title"><a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_html(get_the_title($post->ID)); ?></a></h4>
                                 <?php if ($show_excerpt == true) : ?>
                                     <div class="item-excerpt">
                                         <?php
@@ -183,12 +183,8 @@ $button_text = !empty($button_text) ? $button_text : esc_html__('Read more', 'ba
                 <?php endforeach; ?>
             </div>
         </div>
-        <?php if ($arrows !== 'false') :
-            basilico_arrow_template($settings, 'zmdi zmdi-arrow-left', 'zmdi zmdi-arrow-right');
-        endif; ?>
-        <?php if($dots !== 'false'): ?>
-            <div class="pxl-swiper-dots"></div>
-        <?php endif; ?>
+        <?php basilico_arrow_template($settings, 'zmdi zmdi-arrow-left', 'zmdi zmdi-arrow-right'); ?>
+        <div class="pxl-swiper-dots"></div>
     </div>
 </div>
 <?php endif; ?>

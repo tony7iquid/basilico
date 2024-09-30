@@ -11,10 +11,10 @@ $is_new = \Elementor\Icons_Manager::is_migration_allowed();
 <?php if(isset($download) && !empty($download) && count($download)): ?>
     <div class="pxl-download e-sidebar-widget">
         <?php if(!empty($el_title)) : ?>
-            <h3 class="widget-title"><?php echo esc_attr($el_title); ?></h3>
+            <h3 class="widget-title"><?php echo esc_html($el_title); ?></h3>
         <?php endif; ?>
         <?php if(!empty($download_description)) : ?>
-            <p class="widget-desc"><?php echo esc_attr($download_description); ?></p>
+            <p class="widget-desc"><?php echo esc_html($download_description); ?></p>
         <?php endif; ?>
         <?php foreach ($download as $key => $cms_download):
             $link_key = $widget->get_repeater_setting_key( 'file_name', 'download', $key );

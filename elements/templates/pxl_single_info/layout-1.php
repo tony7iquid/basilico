@@ -10,7 +10,7 @@ $info_items = $widget->get_settings('single_info_items');
 if(!empty($info_items)) : ?>
     <div id="<?php echo esc_attr($html_id); ?>" class="pxl-single-info e-sidebar-widget <?php echo esc_attr($el_style); ?>">
         <?php if(!empty($el_title)) : ?>
-            <h3 class="widget-title"><?php echo esc_attr($el_title); ?></h3>
+            <h3 class="widget-title"><?php echo esc_html($el_title); ?></h3>
         <?php endif; ?>
         <?php foreach ($info_items as $key => $value):
             $info_label = isset($value['info_label']) ? $value['info_label'] : '';

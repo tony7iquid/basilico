@@ -89,7 +89,7 @@ extract($settings);
                                 <?php echo get_the_date('', $post->ID); ?>
                             </div>
                         <?php endif; ?>
-                        <h3 class="item-title"><a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_attr(get_the_title($post->ID)); ?></a></h3>
+                        <h3 class="item-title"><a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_html(get_the_title($post->ID)); ?></a></h3>
                         <?php if ($show_excerpt == 'true') : ?>
                             <div class="item-excerpt d-none">
                                 <?php

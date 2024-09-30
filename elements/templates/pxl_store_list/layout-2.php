@@ -40,8 +40,8 @@ $is_new = \Elementor\Icons_Manager::is_migration_allowed();
                 }
                 ?>
                 <div>
-                    <h5 class="pxl-store-title"><?php echo esc_attr($value['title']); ?></h5>
-                    <span class="pxl-store-desc"><?php echo esc_attr($value['desc']); ?></span>
+                    <h5 class="pxl-store-title"><?php echo esc_html($value['title']); ?></h5>
+                    <span class="pxl-store-desc"><?php echo esc_html($value['desc']); ?></span>
                 </div>
             </div>
             <div class="pxl-store-btn">

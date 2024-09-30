@@ -92,7 +92,7 @@ if ( !empty( $item_animation) ) {
 <div class="pxl-swiper-slider pxl-portfolio-carousel layout-<?php echo esc_attr($settings['layout']);?> ">
     <?php if ($cursor !== 'false') : ?>            
         <div class="pxl-cursor">
-            <span><?php echo esc_attr($cursor_text); ?></span>
+            <span><?php echo esc_html($cursor_text); ?></span>
         </div>
     <?php endif; ?>
     <?php if ($select_post_by === 'term_selected' && $filter == "true"): ?>
@@ -147,7 +147,7 @@ if ( !empty( $item_animation) ) {
                             <?php endif; ?>
                             <div class="box-title">
                                 <h4 class="item-title">
-                                    <a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_attr(get_the_title($post->ID)); ?></a>
+                                    <a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_html(get_the_title($post->ID)); ?></a>
                                 </h4>
                                 <?php if ($show_category == 'true') : ?>
                                     <div class="item-tags">
@@ -158,7 +158,7 @@ if ( !empty( $item_animation) ) {
                             <div class="item-content <?php echo esc_attr($item_anm_cls) ?>" <?php pxl_print_html($data_settings); ?>>
                                 <div class="content-inner">
                                     <h4 class="item-title">
-                                        <a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_attr(get_the_title($post->ID)); ?></a>
+                                        <a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_html(get_the_title($post->ID)); ?></a>
                                     </h4>
                                     <?php if ($show_category == 'true') : ?>
                                         <div class="item-tags">
@@ -183,7 +183,7 @@ if ( !empty( $item_animation) ) {
                                     <?php if ($show_button == 'true') : ?>
                                         <div class="item-readmore">
                                             <a class="btn btn-additional-7 style-2" href="<?php echo esc_url(get_permalink($post->ID)); ?>">
-                                                <span><?php echo esc_attr($button_text); ?></span>
+                                                <span><?php echo esc_html($button_text); ?></span>
                                             </a>
                                         </div>
                                     <?php endif; ?>

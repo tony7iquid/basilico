@@ -138,7 +138,7 @@ $button_text = !empty($button_text) ? $button_text : esc_html__('READ MORE', 'ba
                                             <a href="<?php echo esc_url(get_permalink( $post->ID )); ?>"><?php echo wp_kses_post($thumbnail); ?></a>
                                         </div>
                                     <?php endif; ?>
-                                    <h3 class="item-title"><a href="<?php echo esc_url(get_permalink( $post->ID )); ?>"><?php echo esc_attr(get_the_title($post->ID)); ?></a></h3>
+                                    <h3 class="item-title"><a href="<?php echo esc_url(get_permalink( $post->ID )); ?>"><?php echo esc_html(get_the_title($post->ID)); ?></a></h3>
                                     <div class="content-inner">
                                         <?php
                                         if (!empty($area_img['url']) && $icon_type == 'image'){
@@ -156,7 +156,7 @@ $button_text = !empty($button_text) ? $button_text : esc_html__('READ MORE', 'ba
                                             <?php
                                         }
                                         ?>
-                                        <h3 class="item-title"><a href="<?php echo esc_url(get_permalink( $post->ID )); ?>"><?php echo esc_attr(get_the_title($post->ID)); ?></a></h3>
+                                        <h3 class="item-title"><a href="<?php echo esc_url(get_permalink( $post->ID )); ?>"><?php echo esc_html(get_the_title($post->ID)); ?></a></h3>
                                         <?php if($show_excerpt == 'true'): ?>
                                             <div class="item-excerpt">
                                                 <?php

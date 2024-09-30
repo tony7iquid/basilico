@@ -138,7 +138,7 @@ $button_text = !empty($button_text) ? $button_text : esc_html__('Read more', 'ba
                                             <?php echo wp_kses_post($thumbnail); ?>
                                         </a>
                                         <h3 class="item-title">
-                                            <a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_attr(get_the_title($post->ID)); ?></a>
+                                            <a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_html(get_the_title($post->ID)); ?></a>
                                         </h3>
                                     </div>
                                 </div>

@@ -139,7 +139,7 @@ $button_text = !empty($button_text) ? $button_text : esc_html__('View Detail', '
                                         </div>
                                     <?php endif; ?>
                                     <div class="content-inner">
-                                        <h3 class="item-title"><a href="<?php echo esc_url(get_permalink( $post->ID )); ?>"><?php echo esc_attr(get_the_title($post->ID)); ?></a></h3>
+                                        <h3 class="item-title"><a href="<?php echo esc_url(get_permalink( $post->ID )); ?>"><?php echo esc_html(get_the_title($post->ID)); ?></a></h3>
                                         <?php if($show_excerpt == 'true'): ?>
                                             <div class="item-excerpt">
                                                 <?php
