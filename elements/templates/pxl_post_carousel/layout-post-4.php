@@ -157,7 +157,7 @@ $button_text = !empty($button_text) ? $button_text : esc_html__('Read more', 'ba
                                     <?php endif; ?>
                                 </div>
                             <?php endif; ?>
-                            <div class="item-content d-flex justify-content-center <?php echo esc_attr($item_anm_cls) ?>" <?php pxl_print_html($data_settings); ?>>
+                            <div class="item-content d-flex justify-content-center <?php echo esc_html($item_anm_cls) ?>" <?php pxl_print_html($data_settings); ?>>
                                 <h4 class="item-title"><a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_attr(get_the_title($post->ID)); ?></a></h4>
                                 <?php if ($show_excerpt == true) : ?>
                                     <div class="item-excerpt">
