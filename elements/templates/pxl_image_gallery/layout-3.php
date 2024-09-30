@@ -120,7 +120,7 @@ if ($layout_mode == 'masonry') {
                                     $link_attributes = 'class="light-box" data-elementor-open-lightbox="no" href='.esc_url(wp_get_attachment_image_url($image, 'full')).' title='.esc_attr($image_title);
                                 }
                             ?>
-                            <a <?php echo $link_attributes; ?>>
+                            <a <?php echo pxl_print_html($link_attributes); ?>>
                                 <?php if(!empty($settings['selected_icon']['value'] )): ?>
                                     <?php \Elementor\Icons_Manager::render_icon( $settings['selected_icon'], [ 'aria-hidden' => 'true', 'class' => 'pxl-icon' ], 'i' );?>
                                 <?php else: ?>

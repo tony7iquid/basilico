@@ -34,7 +34,7 @@ if(count($tabs_list) > 0){
             </div>
             <div class="btn-wrapper">
                 <a class="btn btn-outline" href="<?php echo esc_url($button_url); ?>">
-                    <span><?php echo esc_attr($button_text); ?></span>
+                    <span><?php echo esc_html($button_text); ?></span>
                 </a>
             </div>
         </div>

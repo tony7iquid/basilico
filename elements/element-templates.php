@@ -530,7 +530,7 @@ function basilico_get_post_list_layout1($posts = [], $settings = [], $args_m = [
                 ?>
                 <div class="item-content row">
                     <div class="item-left col-md-7 col-xl-8">
-                        <h3 class="item-title"><a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_attr(get_the_title($post->ID)); ?></a></h3>
+                        <h3 class="item-title"><a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_html(get_the_title($post->ID)); ?></a></h3>
                         <?php if ($show_excerpt == 'true') : ?>
                             <div class="pxl-divider"></div>
                             <div class="item-excerpt">
@@ -741,7 +741,7 @@ function basilico_get_post_list_layout2($posts = [], $settings = [], $args_m = [
                             <span><?php the_terms($post->ID, 'category', '', ', ', ''); ?></span>
                         </span>
                     <?php endif; ?>
-                    <h3 class="item-title"><a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_attr(get_the_title($post->ID)); ?></a></h3>
+                    <h3 class="item-title"><a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_html(get_the_title($post->ID)); ?></a></h3>
                     <?php if ($show_excerpt == 'true') : ?>
                         <div class="item-excerpt">
                             <?php
@@ -939,7 +939,7 @@ function basilico_get_post_list_layout3($posts = [], $settings = [], $args_m = [
                 ?>
                 <div class="item-content row">
                     <div class="item-left col-md-7 col-xl-8">
-                        <h3 class="item-title"><a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_attr(get_the_title($post->ID)); ?></a></h3>
+                        <h3 class="item-title"><a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_html(get_the_title($post->ID)); ?></a></h3>
                         <?php if ($show_excerpt == 'true') : ?>
                             <div class="pxl-divider"></div>
                             <div class="item-excerpt">
@@ -1202,7 +1202,7 @@ function basilico_get_post_list_layout4($posts = [], $settings = [], $args_m = [
                             <?php
                         }
                         ?>
-                        <h3 class="item-title"><a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_attr(get_the_title($post->ID)); ?></a></h3>
+                        <h3 class="item-title"><a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_html(get_the_title($post->ID)); ?></a></h3>
                         <?php if ($show_excerpt == 'true') : ?>
                             <div class="pxl-divider"></div>
                             <div class="item-excerpt">
@@ -1320,7 +1320,7 @@ function basilico_get_post_grid_layout1($posts = [], $settings = [], $args_m = [
                             </div>
                         <?php endif ?>
                     <?php endif; ?>
-                    <h3 class="item-title"><a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_attr(get_the_title($post->ID)); ?></a></h3>
+                    <h3 class="item-title"><a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_html(get_the_title($post->ID)); ?></a></h3>
                 </div>
             </div>
         <?php endif; ?>
@@ -1456,7 +1456,7 @@ function basilico_get_post_grid_layout2($posts = [], $settings = [], $args_m = [
                     </div>
                 <?php endif; ?>
                 <div class="item-content d-flex justify-content-center">
-                    <h4 class="item-title"><a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_attr(get_the_title($post->ID)); ?></a></h4>
+                    <h4 class="item-title"><a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_html(get_the_title($post->ID)); ?></a></h4>
                     <?php if ($show_excerpt == 'true') : ?>
                         <div class="item-excerpt">
                             <?php
@@ -1561,7 +1561,7 @@ function basilico_get_post_grid_layout3($posts = [], $settings = [], $args_m = [
                             </div>
                         </div>
                     <?php endif; ?>
-                    <h4 class="item-title"><a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_attr(get_the_title($post->ID)); ?></a></h4>
+                    <h4 class="item-title"><a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_html(get_the_title($post->ID)); ?></a></h4>
                     <?php if ($show_excerpt == 'true') : ?>
                         <div class="item-excerpt">
                             <?php
@@ -1660,7 +1660,7 @@ function basilico_get_pxl_portfolio_list_layout1($posts = [], $settings = [], $a
                             <?php
                         }
                         ?>
-                        <h3 class="item-title"><a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_attr(get_the_title($post->ID)); ?></a></h3>
+                        <h3 class="item-title"><a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_html(get_the_title($post->ID)); ?></a></h3>
                         <?php if ($show_excerpt == 'true') : ?>
                             <div class="item-excerpt">
                                 <?php
@@ -1750,7 +1750,7 @@ function basilico_get_post_grid_pxl_portfolio1($posts = [], $settings = [], $arg
                 <div class="item-content">
                     <div class="content-inner">
                         <h4 class="item-title">
-                            <a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_attr(get_the_title($post->ID)); ?></a>
+                            <a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_html(get_the_title($post->ID)); ?></a>
                         </h4>
                         <?php
                         if ($show_category == 'true') {
@@ -1850,7 +1850,7 @@ function basilico_get_post_grid_pxl_portfolio2($posts = [], $settings = [], $arg
                 <div class="item-content">
                     <div class="content-inner">
                         <h4 class="item-title">
-                            <a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_attr(get_the_title($post->ID)); ?></a>
+                            <a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_html(get_the_title($post->ID)); ?></a>
                         </h4>
                         <?php
                         if ($show_category == 'true') {
@@ -1950,7 +1950,7 @@ function basilico_get_post_grid_pxl_portfolio3($posts = [], $settings = [], $arg
                 <div class="background-overlay"></div>
                 <div class="content-inner">
                     <h4 class="item-title">
-                        <a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_attr(get_the_title($post->ID)); ?></a>
+                        <a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_html(get_the_title($post->ID)); ?></a>
                     </h4>
                     <?php
                     if ($show_category == 'true') {
