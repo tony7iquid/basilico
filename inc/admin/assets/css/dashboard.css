@@ -279,7 +279,7 @@ body.toplevel_page_pxlart,.pxlart_page_pxl-plugins,.pxlart_page_pxl-import-demos
     margin:30px 0 0;
     position:relative;
     z-index:2;
-    background-color:#0e1927;
+    background-color: #fff;
     box-shadow: 0 20px 50px rgba(0,0,0, 0.1);
     align-items:center;
     flex-flow:row wrap;
@@ -301,13 +301,14 @@ body.toplevel_page_pxlart,.pxlart_page_pxl-plugins,.pxlart_page_pxl-import-demos
 
 .pxl-dsb-menu li.is-active a {
     background-color:#e6c9a2;
+    color: #0e1927
 }
 .pxl-dsb-menu a {
     display: inline-flex;
     padding: 0 14px;
     border-radius: 4px;
-    background-color: #fff;
-    color: #1f1f1f;
+    background-color: #0e1927;
+    color: #fff;
     text-decoration: none;
     align-items: center;
     line-height: 36px;
@@ -317,7 +318,8 @@ body.toplevel_page_pxlart,.pxlart_page_pxl-plugins,.pxlart_page_pxl-import-demos
     margin-right:8px
 }
 .pxl-dsb-menu a:hover{
-    background-color:#e6c9a2;
+    background-color: #e6c9a2;
+    color: #0e1927;
 }
 @media(max-width: 991px){
     .pxl-dsb-menu{
