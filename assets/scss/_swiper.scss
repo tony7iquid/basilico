@@ -182,6 +182,9 @@ $slider-outer-space: 0;
 
 .pxl-swiper-arrow {
     position: relative;
+    .absolute {
+        position: absolute;
+    }
 }
 
 .nav-horizontal{
