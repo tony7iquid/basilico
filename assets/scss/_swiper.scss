@@ -182,7 +182,7 @@ $slider-outer-space: 0;
 
 .pxl-swiper-arrow {
     position: relative;
-    .absolute {
+    &.absolute {
         position: absolute;
     }
 }
