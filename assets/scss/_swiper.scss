@@ -99,12 +99,12 @@ $slider-outer-space: 0;
 
 //* Pxl Swiper arrows
 .pxl-swiper-arrows {
-    .pxl-swiper-arrow {
-        cursor: pointer;
-        &.swiper-button-disabled {
-            cursor: not-allowed;
-        }
-        &.style-1, &.style-2 {
+    &.style-1, &.style-2 {
+        .pxl-swiper-arrow {
+            cursor: pointer;
+            &.swiper-button-disabled {
+                cursor: not-allowed;
+            }
             &.default, &.center-vertical {
                 position: absolute;
                 top: 50%;
