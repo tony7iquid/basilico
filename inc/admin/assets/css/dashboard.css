@@ -300,8 +300,7 @@ body.toplevel_page_pxlart,.pxlart_page_pxl-plugins,.pxlart_page_pxl-import-demos
 }
 
 .pxl-dsb-menu li.is-active a {
-    background-color:#1f1f1f;
-    color:#fff
+    background-color:#e6c9a2;
 }
 .pxl-dsb-menu a {
     display: inline-flex;
@@ -318,8 +317,7 @@ body.toplevel_page_pxlart,.pxlart_page_pxl-plugins,.pxlart_page_pxl-import-demos
     margin-right:8px
 }
 .pxl-dsb-menu a:hover{
-    background-color: #1f1f1f;
-    color:#fff
+    background-color:#e6c9a2;
 }
 @media(max-width: 991px){
     .pxl-dsb-menu{
