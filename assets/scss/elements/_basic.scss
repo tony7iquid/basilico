@@ -288,6 +288,9 @@
         span {
             display: inline-block;
         }
+        @media (max-width: $sm_max) {
+            font-size: 14px;
+        }
     }
     .pxl-heading-wrap {
         .pxl-heading-inner {
