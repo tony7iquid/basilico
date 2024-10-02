@@ -1396,7 +1396,7 @@
             .item-content {
                 padding-left: 24px;
                 padding-right: 24px;
-                @media (max-width: $xl_max) {
+                @media (max-width: $xs_max) {
                     flex-direction: column;
                     align-items: start;
                 }
@@ -1405,7 +1405,7 @@
                 border-radius: 50%;
                 overflow: hidden;
                 margin-right: 20px;
-                @media (max-width: $xl_max) {
+                @media (max-width: $xs_max) {
                     margin-bottom: 20px;
                 }
                 img {
