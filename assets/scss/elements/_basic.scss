@@ -1477,6 +1477,10 @@
                 .item-content {
                     margin-top: 13px;
                     margin-bottom: 13px;
+                    @media (max-width: $xs_max) {
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+                    }
                 }
                 .custom-tags {
                     @include d-flex();
