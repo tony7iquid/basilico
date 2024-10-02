@@ -89,11 +89,6 @@ pxl_add_custom_widget(
                                 ],
                             ),
                             array(
-                                'name' => 'dots',
-                                'label' => esc_html__('Show Dots', 'basilico'),
-                                'type' => \Elementor\Controls_Manager::SWITCHER,
-                            ),
-                            array(
                                 'name' => 'dots_color',
                                 'label' => esc_html__('Dots Color', 'basilico'),
                                 'type' => \Elementor\Controls_Manager::COLOR,
@@ -167,6 +162,14 @@ pxl_add_custom_widget(
                     'tab' => \Elementor\Controls_Manager::TAB_SETTINGS,
                     'controls' => array_merge(
                         basilico_arrow_settings(),
+                    ),
+                ),
+                array(
+                    'name' => 'dots_settings',
+                    'label' => esc_html__('Dot Settings', 'basilico' ),
+                    'tab' => \Elementor\Controls_Manager::TAB_SETTINGS,
+                    'controls' => array_merge(
+                        basilico_dots_settings(),
                     ),
                 ),
             ),
