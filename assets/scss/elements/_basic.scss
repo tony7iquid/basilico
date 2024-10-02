@@ -1417,6 +1417,7 @@
                     @include multiline-hover-underline();
                 }
                 @media (max-width: $xs_max) {
+                    max-width: 100%;
                     width: 100%;
                 }
             }
