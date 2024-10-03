@@ -829,7 +829,8 @@ function basilico_arrow_settings(){
             ],
             'condition' => [
                 'arrows_style!' => 'style-4'
-            ]
+            ],
+            'separator' => 'before'
         ),
         array(
             'name' => 'arrow_prev_offset_orientation_h',
@@ -1039,7 +1040,8 @@ function basilico_arrow_settings(){
             ],
             'condition' => [
                 'arrows_style!' => 'style-4'
-            ]
+            ],
+            'separator' => 'before'
         ),
         array(
             'name' => 'arrow_next_offset_orientation_h',
