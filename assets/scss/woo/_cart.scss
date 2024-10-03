@@ -707,7 +707,7 @@ label[for="coupon_code"]{
 .coupon{
 	margin-top: 55px;
 	@media (max-width: $xs_screen){
-		padding: 18px 15px 24px 15px;
+		padding: 18px 0 24px;
 	}
 	label{
 		font-size: 20px;
