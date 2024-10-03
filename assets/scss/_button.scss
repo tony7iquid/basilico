@@ -518,6 +518,43 @@
             background-color: $secondary_color;
         }
     }
+    &.btn-additional-9{
+        position: relative;
+        background-color: $primary_color;
+        border-radius: 25px;
+        box-shadow: 0 5px 0 #d32b42;
+        transition: all 400ms ease 0s;
+        overflow: hidden;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #d32b42;
+            transition: top 400ms ease;
+            z-index: 0;
+        }
+        .pxl-button-icon{
+            color: #fff;
+            transform: translateX(0);
+            transition: transform 400ms ease;
+        }
+        &:hover{
+            box-shadow: 0 0 0 #d32b42;
+            background-position: bottom;
+            background-color: #d32b42;
+            background-size: 100% 200%;
+            color: #fff;
+            .pxl-button-icon{
+                transform: translateX(5px);
+            }
+            &::before {
+                top: 0;
+            }
+        }
+    }
 }
 
 .btn.focus, .btn:focus {
