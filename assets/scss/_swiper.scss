@@ -187,7 +187,9 @@ $slider-outer-space: 0;
     }
     &.style-4 {
         position: absolute;
+        left: 50%;
         bottom: 25px;
+        @include transform(translateX(-50%));
         background-color: $secondary_color;
         padding: 12px 18px;
         @include border-radius(18px);
