@@ -23,6 +23,7 @@
 }
 
 select.orderby{
+	@include border-radius(0);
 	padding: 0 20px;
 	font-size: 16px;
 	font-weight: 500;
@@ -30,8 +31,6 @@ select.orderby{
 	background-repeat: no-repeat;
 	background-size: 12px;
 	background-color: transparent;
-	border: 1px solid $input_border_color;
-	border-radius: $input_border_radius;
 	@media (min-width: $xl_min){
 		width: 240px;
 	}
@@ -938,6 +937,10 @@ select.orderby{
 }
 
 .pxl-shop-layout-5 {
+	select.orderby {
+		border: 1px solid $primary_color;
+		@include border-radius(5px);
+	}
 	.woocommerce-pagination {
 		justify-content: center;
 	}
