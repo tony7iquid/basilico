@@ -20,9 +20,6 @@
 		.options {
 			grid-template-columns: repeat( 2, minmax(0, 100%) ) !important;
 			gap: 20px !important;
-			@media (max-width: $md_max) {
-				grid-template-columns: repeat( 1, minmax(0, 100%) ) !important;
-			}
 		}
 	}
 	.yith-wapo-option {
@@ -246,6 +243,72 @@
 	}
 }
 
+.pxl-shop-layout-6 {
+	.yith-wapo-container {
+		margin-bottom: 0;
+	}
+	.yith-wapo-block .yith-wapo-addon{
+		.wapo-addon-title {
+			font-size: 25px;
+			font-weight: 600;
+			letter-spacing: 0.03em;
+		}
+		.yith-wapo-addon-label, .yith-wapo-label {
+			position: relative;
+			font-size: 15px;
+			font-weight: 400;
+			letter-spacing: 0;
+		}
+		.yith-wapo-option {
+			.checkbox-button-container {
+				.yith-wapo-label,
+				.yith-wapo-addon-label {
+					&:after {
+						top: 5px;
+						left: 8px;
+						width: 6px;
+						height: 10px;
+					}
+				}
+			}
+			.radio-button-container {
+				.yith-wapo-label,
+				.yith-wapo-addon-label {
+					&:after {
+						top: 5px;
+						left: 5px;
+						width: 12px;
+						height: 12px;
+					}
+				}
+			}
+			.checkbox-button-container,
+			.radio-button-container {
+				.yith-wapo-addon-label,
+				.yith-wapo-label {
+					line-height: 22px;
+					&:before {
+						left: 0;
+						top: 0;
+						width: 22px;
+						height: 22px;
+					}
+				}
+				.checkboxbutton,
+				.radiobutton {
+					&:has(input:checked) {
+						& ~ .yith-wapo-addon-label,
+						& ~ .yith-wapo-label {
+							&:after {
+								opacity: 1;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 div#wapo-total-price-table {
 	background-color: transparent;
 	margin-top: 20px;

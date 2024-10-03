@@ -302,93 +302,94 @@
                 });
             }
         });
-    }
+}
 
-    function getDirection($thumb_node) {
-        var windowWidth = window.innerWidth;
-        var thumbs_settings = $thumb_node.data().settings;
-        var direction = (window.innerWidth <= 991 && typeof thumbs_settings['slide_direction_mobile'] !== 'undefined' ) ? thumbs_settings['slide_direction_mobile'] : thumbs_settings['slide_direction'];
+function getDirection($thumb_node) {
+    var windowWidth = window.innerWidth;
+    var thumbs_settings = $thumb_node.data().settings;
+    var direction = (window.innerWidth <= 991 && typeof thumbs_settings['slide_direction_mobile'] !== 'undefined' ) ? thumbs_settings['slide_direction_mobile'] : thumbs_settings['slide_direction'];
 
-        return direction;
-    }
+    return direction;
+}
 
-    function pxl_get_thumbs_setting($thumb_node){  
-        var thumbs_settings = $thumb_node.data().settings, 
-        thumbs_settings_params = {
-            direction: getDirection($thumb_node),
-            effect: thumbs_settings['slide_mode'],
-            wrapperClass : 'pxl-thumbs-wrapper',
-            slideClass: 'pxl-swiper-slide',
-            slidesPerView: thumbs_settings['slides_to_show'],
-            slidesPerGroup: thumbs_settings['slides_to_scroll'],
-            slidesPerColumn: thumbs_settings['slide_percolumn'],
-            spaceBetween: thumbs_settings['slides_gutter'],
-            speed: parseInt(thumbs_settings['speed']),
-            watchSlidesProgress: true,
-            watchSlidesVisibility: true,
-            observer: true,
-            observeParents: true,
-            breakpoints: {
-                0 : {
-                    slidesPerView: thumbs_settings['slides_to_show_xs'],
-                    slidesPerGroup: thumbs_settings['slides_to_scroll'],
-                },
-                576 : {
-                    slidesPerView: thumbs_settings['slides_to_show_sm'],
-                    slidesPerGroup: thumbs_settings['slides_to_scroll'],
-                },
-                768 : {
-                    slidesPerView: thumbs_settings['slides_to_show_md'],
-                    slidesPerGroup: thumbs_settings['slides_to_scroll'],
-                },
-                992 : {
-                    slidesPerView: thumbs_settings['slides_to_show_lg'],
-                    slidesPerGroup: thumbs_settings['slides_to_scroll'],
-                },
-                1200 : {
-                    slidesPerView: thumbs_settings['slides_to_show'],
-                    slidesPerGroup: thumbs_settings['slides_to_scroll'],
-                    spaceBetween: thumbs_settings['slides_gutter'],
-                },
-                1400 : {
-                    slidesPerView: thumbs_settings['slides_to_show_xxl'],
-                    slidesPerGroup: thumbs_settings['slides_to_scroll'],
-                    spaceBetween: thumbs_settings['slides_gutter'],
-                }
+function pxl_get_thumbs_setting($thumb_node){  
+    var thumbs_settings = $thumb_node.data().settings, 
+    thumbs_settings_params = {
+        direction: getDirection($thumb_node),
+        effect: thumbs_settings['slide_mode'],
+        wrapperClass : 'pxl-thumbs-wrapper',
+        slideClass: 'pxl-swiper-slide',
+        slidesPerView: thumbs_settings['slides_to_show'],
+        slidesPerGroup: thumbs_settings['slides_to_scroll'],
+        slidesPerColumn: thumbs_settings['slide_percolumn'],
+        spaceBetween: thumbs_settings['slides_gutter'],
+        speed: parseInt(thumbs_settings['speed']),
+        watchSlidesProgress: true,
+        watchSlidesVisibility: true,
+        observer: true,
+        observeParents: true,
+        breakpoints: {
+            0 : {
+                slidesPerView: thumbs_settings['slides_to_show_xs'],
+                slidesPerGroup: thumbs_settings['slides_to_scroll'],
             },
-        };
+            576 : {
+                slidesPerView: thumbs_settings['slides_to_show_sm'],
+                slidesPerGroup: thumbs_settings['slides_to_scroll'],
+            },
+            768 : {
+                slidesPerView: thumbs_settings['slides_to_show_md'],
+                slidesPerGroup: thumbs_settings['slides_to_scroll'],
+            },
+            992 : {
+                slidesPerView: thumbs_settings['slides_to_show_lg'],
+                slidesPerGroup: thumbs_settings['slides_to_scroll'],
+            },
+            1200 : {
+                slidesPerView: thumbs_settings['slides_to_show'],
+                slidesPerGroup: thumbs_settings['slides_to_scroll'],
+                spaceBetween: thumbs_settings['slides_gutter'],
+            },
+            1400 : {
+                slidesPerView: thumbs_settings['slides_to_show_xxl'],
+                slidesPerGroup: thumbs_settings['slides_to_scroll'],
+                spaceBetween: thumbs_settings['slides_gutter'],
+            }
+        },
+    };
 
-        if(thumbs_settings['allow_touch_move'] == false)
-            thumbs_settings_params['allowTouchMove'] = false;
+    if(thumbs_settings['allow_touch_move'] == false)
+        thumbs_settings_params['allowTouchMove'] = false;
 
-        if(thumbs_settings['center_slide'] || thumbs_settings['center_slide'] == 'true')
-            thumbs_settings_params['centeredSlides'] = true;
+    if(thumbs_settings['center_slide'] || thumbs_settings['center_slide'] == 'true')
+        thumbs_settings_params['centeredSlides'] = true;
 
-                // loop
-        if(thumbs_settings['loop'] || thumbs_settings['loop'] === 'true'){
-            thumbs_settings_params['loop'] = true;
-        }
-                // auto play
-        if(thumbs_settings['autoplay'] || thumbs_settings['autoplay'] === 'true'){
-            thumbs_settings_params['autoplay'] = {
-                delay : thumbs_settings['delay'],
-                disableOnInteraction : thumbs_settings['pause_on_interaction']
-            };
-        } else {
-            thumbs_settings_params['autoplay'] = false;
-        }
-
-        if(thumbs_settings['slides_gutter_md']){
-            thumbs_settings_params['breakpoints'][0]['spaceBetween'] = parseInt(thumbs_settings['slides_gutter_md']);
-            thumbs_settings_params['breakpoints'][576]['spaceBetween'] = parseInt(thumbs_settings['slides_gutter_md']);
-            thumbs_settings_params['breakpoints'][768]['spaceBetween'] = parseInt(thumbs_settings['slides_gutter_md']);
-        }
-        if(thumbs_settings['slides_gutter_lg']){
-            thumbs_settings_params['breakpoints'][0]['spaceBetween'] = parseInt(thumbs_settings['slides_gutter_lg']);
-            thumbs_settings_params['breakpoints'][576]['spaceBetween'] = parseInt(thumbs_settings['slides_gutter_lg']);
-            thumbs_settings_params['breakpoints'][768]['spaceBetween'] = parseInt(thumbs_settings['slides_gutter_lg']);
-            thumbs_settings_params['breakpoints'][992]['spaceBetween'] = parseInt(thumbs_settings['slides_gutter_lg']);
-        }
-        return thumbs_settings_params;
+            // loop
+    if(thumbs_settings['loop'] || thumbs_settings['loop'] === 'true'){
+        thumbs_settings_params['loop'] = true;
     }
-})( jQuery );
+            // auto play
+    if(thumbs_settings['autoplay'] || thumbs_settings['autoplay'] === 'true'){
+        thumbs_settings_params['autoplay'] = {
+            delay : thumbs_settings['delay'],
+            disableOnInteraction : thumbs_settings['pause_on_interaction']
+        };
+    } else {
+        thumbs_settings_params['autoplay'] = false;
+    }
+
+    if(thumbs_settings['slides_gutter_md']){
+        thumbs_settings_params['breakpoints'][0]['spaceBetween'] = parseInt(thumbs_settings['slides_gutter_md']);
+        thumbs_settings_params['breakpoints'][576]['spaceBetween'] = parseInt(thumbs_settings['slides_gutter_md']);
+        thumbs_settings_params['breakpoints'][768]['spaceBetween'] = parseInt(thumbs_settings['slides_gutter_md']);
+    }
+    if(thumbs_settings['slides_gutter_lg']){
+        thumbs_settings_params['breakpoints'][0]['spaceBetween'] = parseInt(thumbs_settings['slides_gutter_lg']);
+        thumbs_settings_params['breakpoints'][576]['spaceBetween'] = parseInt(thumbs_settings['slides_gutter_lg']);
+        thumbs_settings_params['breakpoints'][768]['spaceBetween'] = parseInt(thumbs_settings['slides_gutter_lg']);
+        thumbs_settings_params['breakpoints'][992]['spaceBetween'] = parseInt(thumbs_settings['slides_gutter_lg']);
+    }
+    return thumbs_settings_params;
+}
+
+} )( jQuery );

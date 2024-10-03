@@ -65,15 +65,9 @@
         border-bottom: 1px solid $divider_color;
         background-color: $secondary_color;
         position: relative;
-        @media (max-width: $sm_max) {
-            padding: 21px 25px;
-        }
     }
     .product-content {
         padding: 40px;
-        @media (max-width: $sm_max) {
-            padding: 40px 25px;
-        }
         .product-title {
             font-size: 25px;
             color: $primary_color;
@@ -102,19 +96,11 @@
     }
     .content-left {
         width: 33.33333333%;
-        @media (max-width: $sm_max) {
-            width: 100%;
-        }
     }
     .content-right {
         width: 66.66666667%;
         padding: 50px;
         border-left: 1px solid $divider_color;
-        @media (max-width: $sm_max) {
-            width: 100%;
-            padding: 25px;
-            border-left: none;
-        }
     }
     .yith-wapo-form-style-theme {
         .addon-header {
@@ -148,7 +134,7 @@
         align-items: center;
         z-index: 1;
     }
-    @media (min-width: $lg_max) {
+    @media (min-width: $lg_min) {
         .product-images {
             margin-bottom: 140px;
         }
@@ -160,8 +146,11 @@
     }
     @media (max-width: $lg_max) {
         .product-images {
-            margin-bottom: 0px;
+            margin-bottom: 180px;
         }
+        .qty-btn-wrap {
+            flex-direction: column;
+        }   
     }
     .quantity {
         max-width: 123px;

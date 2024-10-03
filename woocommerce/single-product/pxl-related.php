@@ -56,21 +56,29 @@ basilico()->add_render_attribute( 'carousel', [
 
 if ( $related_products ) : ?>
 	<section class="related products">
-		<?php
-		$heading = apply_filters( 'woocommerce_product_related_products_heading', __( 'Related products', 'basilico' ) );
-		$relate_title = basilico()->get_theme_opt('related_title', '');
-		if (!empty($relate_title)){
-			$heading = $relate_title;
-		}
-		$relate_sub_title = basilico()->get_theme_opt('related_sub_title', '');
-		if ( $heading ) : ?>
-			<?php if (!empty($relate_sub_title)): ?>
-				<div class="related_subtitle">
-					<span><?php echo esc_html( $relate_sub_title ); ?></span>
-				</div>
-			<?php endif; ?>
-			<h2 class="related_title"><?php echo esc_html( $heading ); ?></h2>
+		<div class="box-relatedtitle">
+			<?php
+			$heading = apply_filters( 'woocommerce_product_related_products_heading', __( 'Related products', 'woocommerce' ) );
+			$relate_title = basilico()->get_theme_opt('related_title', '');
+			if (!empty($relate_title)){
+				$heading = $relate_title;
+			}
+			$relate_sub_title = basilico()->get_theme_opt('related_sub_title', '');
+			$relate_description = basilico()->get_theme_opt('related_description', '');
+			if ( $heading ) : ?>
+				<?php if (!empty($relate_sub_title)): ?>
+					<div class="related_subtitle">
+						<span><?php echo esc_html( $relate_sub_title ); ?></span>
+					</div>
+				<?php endif; ?>
+				<h2 class="related_title"><?php echo esc_html( $heading ); ?></h2>
+				<?php if (!empty($relate_description)): ?>
+					<div class="related-description">
+						<span><?php echo esc_html( $relate_description ); ?></span>
+					</div>
+				<?php endif; ?>
 			<div class="pxl-divider"></div>
+		</div>
 		<?php endif; ?>
 		<div class="pxl-product-grid pxl-product-loop-carousel">
 			<div class="pxl-swiper-slider pxl-product-carousel relative">
@@ -89,9 +97,9 @@ if ( $related_products ) : ?>
                         </div>
                     </div>
                 </div>
-                <div class="pxl-swiper-arrows style-1">
-                    <div class="pxl-swiper-arrow pxl-swiper-arrow-prev default"><span class="pxl-icon pxli pxli-arrow-prev"></span></div>
-                    <div class="pxl-swiper-arrow pxl-swiper-arrow-next default"><span class="pxl-icon pxli pxli-arrow-next"></span></div>
+                <div class="pxl-swiper-arrows style-default nav-vertical-out">
+                    <div class="pxl-swiper-arrow pxl-swiper-arrow-prev"><span class="pxli pxli-arrow-prev"></span></div>
+                    <div class="pxl-swiper-arrow pxl-swiper-arrow-next"><span class="pxli pxli-arrow-next"></span></div>
                 </div>
             </div>
         </div>

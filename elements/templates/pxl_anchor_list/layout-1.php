@@ -23,11 +23,6 @@ extract($settings);
 				$template = 0;
 				$anchor_link = wc_get_cart_url();
 			}
-			else if ($selected_template == 'url') {
-				$target = '';
-				$template = 0;
-				$anchor_link = esc_url($anchor['anchor_url']);
-			}
 			else {
 				$template = (int)$anchor['template'];
 				$target = '.pxl-hidden-template-'.$template;
@@ -36,7 +31,7 @@ extract($settings);
 			
 			if ($selected_template == 'cart-dropdown')
 				$anchor_cls = 'pxl-anchor cart_anchor';
-			else if ($selected_template == 'cart-page' || $selected_template == 'url')
+			else if ($selected_template == 'cart-page')
 				$anchor_cls = 'pxl-anchor';
 			else
 				$anchor_cls = 'pxl-anchor side-panel';

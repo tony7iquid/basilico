@@ -77,6 +77,44 @@ pxl_add_custom_widget(
                         ),
                     ),
                 ),
+                array(
+                    'name' => 'style_section',
+                    'label' => esc_html__('Style', 'basilico' ),
+                    'tab' => 'content',
+                    'controls' => array(
+                        array(
+                            'name' => 'border_color',
+                            'label' => esc_html__('Border Color', 'basilico' ),
+                            'type' => 'color',
+                            'selectors' => [
+                                '{{WRAPPER}} .pxl-image-landing .image-wrap' => 'border-color: {{VALUE}};',
+                            ],
+                        ),
+                        array(
+                            'name' => 'border_hover_color',
+                            'label' => esc_html__('Border Hover Color', 'basilico' ),
+                            'type' => 'color',
+                            'selectors' => [
+                                '{{WRAPPER}} .pxl-image-landing:hover .image-wrap' => 'border-color: {{VALUE}};',
+                            ],
+                        ),
+                        array(
+                            'name' => 'title_typography',
+                            'label' => esc_html__('Title Typography', 'basilico' ),
+                            'type' => \Elementor\Group_Control_Typography::get_type(),
+                            'control_type' => 'group',
+                            'selector' => '{{WRAPPER}} .pxl-image-landing .image-title',
+                        ),
+                        array(
+                            'name' => 'title_color',
+                            'label' => esc_html__('Title Color', 'basilico' ),
+                            'type' => \Elementor\Controls_Manager::COLOR,
+                            'selectors' => [
+                                '{{WRAPPER}} .pxl-image-landing .image-title' => 'color: {{VALUE}};',
+                            ],
+                        ),
+                    ),
+                ),
             ),
         ),
     ),

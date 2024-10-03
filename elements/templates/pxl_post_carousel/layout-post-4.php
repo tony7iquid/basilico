@@ -26,7 +26,9 @@ extract(pxl_get_posts_of_grid(
     $tax
 ));
 
+$arrows = $widget->get_setting('arrows','false');
 $arrows_style = $widget->get_setting('arrows_style', 'style-1');
+$dots = $widget->get_setting('dots','false');
 
 $opts = [
     'slide_direction'               => 'horizontal',
@@ -157,8 +159,8 @@ $button_text = !empty($button_text) ? $button_text : esc_html__('Read more', 'ba
                                     <?php endif; ?>
                                 </div>
                             <?php endif; ?>
-                            <div class="item-content d-flex justify-content-center <?php echo esc_html($item_anm_cls) ?>" <?php pxl_print_html($data_settings); ?>>
-                                <h4 class="item-title"><a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_html(get_the_title($post->ID)); ?></a></h4>
+                            <div class="item-content d-flex justify-content-center <?php echo esc_attr($item_anm_cls) ?>" <?php pxl_print_html($data_settings); ?>>
+                                <h4 class="item-title"><a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_attr(get_the_title($post->ID)); ?></a></h4>
                                 <?php if ($show_excerpt == true) : ?>
                                     <div class="item-excerpt">
                                         <?php
@@ -186,8 +188,29 @@ $button_text = !empty($button_text) ? $button_text : esc_html__('Read more', 'ba
                 <?php endforeach; ?>
             </div>
         </div>
-        <?php basilico_arrow_template($settings, 'zmdi zmdi-arrow-left', 'zmdi zmdi-arrow-right'); ?>
-        <div class="pxl-swiper-dots"></div>
+        <?php if($arrows !== 'false'): ?>
+            <div class="pxl-swiper-arrows nav-vertical-out <?php echo esc_attr($arrows_style);?>">
+                <div class="pxl-swiper-arrow pxl-swiper-arrow-next">
+                    <?php 
+                    if ( $settings['arrow_icon_next']['value'] ) 
+                        \Elementor\Icons_Manager::render_icon( $settings['arrow_icon_next'], [ 'aria-hidden' => 'true', 'class' => 'pxl-icon'], 'span' );
+                    else
+                        echo '<span class="pxl-icon zmdi zmdi-arrow-right"></span>';
+                    ?>
+                </div>
+                <div class="pxl-swiper-arrow pxl-swiper-arrow-prev">
+                    <?php 
+                    if ( $settings['arrow_icon_previous']['value'] ) 
+                        \Elementor\Icons_Manager::render_icon( $settings['arrow_icon_previous'], [ 'aria-hidden' => 'true', 'class' => 'pxl-icon'], 'span' );
+                    else
+                        echo '<span class="pxl-icon zmdi zmdi-arrow-left"></span>';
+                    ?>
+                </div>
+            </div>
+        <?php endif; ?>
+        <?php if($dots !== 'false'): ?>
+            <div class="pxl-swiper-dots"></div>
+        <?php endif; ?>
     </div>
 </div>
 <?php endif; ?>

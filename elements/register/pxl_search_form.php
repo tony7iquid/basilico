@@ -83,17 +83,9 @@ pxl_add_custom_widget(
                             ],
                         ),
                         array(
-                            'name' => 'input_height',
-                            'label' => esc_html__( 'Search Input/Button Height (px)', 'basilico' ),
-                            'type' => \Elementor\Controls_Manager::NUMBER,
-                            'selectors' => [
-                                '{{WRAPPER}} .pxl-search-wrap .pxl-search-field, {{WRAPPER}} .pxl-search-wrap .pxl-search-submit' => 'height: {{VALUE}}px;',
-                            ],
-                        ),
-                        array(
                             'name' => 'border_width',
                             'label' => esc_html__( 'Border Width', 'basilico' ),
-                            'type' => \Elementor\Controls_Manager::NUMBER,
+                            'type' => \Elementor\Controls_Manager::DIMENSIONS,
                             'selectors' => [
                                 '{{WRAPPER}} .pxl-search-wrap .pxl-search-field' => 'border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}} !important;',
                             ],

@@ -37,13 +37,15 @@ if ($link_type == 'page') {
 if(!empty($selected_image['id'])) : ?>
     <div class="pxl-image-landing layout-1">
         <div class="image-wrap">
-            <a <?php pxl_print_html($widget->get_render_attribute_string( 'text_link' )); ?>>
-                <?php echo wp_kses_post($thumbnail); ?>
-            </a>
+            <div class="box-scale">
+                <a <?php pxl_print_html($widget->get_render_attribute_string( 'text_link' )); ?>>
+                    <?php echo wp_kses_post($thumbnail); ?>
+                </a>
+            </div>
         </div>
         <div class="image-title">
             <a <?php pxl_print_html($widget->get_render_attribute_string( 'text_link' )); ?>>
-                <?php echo esc_html($settings['title_text']); ?>
+                <?php pxl_print_html($settings['title_text']); ?>
             </a>
         </div>
     </div>

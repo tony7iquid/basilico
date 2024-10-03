@@ -1,59 +1,61 @@
 .pxl-checkout-content-wrap{
 	input[type="checkbox"]{
 		width: 20px;
-		height: 20px;
-		border: 1px solid $divider_color;
-		cursor: pointer;
-		vertical-align: top;
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
-		-webkit-print-color-adjust: exact;
-		position: relative;
-		text-align: center;
-		line-height: 16px;
-		margin-right: 10px;
-		&:after{
-			content: '\f26b';
-			font-family: 'Material-Design-Iconic-Font';
-			font-size: 18px;
-			color: #fff;
-			opacity: 0;
-		}
-		&:checked[type=checkbox] {
-			background: $secondary_color;
-			&:after{
-				opacity: 1;
-			}
-		}
+        height: 20px;
+        border: 1px solid $divider_color;
+        background: #fff;
+        cursor: pointer;
+        vertical-align: top;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        -webkit-print-color-adjust: exact;
+        position: relative;
+        text-align: center;
+        line-height: 16px;
+        margin-right: 10px;
+        &:after{
+            content: '\f26b';
+            font-family: 'Material-Design-Iconic-Font';
+            font-size: 18px;
+            color: #fff;
+            opacity: 0;
+        }
+        &:checked[type=checkbox] {
+        	background: $secondary_color;
+            &:after{
+                opacity: 1;
+            }
+        }
 	}
 	input[type="radio"]{
 		width: 20px;
-		height: 20px;
-		border: 1px solid $divider_color;
-		cursor: pointer;
-		vertical-align: top;
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
-		-webkit-print-color-adjust: exact;
-		position: relative;
-		text-align: center;
-		line-height: 18px;
-		margin-right: 13px;
-		&:after{
-			content: '\f26b';
-			font-family: 'Material-Design-Iconic-Font';
-			font-size: 18px;
-			color: #fff;
-			opacity: 0;
-		}
-		&:checked[type=radio] {
-			background: $secondary_color;
-			&:after{
-				opacity: 1;
-			}
-		}
+        height: 20px;
+        border: 1px solid $divider_color;
+        background: #fff;
+        cursor: pointer;
+        vertical-align: top;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        -webkit-print-color-adjust: exact;
+        position: relative;
+        text-align: center;
+        line-height: 18px;
+        margin-right: 13px;
+        &:after{
+            content: '\f26b';
+            font-family: 'Material-Design-Iconic-Font';
+            font-size: 18px;
+            color: #fff;
+            opacity: 0;
+        }
+        &:checked[type=radio] {
+        	background: $secondary_color;
+            &:after{
+                opacity: 1;
+            }
+        }
 	}
 	.content-top-inner{
 		padding-right: 70px;
@@ -84,98 +86,98 @@
 }
 .pxl-login-form-checkout{
 	display: flex;
-	flex-direction: column;
-	position: fixed;
-	top: 0; 
-	left: 0;
-	right: 0;
-	width: 100%;
-	height: 100vh;
-	z-index: -1;
-	padding: 0;
-	background: rgba(0, 0, 0, 0.4);
-	will-change: transform;
-	-webkit-transition-duration: 500ms;
-	transition-duration: 500ms;
-	opacity: 0; 
-	scrollbar-width: none;
-	@include d-flex();
-	align-items: center;
-	justify-content: center;
-	@media (max-width: $sm_max){
-		left: 15px;
-		right: 15px;
-		width: calc(100% - 30px);
-	}   
-	.pxl-hidden-template-wrap{
-		width: calc(100% - 40px);
-		max-width: 570px;
-		position: relative;
-		background: transparent;
-		border-radius: 0;
-		overflow: hidden;
-		max-height: 100vh;
-		padding: 35px 50px 65px;
-		overflow-y: auto;
-		@include transition(all .3s ease);
-		@include transform(scale(0.6));
-		@media (max-width: $xs-max){
-			padding: 25px 20px 35px;
-		}
-		&::-webkit-scrollbar{
-			height: 0;
-			width: 0;
-			background-color: transparent;
-		}
+    flex-direction: column;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.4);
+    will-change: transform;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    opacity: 0; 
+    scrollbar-width: none;
+    @include d-flex();
+    align-items: center;
+    justify-content: center;
+    @media (max-width: $sm_max){
+        left: 15px;
+        right: 15px;
+        width: calc(100% - 30px);
+    }   
+    .pxl-hidden-template-wrap{
+        width: calc(100% - 40px);
+        max-width: 570px;
+        position: relative;
+        background: transparent;
+        border-radius: 0;
+        overflow: hidden;
+        max-height: 100vh;
+        padding: 35px 50px 65px;
+    	overflow-y: auto;
+        @include transition(all .3s ease);
+        @include transform(scale(0.6));
+        @media (max-width: $xs-max){
+        	padding: 25px 20px 35px;
+        }
+        &::-webkit-scrollbar{
+	        height: 0;
+	        width: 0;
+	        background-color: transparent;
+	    }
 
-		&::-webkit-scrollbar-track{
-			border-radius: 0;
-		}
+	    &::-webkit-scrollbar-track{
+	        border-radius: 0;
+	    }
+	     
+	    &::-webkit-scrollbar-thumb{
+	        border-radius: 0;
+	        background-color: transparent;
+	    }
 
-		&::-webkit-scrollbar-thumb{
-			border-radius: 0;
-			background-color: transparent;
-		}
-
-		&:hover::-webkit-scrollbar {
-			width: 0;
-			height: auto;
-			background-color: rgba(255,255,255,0.1);
-			border-radius: 0
-		}
-		&:hover::-webkit-scrollbar-thumb{
-			background-color: rgba(48, 48, 48, 0.1);
-		}
-	} 
-	.pxl-panel-header{
-		margin-bottom: 68px;
-	}
-	.pxl-panel-content{
-		position: relative;
-		flex: 1;
-
-	}
-	.pxl-title{
-		font-size: 30px;
-		color: $heading_color;
-	}
-	.pxl-close{
-		font-size: 18px;
-		color: $heading_color;
-		&:hover{
-			color: $gray;
-		}
-	}
-	&.open{
-		height: 100%;
-		@include transform(translate(0,0));
-		opacity: 1;
-		z-index: 99999;
-		.pxl-hidden-template-wrap{
-			@include transform(scale(1));
-			background: #fff;
-		}
-	}
+	    &:hover::-webkit-scrollbar {
+	        width: 0;
+	        height: auto;
+	        background-color: rgba(255,255,255,0.1);
+	        border-radius: 0
+	    }
+	    &:hover::-webkit-scrollbar-thumb{
+	        background-color: rgba(48, 48, 48, 0.1);
+	    }
+    } 
+    .pxl-panel-header{
+    	margin-bottom: 68px;
+    }
+    .pxl-panel-content{
+        position: relative;
+        flex: 1;
+         
+    }
+    .pxl-title{
+    	font-size: 30px;
+    	color: $heading_color;
+    }
+    .pxl-close{
+    	font-size: 18px;
+    	color: $heading_color;
+    	&:hover{
+    		color: $gray;
+    	}
+    }
+    &.open{
+    	height: 100%;
+    	@include transform(translate(0,0));
+	    opacity: 1;
+	    z-index: 99999;
+        .pxl-hidden-template-wrap{
+            @include transform(scale(1));
+            background: #fff;
+        }
+    }
 }
 .woocommerce-form-login,.woocommerce-form-register{
 	.form-fields + .form-fields{
@@ -185,8 +187,8 @@
 		font-size: 16px;
 		height: 40px;
 		@include placeholder(){
-			font-size: 16px;
-		}
+	        font-size: 16px;
+	    }
 	}
 	.password-input{
 		position: relative;
@@ -194,18 +196,18 @@
 	}
 	.show-password-input{
 		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: auto; 
-		padding: 0 0 0 10px;
-		border: 0;
-		font-size: 18px;
-		color: $gray;
-		display: inline-block;
-		line-height: 40px;
-		cursor: pointer;
-		@include transition(color .3s ease);
+	    top: 0;
+	    right: 0;
+	    bottom: 0;
+	    left: auto; 
+	    padding: 0 0 0 10px;
+	    border: 0;
+	    font-size: 18px;
+	    color: $gray;
+	    display: inline-block;
+	    line-height: 40px;
+	    cursor: pointer;
+	    @include transition(color .3s ease);
 		&:before{
 			content: "\ec57";	
 			//font-family: $lineicons_font;
@@ -220,10 +222,10 @@
 	.remember-forgot{
 		margin-bottom: 42px;
 		label{
-			font-size: 16px;
-			color: $heading_color;
-			letter-spacing: 0.015em;
-			margin: 0;
+		    font-size: 16px;
+		    color: $heading_color;
+		    letter-spacing: 0.015em;
+		    margin: 0;
 		}
 		.lost_password{
 			a{
@@ -250,15 +252,15 @@
 		justify-content: flex-start;
 		height: 50px;
 		border-color: $divider_color;
-		font-size: 14px;
-		text-transform: capitalize;
-		.pxl-icon{
-			font-size: 20px;
-			margin-right: 15px;
-		}
+	    font-size: 14px;
+    	text-transform: capitalize;
+    	.pxl-icon{
+    		font-size: 20px;
+    		margin-right: 15px;
+    	}
 		&:hover,&:active,&:focus{
-			border-color: $primary_color;
-		}
+    		border-color: $primary_color;
+    	}
 	}
 	form.woocommerce-form-login{
 		display: block !important;
@@ -266,8 +268,8 @@
 	form.checkout_coupon{
 		display: block !important;
 		.input-text{
-			padding: 0px 90px 0 20px;
-			@media (max-width: $xs_screen){
+	    	padding: 0px 90px 0 20px;
+	    	@media (max-width: $xs_screen){
 				padding: 0 20px 0 20px;
 			}
 		}
@@ -306,8 +308,8 @@
 }
 
 .woocommerce-checkout .select2-container .select2-dropdown {
-	border: 1px solid #999;
-	top: 3px;
+    border: 1px solid #999;
+    top: 3px;
 }
 .pxl-checkout-wrap{
 	.form-row{
@@ -336,8 +338,8 @@
 	margin-bottom: 10px;
 	label{
 		color: $heading_color;
-		font-size: 16px;
-		letter-spacing: 0.015em;
+	    font-size: 16px;
+	    letter-spacing: 0.015em;
 	}
 }
 .woocommerce-shipping-fields{
@@ -345,8 +347,8 @@
 	.ship-to-different-address{
 		label{
 			color: $heading_color;
-			font-size: 16px;
-			letter-spacing: 0.015em;
+		    font-size: 16px;
+		    letter-spacing: 0.015em;
 		}
 	}
 }
@@ -366,32 +368,31 @@
 	border: 1px solid;
 	border-color: $divider_color;
 	border-radius: var(--checkout_radius-width);
-	position: relative;
-	@media (max-width: $md_max){
-		margin-top: 0;
-	}
-	.order-review-heading{
-		padding-bottom: 15px;
-		margin-bottom: 20px;
-		border-bottom: 1px solid $divider_color;
-	}
-	.checkout-review-inner{
-		padding: 30px;
-		font-family: $body_font_family;
-		@media (max-width: $xs_screen){
-			padding: 20px;
-		}
-		.woocommerce-error, .woocommerce-info, .woocommerce-message {
-			background-color: transparent;
-			padding: 0 20px 0 50px;
-			&:before {
-				left: 0;
-			}
-		}
-		.woocommerce-checkout-review-order-table{
-			position: static !important;
-		}
-		.blockUI.blockOverlay {
+    position: relative;
+    @media (max-width: $md_max){
+    	margin-top: 0;
+    }
+    .order-review-heading{
+	    padding-bottom: 15px;
+	    margin-bottom: 20px;
+	    border-bottom: 1px solid $divider_color;
+    }
+    .checkout-review-inner{
+    	padding: 30px ;
+    	@media (max-width: $xs_screen){
+    		padding: 20px;
+    	}
+    	.woocommerce-error, .woocommerce-info, .woocommerce-message {
+    		background-color: transparent;
+    		padding: 0 20px 0 50px;
+    		&:before {
+    			left: 0;
+    		}
+    	}
+    	.woocommerce-checkout-review-order-table{
+    		position: static !important;
+    	}
+    	.blockUI.blockOverlay {
 			position: absolute !important;
 			top: 0;
 			left: 0;
@@ -400,14 +401,14 @@
 			background-color: transparent !important;
 			&:before {
 				content: "";
-				position: absolute;
-				top: 0;
-				left: 0;
-				bottom: 0;
-				right: 0;
-				background-color: rgba(255, 255, 255, 0.8);
-				z-index: 2;
-				@include transition(all .3s ease);
+			    position: absolute;
+			    top: 0;
+			    left: 0;
+			    bottom: 0;
+			    right: 0;
+			    background-color: rgba(255, 255, 255, 0.8);
+			    z-index: 2;
+			    @include transition(all .3s ease);
 			}
 			&:after {
 				content: "\e95b";
@@ -415,45 +416,44 @@
 				font-family: $pxli_font;
 				color: #000;
 				@include animation(pxl-spin 2s linear infinite);
-				top: 50%;
+			    top: 50%;
 				left: 50%;
 				@include transform(translate(-50%, -50%));
-				display: inline-block;
+			    display: inline-block;
 				line-height: 1;
-				z-index: 3;
-				@include transition(all .3s ease);
+			    z-index: 3;
+			    @include transition(all .3s ease);
 			}
 		}
-	}
-	.shop_table{
-		padding-bottom: 25px;
-	}
-	.review-order-list{
-		.cart_item + .cart_item{
-			margin-top: 25px;
-		}
-		.product-thumbs{
+    }
+    .shop_table{
+    	padding-bottom: 25px;
+    }
+    .review-order-list{
+    	.cart_item + .cart_item{
+    		margin-top: 25px;
+    	}
+    	.product-thumbs{
 			img{
 				width: 45px;
 			}
 		}
-		.product-name{
-			font-family: $body_font_family;
-			font-size: 16px;
+    	.product-name{
+    		font-size: 16px;
 			line-height: 24px;
 			color: $heading_color;
-		}
-		.variation{
+    	}
+    	.variation{
 			margin-top: 8px;
 			padding-bottom: 4px;
-			line-height: 1.3;
+			line-height: 1;
 			color: $gray;
 			span{
 				margin: 0;
 				padding: 0;
 				position: relative;
 				display: inline-flex;
-				& + span{
+				&+span{
 					padding-left: 8px;
 					&:before{
 						content: ",";
@@ -468,29 +468,29 @@
 			line-height: 1.2;
 			color: $heading_color;
 		}
-	}
-	.review-order-subtotal-shiping{
-		margin-top: 30px;
-		padding-top: 20px;
-		border-top: 1px solid $divider_color;
-		.cart-subtotal {
-			margin-bottom: 10px;
-		}
-		.lbl {
-			font-size: 16px;
-			color: $body_color;
-		}
-		.value {
-			font-size: 16px;
-			color: $heading_color;
-		}
-		.nice-select span.current {
-			font-size: 16px;
-		}
-	}
-
-	.order-total{
-		padding-top: 25px;
+    }
+    .review-order-subtotal-shiping{
+    	margin-top: 30px;
+    	padding-top: 20px;
+    	border-top: 1px solid $divider_color;
+    	.cart-subtotal {
+    		margin-bottom: 10px;
+    	}
+    	.lbl {
+    		font-size: 16px;
+    		color: $body_color;
+    	}
+    	.value {
+    		font-size: 16px;
+    		color: $heading_color;
+    	}
+    	.nice-select span.current {
+    		font-size: 16px;
+    	}
+    }
+    
+    .order-total{
+    	padding-top: 25px;
 		span.lbl{
 			font-size: 18px;
 			color: $heading_color;
@@ -530,7 +530,6 @@
 				color: $heading_color;
 			}
 			.payment_box{
-				font-family: $body_font_family;
 				font-size: 14px;
 				line-height: 24px;
 				color: $body_color;
@@ -538,8 +537,8 @@
 				padding-left: 40px;
 			}
 			input {
-				margin: 0 19px 0 0;
-				float: left;
+			    margin: 0 19px 0 0;
+    			float: left;
 			}
 			img {
 				vertical-align: middle;
@@ -553,7 +552,6 @@
 		}
 	}
 	.woocommerce-terms-and-conditions-wrapper{
-		font-family: $body_font_family;
 		margin-top: 20px;
 		font-size: 14px;
 		line-height: 24px;
@@ -573,7 +571,6 @@
 		border: 1px solid $primary_color;
 		border-radius: var(--checkout_button_radius-width);
 		font-weight: 500;
-		height: $input_height;
 		&:hover {
 			background-color: $secondary_color;
 		}

@@ -132,6 +132,17 @@
     }
 }
 
+//* Icon Box
+.elementor-icon-box-wrapper {
+    .elementor-icon-box-title {
+        font-family: $heading_font_family;
+        text-transform: uppercase;
+    }
+    .elementor-icon-box-description {
+        font-family: $body_font_family;
+    }
+}
+
 .pxl-section-offset-left{
     @media (min-width: $xl_min) {
         &.pxl-container-width-container-1200{

@@ -5,16 +5,6 @@
     @include transition();
 }
 
-.position-sticky-center-vertical {
-    position: -webkit-sticky;
-    position: sticky;
-    @media (min-width: 1200px) {
-        top: 50%;
-        @include transform(translateY(-50%));
-        @include transition();
-    }
-}
-
 body:has(.pxl-header-sticky.h-fixed) {
     .position-sticky {
         top: 200px;
@@ -156,49 +146,8 @@ body:has(.pxl-header-sticky.h-fixed) {
     }
 }
 
-.slider-border-35px {
-    .wp-block-themepunch-revslider {
-        border-radius: 35px;
-        overflow: hidden;
-    }
-}
-
-.link-flicker {
-    a {
-        animation: linkFlicker 3s linear 2;
-    }
-}
-
-@keyframes linkFlicker {
-    0% {
-        color: $primary_color;
-    }
-    25% {
-        color: $secondary_color;
-    }
-    50% {
-        color: $primary_color;
-    }
-    75% {
-        color: $secondary_color;
-    }
-}
-
-.column-hover-blur .elementor-widget-wrap {
-    position: relative;
-    &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        backdrop-filter: blur(0px);
-        @include transition();
-    }
-    &:hover {
-        &:before {
-            backdrop-filter: blur(5px);
-        }
+.pxl-arrows-translateY-minus-50percent {
+    .pxl-swiper-arrow {
+        transform: translateY(-50%) !important;
     }
 }

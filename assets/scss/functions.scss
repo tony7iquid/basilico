@@ -106,7 +106,6 @@ $spacers: (
 .pxl-border-anm.bw-yes{
     border-width: var(--bd-width);
 }
-
 @each $breakpoint, $max_width in $screen_breakpoints {
     @media (max-width: $max_width){
         .pxl-border-anm.bw-#{$breakpoint}-no{
@@ -116,34 +115,4 @@ $spacers: (
             border-width: var(--bd-width);
         }
     }
-}
-
-.pxl-swiper-dots-false{
-    .pxl-slider-dots{
-        display: none;
-    }
-    .pxl-swiper-dots{
-        display: none;
-    }
-}
-
-@each $breakpoint, $max_width in $screen_breakpoints {
-    @media (max-width: $max_width){
-        .pxl-swiper-dots-#{$breakpoint}-false{
-            .pxl-slider-dots{
-                display: none;
-            }
-            .pxl-swiper-dots{
-                display: none;
-            }
-        }
-        .pxl-swiper-dots-#{$breakpoint}-true{
-            .pxl-slider-dots{
-                display: flex;
-            }
-            .pxl-swiper-dots{
-                display: flex;
-            }
-        }
-    }
-}
+} 

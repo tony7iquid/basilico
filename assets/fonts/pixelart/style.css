@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'pxli';
   src:
-    url('fonts/pxli.ttf?f7qi6w') format('truetype'),
-    url('fonts/pxli.woff?f7qi6w') format('woff'),
-    url('fonts/pxli.svg?f7qi6w#pxli') format('svg');
+    url('fonts/pxli.ttf?l9eurh') format('truetype'),
+    url('fonts/pxli.woff?l9eurh') format('woff'),
+    url('fonts/pxli.svg?l9eurh#pxli') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -24,6 +24,51 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.pxli-heart1:before {
+  content: "\e90c";
+}
+.pxli-instagram:before {
+  content: "\e997";
+}
+.pxli-Left-Quote:before {
+  content: "\e9f7";
+}
+.pxli-flame:before {
+  content: "\e9f6";
+}
+.pxli-quote1:before {
+  content: "\e9f5";
+}
+.pxli-package-box:before {
+  content: "\e9f3";
+}
+.pxli-snowflake:before {
+  content: "\e9f4";
+}
+.pxli-arrow-down-solid:before {
+  content: "\e9f2";
+}
+.pxli-collaboration1:before {
+  content: "\e9ee";
+}
+.pxli-mountains:before {
+  content: "\e9ef";
+}
+.pxli-verified-user:before {
+  content: "\e9f0";
+}
+.pxli-laurel-wreath:before {
+  content: "\e9f1";
+}
+.pxli-premium-qualityy:before {
+  content: "\e9ed";
+}
+.pxli-paper-plane-solid:before {
+  content: "\e9ec";
+}
+.pxli-ice-cream:before {
+  content: "\e9eb";
+}
 .pxli-cart-plus:before {
   content: "\e9ea";
 }
@@ -731,10 +776,4 @@
 }
 .pxli-angle-right1:before {
   content: "\e971";
-}
-.pxli-heart1:before {
-  content: "\e90c";
-}
-.pxli-instagram:before {
-  content: "\e997";
 }

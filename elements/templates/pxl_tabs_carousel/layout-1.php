@@ -5,17 +5,15 @@ $default_settings = [
 
 $settings = array_merge($default_settings, $settings);
 $widget->add_render_attribute('opts', [
-    'data-settings'  => wp_json_encode([
-        'fade'       => (bool)$widget->get_setting("fade", false),
-        'dots'       => (bool)$widget->get_setting("dots", false),
-        'swipe'      => (bool)$widget->get_setting("swipe", false),
-        'infinite'   => (bool)$widget->get_setting("infinite", false),
-        'autoplay'   => (bool)$widget->get_setting("autoplay", false),
-        'dots_style' => basilico()->get_theme_opt('swiper_pagination_style', 'style-df')
+    'data-settings' => wp_json_encode([
+        'fade' => $widget->get_setting("fade", "false"),
+        'dots' => $widget->get_setting("dots", "false"),
+        'dots_style' => basilico()->get_theme_opt('swiper_pagination_style', 'style-df'),
+        'swipe' => $widget->get_setting("swipe", "false")
     ])
 ]);
 $fade = $widget->get_setting("fade", "false");
-
+$arrows = $widget->get_setting("arrows", "false");
 $arrows_style = $widget->get_setting("arrows_style", "style-df");
 $dots_style = basilico()->get_theme_opt('swiper_pagination_style', 'style-df');
 extract($settings);
@@ -24,7 +22,7 @@ $widget->add_render_attribute('link_id', 'id', $link_to_tabs);
 
 <div class="pxl-tabs-carousel-container">
     <div class="pxl-swiper-slider-wrap pxl-carousel-inner">
-        <div class="pxl-tabs-carousel overflow-hidden" <?php pxl_print_html($widget->get_render_attribute_string('link_id')); ?> <?php pxl_print_html($widget->get_render_attribute_string('opts')); ?>>
+        <div class="pxl-tabs-carousel" <?php pxl_print_html($widget->get_render_attribute_string('link_id')); ?> <?php pxl_print_html($widget->get_render_attribute_string('opts')); ?>>
             <?php foreach ($tabs_list_carousel as $key => $tab_carousel) : ?>
                 <div class="pxl-carousel-item">
                     <?php
@@ -49,5 +47,15 @@ $widget->add_render_attribute('link_id', 'id', $link_to_tabs);
             <?php endforeach; ?>
         </div>
     </div>
-    <?php basilico_arrow_template($settings, 'pxl-icon zmdi zmdi-arrow-left', 'zmdi zmdi-arrow-right'); ?>
+    <?php if ($arrows != false) : ?>
+        <div class="pxl-swiper-arrows nav-vertical-in <?php echo esc_attr($arrows_style); ?>">
+            <?php if ($arrows_style == 'style-2') : ?>
+                <div class="pxl-swiper-arrow pxl-swiper-arrow-prev"><span class="pxl-icon zmdi zmdi-arrow-left"></span></div>
+                <div class="pxl-swiper-arrow pxl-swiper-arrow-next"><span class="pxl-icon zmdi zmdi-arrow-right"></span></div>
+            <?php else: ?>
+                <div class="pxl-swiper-arrow pxl-swiper-arrow-prev"><span class="pxl-icon pxli-thin-arrow-left"></span></div>
+                <div class="pxl-swiper-arrow pxl-swiper-arrow-next"><span class="pxl-icon pxli-thin-arrow-right"></span></div>
+            <?php endif; ?>
+        </div>
+    <?php endif; ?>
 </div>

@@ -110,12 +110,31 @@ pxl_add_custom_widget(
                                 'type' => \Elementor\Controls_Manager::SELECT,
                                 'label_block' => true,
                                 'options' => [
-                                    'style-1' => esc_html__('Line Between', 'basilico'),
-                                    'style-2' => esc_html__('Coffee Bean', 'basilico'),
+                                    'style-1' => esc_html__('Line Between'),
+                                    'style-2' => esc_html__('Coffee Bean'),
                                 ],
                                 'default' => 'style-1',
                                 'condition' => [
                                     'title_highlighted_line' => "true"
+                                ],
+                            ),
+                            array(
+                                'name' => 'highlighted_cream',
+                                'label' => esc_html__('Highlighted Cream', 'basilico'),
+                                'type' => \Elementor\Controls_Manager::SWITCHER,
+                                'default' => 'false',
+                            ),
+                            array(
+                                'name' => 'highlighted_cream_style',
+                                'label' => esc_html__('Highlighted Cream Style', 'basilico'),
+                                'type' => \Elementor\Controls_Manager::SELECT,
+                                'label_block' => true,
+                                'options' => [
+                                    'style-1' => esc_html__('Ice Cream'),
+                                ],
+                                'default' => 'style-1',
+                                'condition' => [
+                                    'highlighted_cream' => "true"
                                 ],
                             ),
                             array(
@@ -200,8 +219,8 @@ pxl_add_custom_widget(
                                 'type' => \Elementor\Controls_Manager::SELECT,
                                 'label_block' => true,
                                 'options' => [
-                                    'style-1' => esc_html__('Line Between', 'basilico'),
-                                    'style-2' => esc_html__('Coffee Bean', 'basilico'),
+                                    'style-1' => esc_html__('Line Between'),
+                                    'style-2' => esc_html__('Coffee Bean'),
                                 ],
                                 'default' => 'style-1',
                                 'condition' => [
@@ -287,6 +306,44 @@ pxl_add_custom_widget(
                             'name'   => 'description',
                             'label' => '',
                         ])
+                    ),
+                ),
+                array(
+                    'name' => 'highlight_section',
+                    'label' => esc_html__('Highlight Text', 'basilico' ),
+                    'tab' => 'content',
+                    'controls' => array_merge(
+                        array(
+                            array(
+                                'name' => 'text_list',
+                                'label' => esc_html__('Text List', 'basilico'),
+                                'type' => \Elementor\Controls_Manager::REPEATER,
+                                'controls' => array(
+                                    array(
+                                        'name' => 'highlight_text',
+                                        'label' => esc_html__('Text', 'basilico'),
+                                        'type' => \Elementor\Controls_Manager::TEXT,
+                                        'label_block' => true,
+                                    ),
+                                ),
+                                'title_field' => '{{{ highlight_text }}}',
+                            ),
+                            array(
+                                'name' => 'highlight_color',
+                                'label' => esc_html__('Highlight Color', 'basilico' ),
+                                'type' => 'color',
+                                'selectors' => [
+                                    '{{WRAPPER}} .pxl-heading-wrap .heading-highlight' => 'color: {{VALUE}};',
+                                ],
+                            ),
+                            array(
+                                'name' => 'highlight_typography',
+                                'label' => esc_html__('Highlight Typography', 'basilico' ),
+                                'type' => \Elementor\Group_Control_Typography::get_type(),
+                                'control_type' => 'group',
+                                'selector' => '{{WRAPPER}} .pxl-heading-wrap .heading-highlight',
+                            ),
+                        )
                     ),
                 ),
             ),

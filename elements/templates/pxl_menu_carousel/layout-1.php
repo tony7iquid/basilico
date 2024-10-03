@@ -2,35 +2,36 @@
 $default_settings = [
     'list' => [],
 ];
-
+   
 $settings = array_merge($default_settings, $settings);
 extract($settings);
 
-$arrows_style = $widget->get_setting('arrows_style', 'style-1');
+$arrows = $widget->get_setting('arrows','false');  
+$dots = $widget->get_setting('dots','false');  
 
 $opts = [
     'slide_direction'               => 'horizontal',
-    'slide_percolumn'               => 1, 
+    'slide_percolumn'               => '1', 
     'slide_mode'                    => 'slide', 
-    'slides_to_show_xxl'            => (int)$widget->get_setting('col_xxl', 3),
-    'slides_to_show'                => (int)$widget->get_setting('col_xl', 3),
-    'slides_to_show_lg'             => (int)$widget->get_setting('col_lg', 2),
-    'slides_to_show_md'             => (int)$widget->get_setting('col_md', 2),
-    'slides_to_show_sm'             => (int)$widget->get_setting('col_sm', 1),
-    'slides_to_show_xs'             => (int)$widget->get_setting('col_xs', 1), 
-    'slides_to_scroll'              => (int)$widget->get_setting('slides_to_scroll', 1), 
+    'slides_to_show_xxl'            => $widget->get_setting('col_xxl', '3'),
+    'slides_to_show'                => $widget->get_setting('col_xl', '3'),
+    'slides_to_show_lg'             => $widget->get_setting('col_lg', '2'),
+    'slides_to_show_md'             => $widget->get_setting('col_md', '2'),
+    'slides_to_show_sm'             => $widget->get_setting('col_sm', '1'),
+    'slides_to_show_xs'             => $widget->get_setting('col_xs', '1'), 
+    'slides_to_scroll'              => $widget->get_setting('slides_to_scroll', '1'), 
     'slides_gutter'                 => 30,
     'arrow'                         => $arrows,
     'dots'                          => $dots,
     'dots_style'                    => 'bullets',
-    'autoplay'                      => (bool)$widget->get_setting('autoplay', false),
-    'pause_on_hover'                => (bool)$widget->get_setting('pause_on_hover', true),
-    'pause_on_interaction'          => true,
-    'delay'                         => (int)$widget->get_setting('autoplay_speed', 5000),
-    'loop'                          => (bool)$widget->get_setting('infinite', false),
-    'speed'                         => (int)$widget->get_setting('speed', 500)
+    'autoplay'                      => $widget->get_setting('autoplay', 'false'),
+    'pause_on_hover'                => $widget->get_setting('pause_on_hover', 'true'),
+    'pause_on_interaction'          => 'true',
+    'delay'                         => $widget->get_setting('autoplay_speed', '5000'),
+    'loop'                          => $widget->get_setting('infinite','false'),
+    'speed'                         => $widget->get_setting('speed', '500')
 ];
-
+  
 $img_size = !empty($img_size) ? $img_size : '600x472';
 $widget->add_render_attribute( 'carousel', [
     'class'         => 'pxl-swiper-container overflow-hidden',
@@ -38,12 +39,11 @@ $widget->add_render_attribute( 'carousel', [
     'data-settings' => wp_json_encode($opts)
 ]);
 ?>
-
 <?php if(isset($list) && !empty($list) && count($list)): ?>
-<div class="pxl-swiper-slider pxl-menu-carousel layout-<?php echo esc_attr($settings['layout'])?>">
-    <div class="pxl-swiper-slider-wrap pxl-carousel-inner relative">
-        <div <?php pxl_print_html($widget->get_render_attribute_string( 'carousel' )); ?>>
-            <div class="pxl-swiper-wrapper swiper-wrapper">
+    <div class="pxl-swiper-slider pxl-menu-carousel layout-<?php echo esc_attr($settings['layout'])?>">
+        <div class="pxl-swiper-slider-wrap pxl-carousel-inner relative">
+            <div <?php pxl_print_html($widget->get_render_attribute_string( 'carousel' )); ?>>
+                <div class="pxl-swiper-wrapper swiper-wrapper">
                 <?php foreach ($list as $key => $value) :
                     $link = isset($value['link']) ? $value['link'] : '';
                     $link_key = $widget->get_repeater_setting_key( 'content', 'value', $key );
@@ -59,9 +59,9 @@ $widget->add_render_attribute( 'carousel', [
                         }
                     }
                     $link_attributes = $widget->get_render_attribute_string( $link_key );
-                    ?>
+                ?>
                     <div class="pxl-swiper-slide swiper-slide">
-                        <div class="item-inner scale-hover-x">
+                        <div class="item-inner">
                             <?php if (!empty( $value['selected_img']['id'])) :
                                 $thumbnail = '';
                                 $img  = pxl_get_image_by_size(array(
@@ -107,10 +107,17 @@ $widget->add_render_attribute( 'carousel', [
                         </div>
                     </div>
                 <?php endforeach; ?>
+                </div>
             </div>
+            <?php if($arrows !== 'false') : ?>
+                <div class="pxl-swiper-arrows style-default nav-vertical-out">
+                    <div class="pxl-swiper-arrow pxl-swiper-arrow-next"><span class="pxl-icon pxli-arrow-next"></span></div>
+                    <div class="pxl-swiper-arrow pxl-swiper-arrow-prev"><span class="pxl-icon pxli-arrow-prev"></span></div>
+                </div>
+            <?php endif; ?>
+            <?php if($dots !== 'false') : ?>
+                <div class="pxl-swiper-dots"></div>
+            <?php endif; ?>
         </div>
-        <?php basilico_arrow_template($settings); ?>
-        <div class="pxl-swiper-dots"></div>
     </div>
-</div>
 <?php endif; ?>

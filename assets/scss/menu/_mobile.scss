@@ -3,7 +3,7 @@
 	ul,ol{
 		list-style: none;
 	    padding: 0;
-	    margin: 0 0 10px;
+	    margin: 0;
 	    li{
 	    	position: relative;
     		padding: 0;
@@ -102,7 +102,7 @@
         position: absolute;
         right: -6px;
         text-align: center;
-        top: 5px;
+        top: 14px;
         background-color: transparent;
         @include border-radius(4px 4px 0 4px);
         @include transition(all 300ms linear 0ms);
@@ -110,7 +110,7 @@
 			color: $menu_regular;
 			content: "\f2f2";
 			font-family: "Material-Design-Iconic-Font";
-			font-size: 20px;
+			font-size: 25px;
         }
 		&.open:before{
 			content: "\f2f8";
@@ -228,4 +228,32 @@
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
+}
+.pxl-anchor-icon.custom-4 {
+	background-color: $secondary_color;
+	padding: 17px 16px 18px;
+    border-radius: 50%;
+	display: flex;
+	transition: all 400ms ease 0s;
+	@media (max-width: $xs_max) {
+		padding: 11px 11px 12px;
+	}
+	span{
+		width: 23px;
+		height: 20px;
+		display: inline-block;
+		background-image: url(../images/ice-creamiconmenu.png);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		animation: ringbell 1s ease-in-out infinite;
+		@media (max-width: $xs_max) {
+			width: 15px;
+			height: 13px;
+		}
+	}
+	&:hover{
+		background-color: $primary_color;
+	}
+	  
 }

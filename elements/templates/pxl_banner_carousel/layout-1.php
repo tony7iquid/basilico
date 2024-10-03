@@ -99,7 +99,7 @@ $widget->add_render_attribute( 'carousel', [
                     }
                     ?>
                     <div class="pxl-swiper-slide swiper-slide">
-                        <div <?php pxl_print_html($class_attributes); ?> style="background-image: url(<?php echo esc_url($item['item_background']['url']); ?>);">
+                        <div <?php pxl_print_html($class_attributes); ?>>
                             <div class="item-text">
                                 <?php
                                 if (!empty($item['title_text'])){
@@ -124,6 +124,11 @@ $widget->add_render_attribute( 'carousel', [
                                     </a>
                                 </div>
                             </div>
+                            <div class="item-image tilt-hover">
+                                <span style="background-image: url(<?php echo esc_url($item['item_background']['url']); ?>);">
+
+                                </span>
+                                </div>
                             <?php
                             if (! empty($thumbnail )){
                                 ?>

@@ -26,16 +26,17 @@ $pm_menu = basilico()->get_opt('pm_menu','-1');
     ?>
     <div id="<?php echo esc_attr($html_id); ?>" class="pxl-nav-menu pxl-nav-menu-main style-<?php echo esc_attr($style_cls) ?> <?php echo esc_attr($show_arrow_cls.' '.$show_underline) ?>">
     <?php 
-        if(!empty($menu_pd)) {
-            $menu_parametter = array(
-                'menu_id'    => 'pxl-primary-menu-'.$html_id,
-                'menu_class' => 'pxl-primary-menu clearfix',
-                'walker'     => class_exists( 'PXL_Mega_Menu_Walker' ) ? new PXL_Mega_Menu_Walker : '',
-                'link_before'    => '<span class="pxl-menu-title">',
-                'link_after'      => '</span>',
-                'menu'        => wp_get_nav_menu_object($menu_pd)
-            );
-            wp_nav_menu($menu_parametter); 
+        if(!empty($menu_pd)) { 
+            wp_nav_menu(
+                array(
+                    'menu_id'    => 'pxl-primary-menu-'.$html_id,
+                    'menu_class' => 'pxl-primary-menu clearfix',
+                    'walker'     => class_exists( 'PXL_Mega_Menu_Walker' ) ? new PXL_Mega_Menu_Walker : '',
+                    'link_before'    => '<span class="pxl-menu-title">',
+                    'link_after'      => '</span>',
+                    'menu'        => wp_get_nav_menu_object($menu_pd)
+                )
+            ); 
         } elseif( has_nav_menu( 'primary' ) ) { 
             wp_nav_menu( 
                 array(
@@ -54,15 +55,14 @@ $pm_menu = basilico()->get_opt('pm_menu','-1');
     <div id="<?php echo esc_attr($html_id); ?>" class="pxl-nav-menu pxl-nav-menu-inner style-<?php echo esc_attr($style_cls) ?> <?php echo esc_attr($border_hover) ?>">
         <?php 
             if(!empty($settings['menu'])) { 
-                $menu_parametter = array(
+                wp_nav_menu(array(
                     'menu_class'  => 'pxl-nav-inner clearfix',
                     'link_before' => '<span>',
                     'link_after'  => '</span>',
                     'depth'       => '1',
                     'menu'        => wp_get_nav_menu_object($settings['menu']),
                     'walker'      => class_exists( 'PXL_Mega_Menu_Walker' ) ? new PXL_Mega_Menu_Walker : ''
-                );
-                wp_nav_menu($menu_parametter);
+                ));
             } elseif( has_nav_menu( 'primary' ) ) { 
                 wp_nav_menu( 
                     array(
@@ -87,16 +87,17 @@ $pm_menu = basilico()->get_opt('pm_menu','-1');
     <div id="<?php echo esc_attr($html_id); ?>" class="pxl-nav-menu pxl-nav-menu-mobile">
         <?php 
             if(!empty($menu_pm)) { 
-                $menu_parametter = array(
-                    'menu_id'     => 'pxl-mobile-menu',
-                    'menu'        => wp_get_nav_menu_object($menu_pm),
-                    'container'   => '',
-                    'menu_class'  => 'pxl-mobile-menu clearfix',
-                    'walker'      => class_exists( 'PXL_Mega_Menu_Walker' ) ? new PXL_Mega_Menu_Walker : '',
-                    'link_before' => '<span class="pxl-menu-title">',
-                    'link_after'  => '</span>'
-                );
-                wp_nav_menu($menu_parametter); 
+                wp_nav_menu(
+                    array(
+                        'menu_id'     => 'pxl-mobile-menu',
+                        'menu'        => wp_get_nav_menu_object($menu_pm),
+                        'container'   => '',
+                        'menu_class'  => 'pxl-mobile-menu clearfix',
+                        'walker'      => class_exists( 'PXL_Mega_Menu_Walker' ) ? new PXL_Mega_Menu_Walker : '',
+                        'link_before' => '<span class="pxl-menu-title">',
+                        'link_after'  => '</span>'
+                    )
+                ); 
             } elseif( has_nav_menu( 'primary' ) ) { 
                 wp_nav_menu( 
                     array(
@@ -114,18 +115,17 @@ $pm_menu = basilico()->get_opt('pm_menu','-1');
 <?php elseif($settings['type'] == '4'): ?>
     <div id="<?php echo esc_attr($html_id); ?>" class="pxl-nav-menu e-sidebar-widget">
         <?php if(!empty($settings['el_title'])) : ?>
-            <h3 class="widget-title"><?php echo esc_html($settings['el_title']); ?></h3>
+            <h3 class="widget-title"><?php echo esc_attr($settings['el_title']); ?></h3>
         <?php endif;
         if(!empty($settings['menu'])) {
-            $menu_parametter = array(
+            wp_nav_menu(array(
                 'menu_class'  => 'pxl-nav-inner clearfix',
                 'link_before' => '<span>',
                 'link_after'  => '</span>',
                 'depth'       => '1',
                 'menu'        => wp_get_nav_menu_object($settings['menu']),
                 'walker'      => class_exists( 'PXL_Mega_Menu_Walker' ) ? new PXL_Mega_Menu_Walker : ''
-            );
-            wp_nav_menu($menu_parametter);
+            ));
         } elseif( has_nav_menu( 'primary' ) ) {
             wp_nav_menu(
                 array(

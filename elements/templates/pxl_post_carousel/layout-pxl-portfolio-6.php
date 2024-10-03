@@ -19,7 +19,6 @@ $num_words = $widget->get_setting('num_words', 30);
 $settings['layout']    = $settings['layout_'.$settings['post_type']];
 
 $tab_style = basilico()->get_theme_opt('tab_style', 'style-df');
-$pagination_style = basilico()->get_theme_opt('swiper_pagination_style', 'style-df');
 
 extract(pxl_get_posts_of_grid(
     'pxl-portfolio',
@@ -131,7 +130,7 @@ if ( !empty( $item_animation) ) {
                             <div class="item-content d-flex remove-cursor <?php echo esc_attr($item_anm_cls) ?>" <?php pxl_print_html($data_settings); ?>>
                                 <div class="content-inner">
                                     <h4 class="item-title">
-                                        <a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_html(get_the_title($post->ID)); ?></a>
+                                        <a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_attr(get_the_title($post->ID)); ?></a>
                                     </h4>
                                     <?php if ($show_category == 'true') : ?>
                                         <div class="item-tags">
@@ -158,7 +157,7 @@ if ( !empty( $item_animation) ) {
                                     <?php if ($show_button == 'true') : ?>
                                         <div class="item-readmore">
                                             <a class="btn-more style-2" href="<?php echo esc_url(get_permalink($post->ID)); ?>">
-                                                <span><?php echo esc_html($loadmore_text); ?></span>
+                                                <span><?php echo esc_attr($loadmore_text, 'basilico'); ?></span>
                                                 <i class="zmdi zmdi-arrow-right"></i>
                                             </a>
                                         </div>
@@ -168,7 +167,7 @@ if ( !empty( $item_animation) ) {
                             <div class="box-title">
                                 <div class="title-wrap">
                                     <h4 class="item-title">
-                                        <a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_html(get_the_title($post->ID)); ?></a>
+                                        <a href="<?php echo esc_url(get_permalink($post->ID)); ?>"><?php echo esc_attr(get_the_title($post->ID)); ?></a>
                                     </h4>
                                     <?php if ($show_category == 'true') : ?>
                                         <div class="item-tags">
@@ -182,11 +181,14 @@ if ( !empty( $item_animation) ) {
                 <?php endforeach; ?>
             </div>
         </div>
-        <?php if ($arrows !== 'false') :
-            basilico_arrow_template($settings);
-        endif; ?>
+        <?php if($arrows !== 'false'): ?>
+            <div class="pxl-swiper-arrows style-default nav-horizontal">
+                <div class="pxl-swiper-arrow pxl-swiper-arrow-prev"><span class="pxli pxli-arrow-prev"></span></div>
+                <div class="pxl-swiper-arrow pxl-swiper-arrow-next"><span class="pxli pxli-arrow-next"></span></div>
+            </div>
+        <?php endif; ?>
         <?php if($dots !== 'false'): ?>
-            <div class="pxl-swiper-dots <?php echo esc_attr($pagination_style); ?>"></div>
+            <div class="pxl-swiper-dots"></div>
         <?php endif; ?>
     </div>
 </div>
