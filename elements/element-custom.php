@@ -23,7 +23,7 @@ function basilico_add_custom_section_controls( \Elementor\Element_Base $element)
                     'sticky'      => esc_html__( 'Header Sticky', 'basilico' ),
                     'transparent' => esc_html__( 'Header Transparent', 'basilico' ),
                 ),
-                'default'      => '',
+                'default'      => '', 
             ]
         );
     }
