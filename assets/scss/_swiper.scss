@@ -179,6 +179,27 @@ $slider-outer-space: 0;
             }
         }
     }
+    &.style-4 {
+        .pxl-swiper-arrows {
+            position: absolute;
+            bottom: 25px;
+            background-color: $secondary_color;
+            padding: 12px 18px;
+            @include border-radius(18px);
+            .pxl-swiper-arrow {
+                .pxl-icon {
+                    font-size: 15px;
+                    line-height: 1;
+                    color: $primary_color;
+                    @include transition(color 0.3s ease);
+                }
+                svg {
+                    width: 15px;
+                    height: auto;
+                }
+            }
+        }
+    }
 }
 
 .pxl-swiper-arrow {

@@ -720,6 +720,7 @@ function basilico_arrow_settings(){
                 'style-1' => esc_html__('Style 1', 'basilico'),
                 'style-2' => esc_html__('Style 2', 'basilico'),
                 'style-3' => esc_html__('Style 3', 'basilico'),
+                'style-4' => esc_html__('Style 4', 'basilico'),
             ],
             'default' => 'style-1',
         ),
@@ -745,7 +746,7 @@ function basilico_arrow_settings(){
                 '{{WRAPPER}} .pxl-swiper-arrows .pxl-swiper-arrow' => 'background-color: {{VALUE}};',
             ],
             'condition' => [
-                'arrows_style' => 'style-2'
+                'arrows_style' => ['style-2', 'style-3']
             ]
         ),
         array(
@@ -826,6 +827,9 @@ function basilico_arrow_settings(){
                 'center-vertical' => esc_html('Center Vertical', 'basilico'),
                 'absolute' => esc_html('Custom', 'basilico'),
             ],
+            'condition' => [
+                'arrows_style!' => 'style-4'
+            ]
         ),
         array(
             'name' => 'arrow_prev_offset_orientation_h',
@@ -845,6 +849,9 @@ function basilico_arrow_settings(){
             'render_type' => 'ui',
             'condition' => [
                 'arrow_prev_position' => ['absolute', 'center-vertical']
+            ],
+            'condition' => [
+                'arrows_style!' => 'style-4'
             ]
         ),
         array(
@@ -881,7 +888,8 @@ function basilico_arrow_settings(){
             ],
             'condition' => [
                 'arrow_prev_offset_orientation_h!' => 'right',
-                'arrow_prev_position' => ['absolute', 'center-vertical']
+                'arrow_prev_position' => ['absolute', 'center-vertical'],
+                'arrows_style!' => 'style-4'
             ],
         ),
         array(
@@ -919,6 +927,7 @@ function basilico_arrow_settings(){
             'condition' => [
                 'arrow_prev_offset_orientation_h' => 'right',
                 'arrow_prev_position' => ['absolute', 'center-vertical'],
+                'arrows_style!' => 'style-4'
             ],
         ),
         array(
@@ -939,6 +948,7 @@ function basilico_arrow_settings(){
             'render_type' => 'ui',
             'condition' => [
                 'arrow_prev_position' => 'absolute',
+                'arrows_style!' => 'style-4'
             ]
         ),
         array(
@@ -976,6 +986,7 @@ function basilico_arrow_settings(){
             'condition' => [
                 'arrow_prev_offset_orientation_v!' => 'bottom',
                 'arrow_prev_position' => 'absolute',
+                'arrows_style!' => 'style-4'
             ],
         ),
         array(
@@ -1013,6 +1024,7 @@ function basilico_arrow_settings(){
             'condition' => [
                 'arrow_prev_offset_orientation_v' => 'bottom',
                 'arrow_prev_position' => 'absolute',
+                'arrows_style!' => 'style-4'
             ],
         ),
         array(
@@ -1025,6 +1037,9 @@ function basilico_arrow_settings(){
                 'center-vertical' => esc_html('Center Vertical', 'basilico'),
                 'absolute' => esc_html('Custom', 'basilico'),
             ],
+            'condition' => [
+                'arrows_style!' => 'style-4'
+            ]
         ),
         array(
             'name' => 'arrow_next_offset_orientation_h',
@@ -1043,7 +1058,8 @@ function basilico_arrow_settings(){
             ],
             'render_type' => 'ui',
             'condition' => [
-                'arrow_next_position' => ['absolute', 'center-vertical']
+                'arrow_next_position' => ['absolute', 'center-vertical'],
+                'arrows_style!' => 'style-4'
             ]
         ),
         array(
@@ -1081,6 +1097,7 @@ function basilico_arrow_settings(){
             'condition' => [
                 'arrow_next_offset_orientation_h!' => 'right',
                 'arrow_next_position' => ['absolute', 'center-vertical'],
+                'arrows_style!' => 'style-4'
             ],
         ),
         array(
@@ -1118,6 +1135,7 @@ function basilico_arrow_settings(){
             'condition' => [
                 'arrow_next_offset_orientation_h' => 'right',
                 'arrow_next_position' => ['absolute', 'center-vertical'],
+                'arrows_style!' => 'style-4'
             ],
         ),
         array(
@@ -1137,7 +1155,8 @@ function basilico_arrow_settings(){
             ],
             'render_type' => 'ui',
             'condition' => [
-                'arrow_next_position' => 'absolute'
+                'arrow_next_position' => 'absolute',
+                'arrows_style!' => 'style-4'
             ]
         ),
         array(
@@ -1175,6 +1194,7 @@ function basilico_arrow_settings(){
             'condition' => [
                 'arrow_next_offset_orientation_v!' => 'bottom',
                 'arrow_next_position' => 'absolute',
+                'arrows_style!' => 'style-4'
             ],
         ),
         array(
@@ -1212,6 +1232,7 @@ function basilico_arrow_settings(){
             'condition' => [
                 'arrow_next_offset_orientation_v' => 'bottom',
                 'arrow_next_position' => 'absolute',
+                'arrows_style!' => 'style-4'
             ]
         )
     );
