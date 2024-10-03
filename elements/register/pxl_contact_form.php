@@ -341,7 +341,7 @@ if(class_exists('WPCF7')) {
                                                 'selectors' => [
                                                     '{{WRAPPER}} .pxl-button-wrapper .btn:hover' => 'border-color: {{VALUE}};',
                                                     '{{WRAPPER}} .pxl-button-wrapper .btn.btn-additional-6:hover, {{WRAPPER}} .pxl-button-wrapper .btn.btn-additional-7:hover,
-                                                     {{WRAPPER}} .pxl-button-wrapper .btn.btn-additional-5:hover' => 'background-color: {{VALUE}};',
+                                                     {{WRAPPER}} .pxl-button-wrapper .btn.btn-additional-5:hover, {{WRAPPER}} .pxl-button-wrapper .btn.btn-additional-8:hover' => 'background-color: {{VALUE}};',
                                                     '{{WRAPPER}} .pxl-button-wrapper .btn:before' => 'background-color: {{VALUE}};'
                                                 ],
                                             ),
