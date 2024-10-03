@@ -99,6 +99,12 @@ $slider-outer-space: 0;
 
 //* Pxl Swiper arrows
 .pxl-swiper-arrows {
+    .pxl-swiper-arrow {
+        position: relative;
+        &.absolute {
+            position: absolute;
+        }
+    }
     &.style-1, &.style-2, &.style-3 {
         .pxl-swiper-arrow {
             cursor: pointer;
@@ -186,24 +192,27 @@ $slider-outer-space: 0;
         padding: 12px 18px;
         @include border-radius(18px);
         .pxl-swiper-arrow {
+            cursor: pointer;
+            + .pxl-swiper-arrow {
+                margin-left: 47px;
+            }
             .pxl-icon {
                 font-size: 15px;
                 line-height: 1;
-                color: $primary_color;
+                color: rgba(255, 255, 255, 0.5);
                 @include transition(color 0.3s ease);
             }
             svg {
                 width: 15px;
+                fill: rgba(255, 255, 255, 0.5);
                 height: auto;
             }
+            &:hover {
+                .pxl-icon, svg {
+                    color: #fff;
+                }
+            }
         }
-    }
-}
-
-.pxl-swiper-arrow {
-    position: relative;
-    &.absolute {
-        position: absolute;
     }
 }
 
