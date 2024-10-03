@@ -815,15 +815,6 @@
             justify-content: center;
             margin-top: 36px;
         }
-        .pxl-swiper-arrow {
-            font-size: 40px;
-            line-height: 1;
-            color: $primary_color;
-            cursor: pointer;
-            &.swiper-button-disabled {
-                cursor: not-allowed;
-            }
-        }
     }
     &.layout-9 {
         .item-quote-icon {
