@@ -502,6 +502,9 @@
         letter-spacing: 0.15em;
         overflow: visible;
         @include border-radius(5px);
+        @media (max-width: $sm_max) {
+            font-size: 13px;
+        }
         span + i, i + span {
             margin-left: 13px;
         }
