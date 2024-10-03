@@ -26,6 +26,7 @@ pxl_add_custom_widget(
                                 'layout-3'       => esc_html__('Layout 3', 'basilico'),
                                 'layout-4'       => esc_html__('Layout 4', 'basilico'),
                                 'layout-5'       => esc_html__('Layout 5', 'basilico'),
+                                'layout-6'       => esc_html__('Layout 6', 'basilico'),
                             ],
                             'default'  => 'layout-1',
                         ),
@@ -89,6 +90,33 @@ pxl_add_custom_widget(
                                 ],
                             ),
                             array(
+                                'name' => 'dots',
+                                'label' => esc_html__('Show Dots', 'basilico'),
+                                'type' => \Elementor\Controls_Manager::SWITCHER,
+                            ),
+                            array(
+                                'name' => 'dots_color',
+                                'label' => esc_html__('Dots Color', 'basilico'),
+                                'type' => \Elementor\Controls_Manager::COLOR,
+                                'selectors' => [
+                                    '{{WRAPPER}} .pxl-swiper-slider .pxl-swiper-dots .pxl-swiper-pagination-bullet:after' => 'background-color: {{VALUE}};',
+                                ],
+                                'condition' => [
+                                    'dots' => "true",
+                                ],
+                            ),
+                            array(
+                                'name' => 'dots_color_active',
+                                'label' => esc_html__('Active Color', 'basilico'),
+                                'type' => \Elementor\Controls_Manager::COLOR,
+                                'selectors' => [
+                                    '{{WRAPPER}} .pxl-swiper-slider .pxl-swiper-dots .pxl-swiper-pagination-bullet.swiper-pagination-bullet-active:after' => 'background-color: {{VALUE}};',
+                                ],
+                                'condition' => [
+                                    'dots' => "true",
+                                ],
+                            ),
+                            array(
                                 'name' => 'pause_on_hover',
                                 'label' => esc_html__('Pause on Hover', 'basilico'),
                                 'type' => \Elementor\Controls_Manager::SWITCHER,
@@ -140,14 +168,6 @@ pxl_add_custom_widget(
                     'tab' => \Elementor\Controls_Manager::TAB_SETTINGS,
                     'controls' => array_merge(
                         basilico_arrow_settings(),
-                    ),
-                ),
-                array(
-                    'name' => 'dots_settings',
-                    'label' => esc_html__('Dot Settings', 'basilico' ),
-                    'tab' => \Elementor\Controls_Manager::TAB_SETTINGS,
-                    'controls' => array_merge(
-                        basilico_dots_settings(),
                     ),
                 ),
             ),

@@ -8,10 +8,10 @@
 add_filter( 'pxl_server_info', 'basilico_add_server_info');
 function basilico_add_server_info($infos){
     $infos = [
-        'api_url' => 'https://api.7iquid.tech/',
-        'docs_url' => 'https://doc.7iquid.tech/basilico/',
+        'api_url' => 'https://api.7iquid.com/',
+        'docs_url' => 'https://doc.7iquid.com/basilico/',
         'plugin_url' => 'https://7iquid.com/plugins/',
-        'demo_url' => 'https://demo.7iquid.tech/basilico/',
+        'demo_url' => 'https://demo.7iquid.com/basilico/',
         'support_url' => '#',
         'help_url' => '#',
         'email_support' => '7iquid.agency@gmail.com',
@@ -36,8 +36,8 @@ function basilico_add_cpt_support($cpt_support) {
 }
 
 
-add_filter( 'pxl_extra_post_types', 'basilico_add_post_type' );
-function basilico_add_post_type( $postypes ) {
+add_filter( 'pxl_extra_post_types', 'basilico_add_posttype' );
+function basilico_add_posttype( $postypes ) {
     $postypes['portfolio'] = array(
         'status' => false,
         'args' => array(
@@ -221,7 +221,7 @@ function basilico_support_awesome_pro() {
 
 add_filter( 'redux_pxl_iconpicker_field/get_icons', 'basilico_add_icons_to_pxl_iconpicker_field' );
 function basilico_add_icons_to_pxl_iconpicker_field($icons){
-	$custom_icons = [];
+	$custom_icons = []; //'Flaticon' => array(array('flaticon-marker' => 'flaticon-marker')),
 	$icons = array_merge($custom_icons, $icons);
 	return $icons;
 }
@@ -229,7 +229,7 @@ function basilico_add_icons_to_pxl_iconpicker_field($icons){
 
 add_filter("pxl_mega_menu/get_icons", "basilico_add_icons_to_megamenu");
 function basilico_add_icons_to_megamenu($icons){
-	$custom_icons = [];
+	$custom_icons = []; //'Flaticon' => array(array('flaticon-marker' => 'flaticon-marker')),
 	$icons = array_merge($custom_icons, $icons);
 	return $icons;
 }
@@ -238,8 +238,9 @@ add_filter( 'body_class', 'basilico_body_classes' );
 function basilico_body_classes( $classes )
 {
     $header_sticky_layout = (int)basilico()->get_opt('header_sticky_layout');
-    $select_style = basilico()->get_opt('select_style', '');
     $footer_fixed = basilico()->get_opt('footer_fixed', '0');
+
+    $shop_style = basilico()->get_theme_opt('shop_style', 'default');
 
     if (class_exists('ReduxFramework')) {
         $classes[] = 'redux-page';
@@ -250,8 +251,6 @@ function basilico_body_classes( $classes )
     }
 
     if($footer_fixed == '1') $classes[] = 'pxl-footer-fixed';
-
-    if(!empty($select_style)) $classes[] = $select_style;
 
     if(get_option( 'woosw_page_id', 0) == get_the_ID())
         $classes[] = 'pxl-wishlist-page';
@@ -315,7 +314,8 @@ function basilico_custom_fonts($fonts){
         'Custom Fonts' => [
             'Audrey' => 'Audrey',
             'Cerebri Sans' => 'Cerebri Sans',
-            'PS Demo' => 'PS Demo'
+            'PS Demo' => 'PS Demo',
+            'Souvenir' => 'Souvenir',
         ]
     ];
     return $fonts;
@@ -340,5 +340,6 @@ function basilico_update_elementor_font_control($additional_fonts){
     $additional_fonts['Cormorant Infant'] = 'pxlfonts';
     $additional_fonts['PS Demo'] = 'pxlfonts';
     $additional_fonts['Cirka'] = 'pxlfonts';
+    $additional_fonts['Souvenir'] = 'pxlfonts';
     return $additional_fonts;
 }

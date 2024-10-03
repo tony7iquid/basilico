@@ -582,23 +582,12 @@ function basilico_add_custom_columns_controls( \Elementor\Element_Base $element)
                 'default'           => esc_html__( 'Default', 'basilico' ),
                 'auto'   => esc_html__( 'Auto', 'basilico' ),
             ),
+            'control_type' => 'responsive',
             'label_block'  => true,
             'default'      => 'default',
             'prefix_class' => 'pxl-column-element-'
         ]
     );
-    $element->add_control(
-        'pxl_col_fullwidth_desktop',
-        [
-            'label' => esc_html__('Desktop Full Width (> 1500px)', 'basilico'),
-            'type'    => \Elementor\Controls_Manager::SWITCHER,
-            'label_on' => esc_html__( 'Yes', 'basilico' ),
-            'label_off' => esc_html__( 'No', 'basilico' ),
-            'return_value' => 'yes',
-            'default' => 'no',
-            'prefix_class' => 'pxl-column-fullwidth-',
-        ]
-    ); 
     $element->add_control(
         'pxl_border_animated',
         [
@@ -977,7 +966,7 @@ function basilico_add_custom_common_controls(\Elementor\Element_Base $element){
 
 add_filter( 'pxl-custom-section/before-render', 'basilico_custom_section_before_render', 10, 3 );
 function basilico_custom_section_before_render($html, $settings, $el){  
-    if( isset($settings['pxl_section_border_animated']) && $settings['pxl_section_border_animated'] == 'yes' && isset($settings['border_width'])){
+    if( isset($settings['pxl_section_border_animated']) && $settings['pxl_section_border_animated'] == 'yes' ){
         $unit = $settings['border_width']['unit'];
         $border_num = 0;
         $bd_top_style = 'style="border-width: '.$settings['border_width']['top'].$unit.' 0 0 0; border-style: '.$settings['border_border'].'; border-color: '.$settings['border_color'].';"';

@@ -24,9 +24,9 @@ if(count($tabs_list) > 0){
                         $widget->add_render_attribute( $title_key, 'class', 'active');
                     }
                     ?>
-                    <a href="javascript:void(0)" <?php pxl_print_html($widget->get_render_attribute_string( $title_key )); ?> data-slide="<?php echo esc_attr($key); ?>">
+                    <span <?php pxl_print_html($widget->get_render_attribute_string( $title_key )); ?> data-slide="<?php echo esc_attr($key); ?>">
                         <span><?php echo pxl_print_html($tab['tab_title']); ?></span>
-                    </a>
+                    </span>
                 <?php endforeach; ?>
             </div>
         </div>

@@ -29,10 +29,11 @@
     font-weight: $button_font_weight;
     letter-spacing: $button_letter_spacing;
     padding: $button_padding;
-    line-height: $button_line_height;
     @include border-radius($button_radius);
     background-color: $secondary_color;
     color: #fff;
+    line-height: $input_height;
+    height: $input_height;
     text-transform: uppercase;
     white-space: nowrap;
     outline: none;
@@ -43,10 +44,6 @@
     overflow: hidden;
     @include box-shadow(none);
     @include transition(all 250ms linear 0s);
-    @media (max-width: $md_max){
-        padding: 8px 25px 8px 25px;
-        font-size: 12px;
-    }
     &:before {
         z-index: 1;
     }
@@ -178,7 +175,7 @@
             transition-delay: 0.15s;
         }
         &:hover {
-            color: #fff;
+            color: #fff !important;
             transition-delay: 0.25s;
             &:before {
                 height: calc(100% + 2px);
@@ -304,7 +301,6 @@
         background-color: transparent;
         overflow: visible;
         margin-bottom: 9px;
-        padding: 12px 35px;
         .pxl-button-icon {
             color: $heading_color;
         }
@@ -459,7 +455,7 @@
         font-weight: 700;
         letter-spacing: 0.1em;
         overflow: visible;
-        box-shadow: 3px 3px $divider_color;
+        box-shadow: 3px 3px 0px 0px $divider_color;
         span + i, i + span {
             margin-left: 13px;
         }
@@ -474,21 +470,21 @@
             .pxl-button-icon, i {
                 color: inherit;
             }
-            box-shadow: 0px 0px $divider_color;
+            box-shadow: 0px 0px 0px 0px $divider_color;
         }
         &.style-2 {
-            box-shadow: 3px 3px #fff;
+            box-shadow: 3px 3px 0px 0px #fff;
             .pxl-button-icon, &:after {
                 background-color: #fff;
             }
             &:hover {
-                box-shadow: 0px 0px #fff;
+                box-shadow: 0px 0px 0px 0px #fff;
             }
         }
         &.no-shadow {
-            box-shadow: none;
+            box-shadow: 0px 0px 0px 0px transparent;
             &:hover {
-                box-shadow: none;
+                box-shadow: 0px 0px 0px 0px transparent;
             }
         }
     }
@@ -502,9 +498,6 @@
         letter-spacing: 0.15em;
         overflow: visible;
         @include border-radius(5px);
-        @media (max-width: $sm_max) {
-            font-size: 13px;
-        }
         span + i, i + span {
             margin-left: 13px;
         }
@@ -516,6 +509,43 @@
         }
         &:hover {
             background-color: $secondary_color;
+        }
+    }
+    &.btn-additional-9{
+        position: relative;
+        background-color: $primary_color;
+        border-radius: 25px;
+        box-shadow: 0 5px 0 #d32b42;
+        transition: all 400ms ease 0s;
+        overflow: hidden;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #d32b42;
+            transition: top 400ms ease;
+            z-index: 0;
+        }
+        .pxl-button-icon{
+            color: #fff;
+            transform: translateX(0);
+            transition: transform 400ms ease;
+        }
+        &:hover{
+            box-shadow: 0 0 0 #d32b42;
+            background-position: bottom;
+            background-color: #d32b42;
+            background-size: 100% 200%;
+            color: #fff;
+            .pxl-button-icon{
+                transform: translateX(5px);
+            }
+            &::before {
+                top: 0;
+            }
         }
     }
 }

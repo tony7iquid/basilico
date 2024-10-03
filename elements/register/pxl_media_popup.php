@@ -49,7 +49,7 @@ pxl_add_custom_widget(
                             'label' => esc_html__('Media URL', 'basilico'),
                             'type' => Controls_Manager::URL,
                             'default' => [
-                                'url' => 'https://www.youtube.com/watch?v=MLpWrANjFbI',
+                                'url' => 'https://www.youtube.com/watch?v=75Co4wHh96w',
                                 'is_external' => 'on'
                             ]
                         ),
@@ -185,6 +185,16 @@ pxl_add_custom_widget(
                                 '{{WRAPPER}} .pxl-media-popup .media-play-button i' => 'font-size: {{SIZE}}{{UNIT}};',
                             ],
 
+                        ),
+                        array(
+                            'name' => 'icon_margin',
+                            'label' => esc_html__('Icon Margin(px)', 'basilico' ),
+                            'type' => 'dimensions',
+                            'control_type' => 'responsive',
+                            'size_units' => [ 'px' ],
+                            'selectors' => [
+                                '{{WRAPPER}} .pxl-media-popup .media-play-button i' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                            ],
                         ),
                     ),
                 ),

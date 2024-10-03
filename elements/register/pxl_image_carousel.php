@@ -84,6 +84,29 @@ pxl_add_custom_widget(
                                 ],
                             ),
                             array(
+                                'name' => 'arrows',
+                                'label' => esc_html__('Show Arrows', 'basilico'),
+                                'type' => \Elementor\Controls_Manager::SWITCHER,
+                            ),
+                            array(
+                                'name' => 'arrows_style',
+                                'label' => esc_html__('Arrows Style', 'basilico'),
+                                'type' => \Elementor\Controls_Manager::SELECT,
+                                'options' => [
+                                    'style-1' => esc_html__('Style 1'),
+                                    'style-2' => esc_html__('Style 2'),
+                                ],
+                                'default' => 'style-1',
+                                'condition' => [
+                                    'arrows' => 'true'
+                                ]
+                            ),
+                            array(
+                                'name' => 'dots',
+                                'label' => esc_html__('Show Dots', 'basilico'),
+                                'type' => \Elementor\Controls_Manager::SWITCHER,
+                            ),
+                            array(
                                 'name' => 'pause_on_hover',
                                 'label' => esc_html__('Pause on Hover', 'basilico'),
                                 'type' => \Elementor\Controls_Manager::SWITCHER,
@@ -115,25 +138,9 @@ pxl_add_custom_widget(
                             ),
                         )
                     ),
-                ),
-                array(
-                    'name' => 'arrow_settings',
-                    'label' => esc_html__('Arrow Settings', 'basilico' ),
-                    'tab' => \Elementor\Controls_Manager::TAB_SETTINGS,
-                    'controls' => array_merge(
-                        basilico_arrow_settings(),
-                    ),
-                ),
-                array(
-                    'name' => 'dots_settings',
-                    'label' => esc_html__('Dots Settings', 'basilico' ),
-                    'tab' => \Elementor\Controls_Manager::TAB_SETTINGS,
-                    'controls' => array_merge(
-                        basilico_dots_settings(),
-                    ),
-                ),
-            ),
-        ),
-    ),
-    basilico_get_class_widget_path()
+),
+),
+),
+),
+basilico_get_class_widget_path()
 );

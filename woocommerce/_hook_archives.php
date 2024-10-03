@@ -18,7 +18,7 @@ add_filter('woocommerce_sale_flash', 'basilico_custom_sale_text', 10, 3);
 function basilico_custom_sale_text($text, $post, $_product)
 {
     $onsale_text = basilico()->get_theme_opt('onsale_text', 'Sale Off');
-    return '<span class="onsale">'.esc_attr($onsale_text).'</span>';
+    return '<span class="onsale">'.esc_attr__($onsale_text, 'basilico').'</span>';
 }
 
 /* Add and Remove function hook in woocommerce/templates/content-product.php */
@@ -57,7 +57,7 @@ if(!function_exists('basilico_woocommerce_catalog_result')){
             <?php if ($style_shop == 'layout-1' || $style_shop == 'layout-2' || $style_shop == 'layout-5') : ?>
                 <div class="pxl-view-layout-wrap col-12 col-sm-auto order-md-3">
                     <ul class="pxl-view-layout d-flex align-items-center">
-                        <li class="lbl"><?php echo esc_html__( 'View', 'basilico' ); ?></li>
+                        <li class="lbl"><?php echo esc_html__( 'View','basilico' ) ?></li>
                         <li class="view-icon view-grid <?php echo esc_attr($active_grid) ?>"><a href="javascript:void(0);" class="pxl-ttip tt-top-left" data-cls="products <?php echo implode(' ', $row_cols_class);?>" data-col="grid"><span class="tt-txt"><?php echo esc_html__('View Grid','basilico') ?></span><span class="pxli-grid"></span></a></li>
                         <li class="view-icon view-list <?php echo esc_attr($active_list) ?>"><a href="javascript:void(0);" class="pxl-ttip tt-top-left" data-cls="products shop-view-list" data-col="list"><span class="tt-txt"><?php echo esc_html__('View List','basilico') ?></span><span class="pxli-list"></span></a></li>
                     </ul>
@@ -78,8 +78,8 @@ if(!function_exists('basilico_woocommerce_catalog_result')){
 add_filter('woocommerce_loop_add_to_cart_link', 'basilico_woocommerce_loop_add_to_cart_link', 10, 3);
 add_filter( 'woocommerce_add_to_cart_form_action', '__return_empty_string' );
 function basilico_woocommerce_loop_add_to_cart_link($button, $product, $args){
-    if (class_exists( 'YITH_WAPO' ) && !empty(YITH_WAPO_DB()->yith_wapo_get_blocks_by_product($product->get_id()))) {
-        return '<a href="#" class="pxl-btn button pxl-quickview" data-product_id="' . get_the_ID() . '">' . esc_html__('Order Online', 'basilico') . '</a>';
+    if (class_exists( 'YITH_WAPO' ) && !empty(YITH_WAPO_DB()->yith_wapo_get_blocks_by_product($product->id))) {
+        return '<a href="#" class="pxl-btn button pxl-quickview" data-product_id="' . get_the_ID() . '">' . esc_html__('Order Online') . '</a>';
     }
 
     $product_layout = basilico()->get_theme_opt('product_layout', 'layout-1');
@@ -90,11 +90,15 @@ function basilico_woocommerce_loop_add_to_cart_link($button, $product, $args){
     else if ($product_layout == 'layout-5') {
         $btn_icon = '<span class="pxl-icon pxli pxli-shopping-cart-plus"></span>';
     }
+    else if ($product_layout == 'layout-6') {
+        $btn_icon = '<span class="pxl-icon pxli pxli-shopping-cart"></span>';
+    }
     return sprintf(
         '<a href="%s" data-quantity="%s" class="pxl-btn %s" %s><span class="pxl-btn-text">%s</span>%s</a>',
         esc_url( $product->add_to_cart_url() ),
         esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
         esc_attr( isset( $args['class'] ) ? $args['class'] : 'button' ),
+        //$add_to_cart_btn_style,
         isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
         esc_html( $product->add_to_cart_text() ),
         $btn_icon
@@ -122,18 +126,18 @@ function pxl_product_quickview() {
     ?>
     <h3 class="modal-heading">
         <span><?php echo esc_html('Product Options', 'basilico'); ?></span>
-        <span class="close-modal"></span>
+        <span class="close-modal"></span>       
     </h3>
     <div class="woocommerce single-product">
         <div id="product-<?php echo esc_attr( $product_id ); ?>" <?php wc_product_class( '', $product ); ?>>
             <div class="content-left">
                 <div class="product-content">
-                    <h3 class="product-title"><?php echo esc_html($product->get_name()); ?></h3>
+                    <h3 class="product-title"><?php echo $product->get_name(); ?></h3>
                     <div class="pxl-divider"></div>
-                    <div class="product-price"><?php echo esc_html($product->get_price_html()); ?></div>
-                    <div class="product-description"><?php echo esc_html($product->get_short_description()); ?></div>     
+                    <div class="product-price"><?php echo $product->get_price_html(); ?></div>
+                    <div class="product-description"><?php echo $product->get_short_description(); ?></div>     
                 </div>
-                <div class="product-images"><?php echo esc_html($product->get_image()); ?></div>
+                <div class="product-images"><?php echo $product->get_image(); ?></div>
             </div>
             <div class="content-right">
                 <?php

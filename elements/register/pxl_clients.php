@@ -99,6 +99,16 @@ pxl_add_custom_widget(
                                 ],
                             ),
                             array(
+                                'name' => 'arrows',
+                                'label' => esc_html__('Show Arrows', 'basilico'),
+                                'type' => \Elementor\Controls_Manager::SWITCHER,
+                            ),
+                            array(
+                                'name' => 'dots',
+                                'label' => esc_html__('Show Dots', 'basilico'),
+                                'type' => \Elementor\Controls_Manager::SWITCHER,
+                            ),
+                            array(
                                 'name' => 'pause_on_hover',
                                 'label' => esc_html__('Pause on Hover', 'basilico'),
                                 'type' => \Elementor\Controls_Manager::SWITCHER,
@@ -128,23 +138,7 @@ pxl_add_custom_widget(
                                 'type' => \Elementor\Controls_Manager::NUMBER,
                                 'default' => 400,
                             ),
-                        ),
-                    ),
-                ),
-                array(
-                    'name' => 'arrow_settings',
-                    'label' => esc_html__('Arrow Settings', 'basilico' ),
-                    'tab' => \Elementor\Controls_Manager::TAB_SETTINGS,
-                    'controls' => array_merge(
-                        basilico_arrow_settings(),
-                    ),
-                ),
-                array(
-                    'name' => 'dots_settings',
-                    'label' => esc_html__('Dots Settings', 'basilico' ),
-                    'tab' => \Elementor\Controls_Manager::TAB_SETTINGS,
-                    'controls' => array_merge(
-                        basilico_dots_settings(),
+                        )
                     ),
                 ),
             )

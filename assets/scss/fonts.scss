@@ -42,6 +42,37 @@
     src: url("../fonts/font-face/Audrey-BoldOblique.woff") format("woff");
 }
 
+//---------------------------- Heading Font Souvenir ---------------------------
+@font-face {
+    font-family: "Souvenir";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/font-face/Souvenir.woff") format("woff");
+}
+@font-face {
+    font-family: "Souvenir";
+    font-style: italic;
+    font-weight: 400;
+    src: url("../fonts/font-face/SouvenirI.woff") format("woff");
+}
+@font-face {
+    font-family: "Souvenir";
+    font-style: normal;
+    font-weight: 800;
+    src: url("../fonts/font-face/souvenir-demi.woff") format("woff");
+}
+@font-face {
+    font-family: "Souvenir";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/font-face/SouvenirB.woff") format("woff");
+}
+@font-face {
+    font-family: "Souvenir";
+    font-style: italic;
+    font-weight: 700;
+    src: url("../fonts/font-face/SouvenirBI.woff") format("woff");
+}
 // Font family custom class
 .heading-default-font {
     font-family: $heading_font_family !important;

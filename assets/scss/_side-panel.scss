@@ -85,10 +85,6 @@
     &.style-df {
         width: 30px;
         height: 30px;
-        @media (max-width: $sm_max) {
-            width: 25px;
-            height: 25px;
-        }
         &:before, &:after {
             content: '';
             position: absolute;
@@ -98,9 +94,6 @@
             z-index: 2;
             transform-origin: center;
             @include transition(all 0.3s ease);
-            @media (max-width: $sm_max) {
-                width: 25px;
-            }
         }
         &:before {
             @include transform(rotate(45deg));
@@ -244,13 +237,7 @@
     .pxl-close {
         top: 41px;
         right: 42px;
-    }
-    @media (max-width: $sm_max) {
-        max-width: 300px;
-        .pxl-close {
-            right: 25px;
-        }
-    }
+    }  
 }
 
 .pxl-hidden-template.pos-top{

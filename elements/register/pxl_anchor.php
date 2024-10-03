@@ -33,6 +33,7 @@ pxl_add_custom_widget(
                                 'custom' => esc_html__('Custom 1', 'basilico'),
                                 'custom-2' => esc_html__('Custom 2', 'basilico'),
                                 'custom-3' => esc_html__('Custom 3', 'basilico'),
+                                'custom-4' => esc_html__('Custom 4', 'basilico'),
                             ],
                             'default' => 'lib' 
                         ),

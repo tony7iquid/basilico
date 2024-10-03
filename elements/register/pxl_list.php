@@ -27,6 +27,10 @@ pxl_add_custom_widget(
                                     'label' => esc_html__( 'Layout 2', 'basilico' ),
                                     'image' => get_template_directory_uri() . '/elements/assets/layout-image/pxl_fancy_box-2.jpg'
                                 ],
+                                '3' => [
+                                    'label' => esc_html__( 'Layout 3', 'basilico' ),
+                                    'image' => get_template_directory_uri() . '/elements/assets/layout-image/pxl_list-3.jpg'
+                                ],
                             ],
                         )
                     )
@@ -67,6 +71,69 @@ pxl_add_custom_widget(
                             'title_field' => '{{{ content }}}',
                         ),
                     ),
+                    'condition' => [
+                        'layout!' => '3'
+                    ],
+                ),
+                array(
+                    'name' => 'tab_content_layout3',
+                    'label' => esc_html__( 'Content', 'basilico' ),
+                    'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+                    'controls' => array(
+                        array(
+                            'name' => 'list_layout3',
+                            'label' => esc_html__('Items', 'basilico'),
+                            'type' => \Elementor\Controls_Manager::REPEATER,
+                            'controls' => array(
+                                array(
+                                    'name' => 'list_icon_layout3',
+                                    'label' => esc_html__('List Icon', 'basilico' ),
+                                    'type' => \Elementor\Controls_Manager::ICONS,
+                                    'fa4compatibility' => 'icon',
+                                    'default' => [
+                                        'value' => 'fas fa-check',
+                                        'library' => 'fa-solid',
+                                    ],
+                                ),
+                                array(
+                                    'name' => 'content_layout3',
+                                    'label' => esc_html__('Content', 'basilico'),
+                                    'type' => \Elementor\Controls_Manager::TEXT,
+                                    'label_block' => true,
+                                ),
+                                array(
+                                    'name' => 'content_link',
+                                    'label' => esc_html__('Content Link', 'basilico'),
+                                    'type' => \Elementor\Controls_Manager::TEXT,
+                                    'label_block' => true,
+                                ),
+                                array(
+                                    'name' => 'link_layout3',
+                                    'label' => esc_html__('Item Link', 'basilico'),
+                                    'type' => \Elementor\Controls_Manager::URL,
+                                    'label_block' => true,
+                                ),
+                                array(
+                                    'name'  => 'max_width',
+                                    'label' => esc_html__( 'Max Width(px)', 'basilico' ),
+                                    'type'  => 'slider',
+                                    'range' => [
+                                        'px' => [
+                                            'min' => 0,
+                                            'max' => 1000,
+                                        ],
+                                    ],
+                                    'selectors' => [
+                                        '{{WRAPPER}} .pxl-list {{CURRENT_ITEM}}' => 'max-width: {{SIZE}}{{UNIT}};',
+                                    ],
+                                ),
+                            ),
+                            'title_field' => '{{{ content_layout3 }}}',
+                        ),
+                    ),
+                    'condition' => [
+                        'layout' => '3'
+                    ],
                 ),
                 array(
                     'name' => 'tab_style',

@@ -49,6 +49,7 @@ function basilico_page_options_register( $metabox ) {
                                     'layout-3' => esc_html__('Layout 3', 'basilico'),
                                     'layout-4' => esc_html__('Layout 4', 'basilico'),
                                     'layout-5' => esc_html__('Layout 5', 'basilico'),
+                                    'layout-6' => esc_html__('Layout 6', 'basilico'),
                                 ),
                                 'default'  => '-1'
                             ),

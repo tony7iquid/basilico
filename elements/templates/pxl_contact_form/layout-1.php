@@ -20,7 +20,7 @@ if(class_exists('WPCF7') && !empty($ctf7_slug)){
     if (!empty($ctf7_id)){
         ?>
         <div id="<?php echo esc_attr($html_id); ?>" class="pxl-contact-form7">
-            <div class="pxl-contact-form-inner <?php echo esc_attr($select_style); ?>">
+            <div class="pxl-contact-form-inner">
                 <?php echo do_shortcode('[contact-form-7 id="'.esc_attr( $ctf7_id ).'"]'); ?>
             </div>
         </div>

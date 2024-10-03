@@ -54,8 +54,12 @@ pxl_add_custom_widget(
                                 '9' => [
                                     'label' => esc_html__( 'Layout 9', 'basilico' ),
                                     'image' => get_template_directory_uri() . '/elements/assets/layout-image/pxl_fancy_box-9.jpg'
-                                ]
-                            ]
+                                ],
+                                '10' => [
+                                    'label' => esc_html__( 'Layout 10', 'basilico' ),
+                                    'image' => get_template_directory_uri() . '/elements/assets/layout-image/pxl_fancy_box-10.jpg'
+                                ],
+                            ],
                         )
                     )
                 ),
@@ -68,6 +72,10 @@ pxl_add_custom_widget(
                             'name'             => 'selected_icon',
                             'label'            => esc_html__( 'Icon', 'basilico' ),
                             'type'             => 'icons',
+                            'default'          => [
+                                'library' => 'flaticon',
+                                'value'   => 'flaticon-calling'
+                            ],
                             'condition' => ['layout!' => '7']
                         ),
                         array(
@@ -84,6 +92,24 @@ pxl_add_custom_widget(
                                 '{{WRAPPER}} .pxl-fancy-box .box-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
                                 '{{WRAPPER}} .pxl-fancy-box .box-icon > svg' => 'width: {{SIZE}}{{UNIT}} !important;',
                             ],
+                            'condition' => ['layout!' => '9']
+                        ),
+                        array(
+                            'name'  => 'icon_size_9',
+                            'label' => esc_html__( 'Icon Size', 'basilico' ),
+                            'type'  => 'slider',
+                            'range' => [
+                                'px' => [
+                                    'min' => 15,
+                                    'max' => 300,
+                                ],
+                            ],
+                            'selectors' => [
+                                '{{WRAPPER}} .pxl-fancy-box .box-icon .pxl-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
+                                '{{WRAPPER}} .pxl-fancy-box .box-icon .pxl-icon svg' => 'width: {{SIZE}}{{UNIT}} !important;',
+                            ],
+                            'condition' => ['layout' => '9'],
+                            'control_type' => 'responsive',
                         ),
                         array(
                             'name' => 'icon_margin',
@@ -107,7 +133,7 @@ pxl_add_custom_widget(
                                 ],
                             ],
                             'selectors' => [
-                                '{{WRAPPER}} .pxl-fancy-box .box-inner' => 'max-width: {{SIZE}}{{UNIT}}; margin: 0 auto;',
+                                '{{WRAPPER}} .pxl-fancy-box .box-inner' => 'max-width: {{SIZE}}{{UNIT}};',
                             ],
                         ),
                         array(
@@ -121,11 +147,8 @@ pxl_add_custom_widget(
                                 'url' => \Elementor\Utils::get_placeholder_image_src()
                             ],
                             'condition' => [
-                                'layout'    => ['7', '9']
-                            ],
-                            'selectors' => [
-                                '{{WRAPPER}} .pxl-fancy-box.layout-9' => 'background-image: url( {{URL}} );',
-                            ],
+                                'layout'    => ['7']
+                            ]
                         ),
                         array(
                             'name' => 'selected_img',
@@ -151,14 +174,6 @@ pxl_add_custom_widget(
                             ]
                         ),
                         array(
-                            'name'     => 'subtitle',
-                            'label'    => esc_html__('Sub Title', 'basilico'),
-                            'type'     => 'text',
-                            'condition' => [
-                                'layout'    => ['9']
-                            ]
-                        ),
-                        array(
                             'name'     => 'title',
                             'label'    => esc_html__('Title', 'basilico'),
                             'type'     => 'textarea',
@@ -169,6 +184,26 @@ pxl_add_custom_widget(
                             'label'    => esc_html__('Description', 'basilico'),
                             'type'     => 'textarea',
                             'default'  => esc_html__('Lorem Ipsum is simply dummy text of the printing and typesetting industry', 'basilico'),
+                            'condition' => [
+                                'layout!'    => ['9']
+                            ]
+                        ),
+                        array(
+                            'name' => 'boxs_des',
+                            'label' => esc_html__('Item', 'basilico'),
+                            'type' => \Elementor\Controls_Manager::REPEATER,
+                            'default' => [],
+                            'controls' => array(
+                                array(
+                                    'name'     => 'des_layout9',
+                                    'label'    => esc_html__('Description', 'basilico'),
+                                    'type'     => 'textarea',
+                                ),
+                            ),
+                            'title_field' => '{{{ des_layout9 }}}',
+                            'condition' => [
+                                'layout'    => ['9']
+                            ]
                         ),
                         array(
                             'name' => 'button_text',
@@ -176,12 +211,12 @@ pxl_add_custom_widget(
                             'type' => \Elementor\Controls_Manager::TEXT,
                             'label_block' => true,
                             'condition' => [
-                                'layout'    => ['2', '9']
+                                'layout'    => ['2','9']
                             ]
                         ),
                         array(
                             'name'        => 'link',
-                            'label'       => esc_html__( 'Button Link', 'basilico' ),
+                            'label'       => esc_html__( 'Custom Link', 'basilico' ),
                             'type'        => 'url',
                             'placeholder' => esc_html__( 'https://your-link.com', 'basilico' ),
                             'default'     => [
@@ -189,172 +224,248 @@ pxl_add_custom_widget(
                                 'is_external' => 'on'
                             ],
                             'condition' => [
-                                'layout' => ['2', '5', '6', '7', '9']
+                                'layout' => ['2', '5', '6', '7','9']
                             ],
                         ),
                     )
-                ),
-                array(
-                    'name' => 'section_style',
-                    'label' => esc_html__('Style', 'basilico'),
-                    'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-                    'controls' => array(
-                        array(
-                            'name' => 'icon_background',
-                            'label' => esc_html__('Icon Background', 'basilico' ),
-                            'type' => 'color',
-                            'selectors' => [
-                                '{{WRAPPER}} .pxl-fancy-box .box-icon' => 'background-color: {{VALUE}};'
-                            ],
-                        ),
-                        array(
-                            'name' => 'icon_color',
-                            'label' => esc_html__( 'Icon Color', 'basilico' ),
-                            'type' => \Elementor\Controls_Manager::COLOR,
-                            'default' => '',
-                            'selectors' => [
-                                '{{WRAPPER}} .pxl-fancy-box .box-icon i' => 'color: {{VALUE}};',
-                                '{{WRAPPER}} .pxl-fancy-box .box-icon svg' => 'fill: {{VALUE}};',
-                            ],
-                        ),
-                        array(
-                            'name' => 'subtitle_color',
-                            'label' => esc_html__( 'Sub Title Color', 'basilico' ),
-                            'type' => \Elementor\Controls_Manager::COLOR,
-                            'default' => '',
-                            'selectors' => [
-                                '{{WRAPPER}} .pxl-fancy-box .box-subtitle' => 'color: {{VALUE}};',
-                            ],
-                        ),
-                        array(
-                            'name' => 'subtitle_typography',
-                            'label' => esc_html__('Sub Title Typography', 'basilico' ),
-                            'type' => \Elementor\Group_Control_Typography::get_type(),
-                            'control_type' => 'group',
-                            'selector' => '{{WRAPPER}} .pxl-fancy-box .box-subtitle',
-                        ),
-                        array(
-                            'name' => 'title_color',
-                            'label' => esc_html__( 'Title Color', 'basilico' ),
-                            'type' => \Elementor\Controls_Manager::COLOR,
-                            'default' => '',
-                            'selectors' => [
-                                '{{WRAPPER}} .pxl-fancy-box .box-title' => 'color: {{VALUE}};',
-                                '{{WRAPPER}} .pxl-fancy-box .box-title a' => 'color: {{VALUE}};',
-                            ],
-                        ),
-                        array(
-                            'name' => 'title_typography',
-                            'label' => esc_html__('Title Typography', 'basilico' ),
-                            'type' => \Elementor\Group_Control_Typography::get_type(),
-                            'control_type' => 'group',
-                            'selector' => '{{WRAPPER}} .pxl-fancy-box .box-title',
-                        ),
-                        array(
-                            'name' => 'description_color',
-                            'label' => esc_html__( 'Description Color', 'basilico' ),
-                            'type' => \Elementor\Controls_Manager::COLOR,
-                            'default' => '',
-                            'selectors' => [
-                                '{{WRAPPER}} .pxl-fancy-box .box-description' => 'color: {{VALUE}};',
-                            ],
-                        ),
-                        array(
-                            'name' => 'description_typography',
-                            'label' => esc_html__('Description Typography', 'basilico' ),
-                            'type' => \Elementor\Group_Control_Typography::get_type(),
-                            'control_type' => 'group',
-                            'selector' => '{{WRAPPER}} .pxl-fancy-box .box-description',
-                        ),
-                        array(
-                            'name' => 'box_background',
-                            'label' => esc_html__('Box Background', 'basilico' ),
-                            'type' => 'color',
-                            'selectors' => [
-                                '{{WRAPPER}} .pxl-fancy-box .box-inner' => 'background-color: {{VALUE}};'
-                            ],
-                            'condition' => [
-                                'layout!' => '6'
-                            ]
-                        ),
-                        array(
-                            'name' => 'border_inner_color',
-                            'label' => esc_html__('Border Inner Color', 'basilico' ),
-                            'type' => 'color',
-                            'selectors' => [
-                                '{{WRAPPER}} .pxl-fancy-box.layout-6 .back-card:before' => 'border-color: {{VALUE}};'
-                            ],
-                            'condition' => [
-                                'layout!' => '6'
-                            ]
-                        ),
-                        array(
-                            'name' => 'btn_style',
-                            'label' => esc_html__('Button Styles', 'basilico' ),
-                            'type' => \Elementor\Controls_Manager::SELECT,
-                            'default' => 'btn-default',
-                            'options' => [
-                                'btn-default' => esc_html__('Default', 'basilico' ),
-                                'btn-gradient' => esc_html__('Gradient', 'basilico' ),
-                                'btn-white' => esc_html__('White', 'basilico' ),
-                                'btn-fullwidth' => esc_html__('Full Width', 'basilico' ),
-                                'btn-outline' => esc_html__('Out Line', 'basilico' ),
-                                'btn-outline-secondary' => esc_html__('Out Line Secondary', 'basilico' ),
-                            ],
-                            'condition' => [
-                                'layout'    => ['2', '9']
-                            ]
-                        ),
-                        array(
-                            'name' => 'btn_color',
-                            'label' => esc_html__('Button Text Color', 'basilico' ),
-                            'type' => \Elementor\Controls_Manager::COLOR,
-                            'selectors' => [
-                                '{{WRAPPER}} .pxl-fancy-box .btn' => 'color: {{VALUE}};',
-                            ],
-                            'condition' => [
-                                'layout'    => ['2']
-                            ]
-                        ),
-                        array(
-                            'name' => 'btn_color_hover',
-                            'label' => esc_html__('Button Text Color Hover', 'basilico' ),
-                            'type' => \Elementor\Controls_Manager::COLOR,
-                            'selectors' => [
-                                '{{WRAPPER}} .pxl-fancy-box .btn:hover' => 'color: {{VALUE}};',
-                            ],
-                            'condition' => [
-                                'layout'    => ['2']
-                            ]
-                        ),
-                        array(
-                            'name' => 'btn_bg_color',
-                            'label' => esc_html__('Button Background Color', 'basilico' ),
-                            'type' => \Elementor\Controls_Manager::COLOR,
-                            'selectors' => [
-                                '{{WRAPPER}} .pxl-fancy-box .btn' => 'background-image: none; background-color: {{VALUE}}; border-color: {{VALUE}};',
-                                '{{WRAPPER}} .pxl-fancy-box .btn::after' => 'background-image: none; background-color: {{VALUE}};'
-                            ],
-                            'condition' => [
-                                'layout' => '2',
-                            ],
-                        ),
-                        array(
-                            'name' => 'btn_bg_color_hover',
-                            'label' => esc_html__('Button Background Color Hover', 'basilico' ),
-                            'type' => \Elementor\Controls_Manager::COLOR,
-                            'selectors' => [
-                                '{{WRAPPER}} .pxl-fancy-box .btn:hover' => 'border-color: {{VALUE}};',
-                                '{{WRAPPER}} .pxl-fancy-box .btn:hover::before' => 'background-color: {{VALUE}};',
-                            ],
-                            'condition' => [
-                                'layout' => '2',
-                            ],
-                        ),
-                    ),
-                ),
-            )
-        )
+),
+array(
+    'name' => 'section_style',
+    'label' => esc_html__('Style', 'basilico'),
+    'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+    'controls' => array(
+        array(
+            'name' => 'icon_background',
+            'label' => esc_html__('Icon Background', 'basilico' ),
+            'type' => 'color',
+            'selectors' => [
+                '{{WRAPPER}} .pxl-fancy-box .box-icon' => 'background-color: {{VALUE}};'
+            ],
+            'condition' => [
+                'layout!' => ['9','10']
+            ]
+        ),
+        array(
+            'name' => 'padding',
+            'label' => esc_html__('Padding Box', 'basilico' ),
+            'type' => \Elementor\Controls_Manager::DIMENSIONS,
+            'size_units' => [ 'px' ],
+            'selectors' => [
+                '{{WRAPPER}} .pxl-fancy-box .box-inner' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            ],
+            'control_type' => 'responsive',
+            'condition' => [
+                'layout' => ['10']
+            ]
+        ),
+        array(
+            'name' => 'border_radius',
+            'label' => esc_html__('Border Radius Box', 'basilico' ),
+            'type' => \Elementor\Controls_Manager::DIMENSIONS,
+            'size_units' => [ 'px' ],
+            'selectors' => [
+                '{{WRAPPER}} .pxl-fancy-box .box-inner' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            ],
+            'control_type' => 'responsive',
+            'condition' => [
+                'layout' => ['10']
+            ]
+        ),
+        array(
+            'name' => 'icon_color',
+            'label' => esc_html__( 'Icon Color', 'basilico' ),
+            'type' => \Elementor\Controls_Manager::COLOR,
+            'default' => '',
+            'selectors' => [
+                '{{WRAPPER}} .pxl-fancy-box .box-icon i' => 'color: {{VALUE}};',
+                '{{WRAPPER}} .pxl-fancy-box .box-icon svg' => 'fill: {{VALUE}};',
+            ],
+        ),
+        array(
+            'name' => 'title_color',
+            'label' => esc_html__( 'Title Color', 'basilico' ),
+            'type' => \Elementor\Controls_Manager::COLOR,
+            'default' => '',
+            'selectors' => [
+                '{{WRAPPER}} .pxl-fancy-box .box-title' => 'color: {{VALUE}};',
+                '{{WRAPPER}} .pxl-fancy-box .box-title a' => 'color: {{VALUE}};',
+            ],
+        ),
+        array(
+            'name' => 'title_typography',
+            'label' => esc_html__('Title Typography', 'basilico' ),
+            'type' => \Elementor\Group_Control_Typography::get_type(),
+            'control_type' => 'group',
+            'selector' => '{{WRAPPER}} .pxl-fancy-box .box-title',
+        ),
+        array(
+            'name' => 'title_margin',
+            'label' => esc_html__('Title Margin', 'basilico' ),
+            'type' => \Elementor\Controls_Manager::DIMENSIONS,
+            'size_units' => [ 'px' ],
+            'selectors' => [
+                '{{WRAPPER}} .pxl-fancy-box .box-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            ],
+            'control_type' => 'responsive',
+            'condition' => [
+                'layout' => ['10']
+            ]
+        ),
+        array(
+            'name'  => 'title_max_width',
+            'label' => esc_html__( 'Max Width Title', 'basilico' ),
+            'type'  => 'slider',
+            'control_type' => 'responsive',
+            'range' => [
+                'px' => [
+                    'min' => 0,
+                    'max' => 1200,
+                ],
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .pxl-fancy-box .box-title' => 'max-width: {{SIZE}}{{UNIT}};',
+            ],
+            'condition' => [
+                'layout' => ['9','10']
+            ]
+        ),
+        array(
+            'name' => 'description_color',
+            'label' => esc_html__( 'Description Color', 'basilico' ),
+            'type' => \Elementor\Controls_Manager::COLOR,
+            'default' => '',
+            'selectors' => [
+                '{{WRAPPER}} .pxl-fancy-box .box-description' => 'color: {{VALUE}};',
+            ],
+        ),
+        array(
+            'name' => 'description_typography',
+            'label' => esc_html__('Description Typography', 'basilico' ),
+            'type' => \Elementor\Group_Control_Typography::get_type(),
+            'control_type' => 'group',
+            'selector' => '{{WRAPPER}} .pxl-fancy-box .box-description',
+        ),
+        array(
+            'name' => 'box_background',
+            'label' => esc_html__('Box Background', 'basilico' ),
+            'type' => 'color',
+            'selectors' => [
+                '{{WRAPPER}} .pxl-fancy-box .box-inner' => 'background-color: {{VALUE}};'
+            ],
+            'condition' => [
+                'layout!' => '6'
+            ]
+        ),
+        array(
+            'name' => 'boxshadow_background',
+            'label' => esc_html__('Boxshadow Color', 'basilico' ),
+            'type' => 'color',
+            'selectors' => [
+                '{{WRAPPER}} .pxl-fancy-box .box-inner' => 'box-shadow: 0 10px 0 {{VALUE}};'
+            ],
+            'condition' => [
+                'layout' => '9'
+            ]
+        ),
+        array(
+            'name' => 'border_inner_color',
+            'label' => esc_html__('Border Inner Color', 'basilico' ),
+            'type' => 'color',
+            'selectors' => [
+                '{{WRAPPER}} .pxl-fancy-box.layout-6 .back-card:before' => 'border-color: {{VALUE}};'
+            ],
+            'condition' => [
+                'layout!' => ['6','9','10']
+            ]
+        ),
+        array(
+            'name' => 'btn_style',
+            'label' => esc_html__('Button Styles', 'basilico' ),
+            'type' => \Elementor\Controls_Manager::SELECT,
+            'default' => 'btn-default',
+            'options' => [
+                'btn-default' => esc_html__('Default', 'basilico' ),
+                'btn-gradient' => esc_html__('Gradient', 'basilico' ),
+                'btn-white' => esc_html__('White', 'basilico' ),
+                'btn-fullwidth' => esc_html__('Full Width', 'basilico' ),
+                'btn-outline' => esc_html__('Out Line', 'basilico' ),
+                'btn-outline-secondary' => esc_html__('Out Line Secondary', 'basilico' ),
+            ],
+            'condition' => [
+                'layout'    => ['2']
+            ]
+        ),
+        array(
+            'name' => 'btn_color',
+            'label' => esc_html__('Button Text Color', 'basilico' ),
+            'type' => \Elementor\Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .pxl-fancy-box .btn' => 'color: {{VALUE}};',
+            ],
+            'condition' => [
+                'layout'    => ['2']
+            ]
+        ),
+        array(
+            'name' => 'btn_color_hover',
+            'label' => esc_html__('Button Text Color Hover', 'basilico' ),
+            'type' => \Elementor\Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .pxl-fancy-box .btn:hover' => 'color: {{VALUE}};',
+            ],
+            'condition' => [
+                'layout'    => ['2']
+            ]
+        ),
+        array(
+            'name' => 'btn_bg_color',
+            'label' => esc_html__('Button Background Color', 'basilico' ),
+            'type' => \Elementor\Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .pxl-fancy-box .btn' => 'background-image: none; background-color: {{VALUE}}; border-color: {{VALUE}};',
+                '{{WRAPPER}} .pxl-fancy-box .btn::after' => 'background-image: none; background-color: {{VALUE}};'
+            ],
+            'condition' => [
+                'layout' => '2',
+            ],
+        ),
+        array(
+            'name' => 'btn_bg_color_hover',
+            'label' => esc_html__('Button Background Color Hover', 'basilico' ),
+            'type' => \Elementor\Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .pxl-fancy-box .btn:hover' => 'border-color: {{VALUE}};',
+                '{{WRAPPER}} .pxl-fancy-box .btn:hover::before' => 'background-color: {{VALUE}};',
+            ],
+            'condition' => [
+                'layout' => '2',
+            ],
+        ),
+        array(
+            'name' => 'readmore_color',
+            'label' => esc_html__('Button Text Color', 'basilico' ),
+            'type' => \Elementor\Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .pxl-fancy-box .box-readmore' => 'color: {{VALUE}};',
+            ],
+            'condition' => [
+                'layout'    => ['9']
+            ]
+        ),
+        array(
+            'name' => 'readmore_typography',
+            'label' => esc_html__('Button Text Typography', 'basilico' ),
+            'type' => \Elementor\Group_Control_Typography::get_type(),
+            'control_type' => 'group',
+            'selector' => '{{WRAPPER}} .pxl-fancy-box .box-readmore',
+            'condition' => [
+                'layout!'    => ['10']
+            ]
+        ),
     ),
-    basilico_get_class_widget_path()
+),
+)
+)
+),
+basilico_get_class_widget_path()
 );

@@ -37,7 +37,7 @@ if (class_exists('\Elementor\Plugin') && \Elementor\Plugin::$instance->documents
                     if ($filetype == 'audio/mpeg') : ?>
                         <div class="pxl-media-popup">
                             <div class="content-inner">
-                                <a class="media-play-button media-default" href="<?php echo esc_url($audio_url); ?>">
+                                <a class="media-play-button video-default" href="<?php echo esc_url($audio_url); ?>">
                                     <i class="pxli-volume"></i>
                                 </a>
                             </div>
@@ -46,7 +46,7 @@ if (class_exists('\Elementor\Plugin') && \Elementor\Plugin::$instance->documents
                 <?php elseif (!empty($featured_video) && has_post_format('video')) : ?>
                     <div class="pxl-media-popup">
                         <div class="content-inner">
-                            <a class="media-play-button media-default" href="<?php echo esc_url($featured_video); ?>">
+                            <a class="media-play-button video-default" href="<?php echo esc_url($featured_video); ?>">
                                 <i class="pxli-play-2 pxl-icon-outline"></i>
                             </a>
                         </div>

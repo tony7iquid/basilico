@@ -40,7 +40,7 @@ if(!empty($accordions)) : ?>
             $widget->add_render_attribute( $content_key, 'style', 'display:block;' );
         }
         $widget->add_inline_editing_attributes( $content_key, 'basic' ); ?>
-        <div class="pxl-ac-item <?php echo esc_attr($is_active?'active':''); ?>">
+        <div class="pxl-ac-item elementor-repeater-item-<?php echo esc_attr($value['_id']); ?> <?php echo esc_attr($is_active?'active':''); ?>">
             <div class="pxl-ac-title <?php echo esc_attr($is_active?'active':''); ?>" data-target="<?php echo esc_attr('#' . $_id.$html_id); ?>">
                 <span <?php pxl_print_html($widget->get_render_attribute_string( $title_key )); ?>><?php pxl_print_html($ac_title); ?></span>
             </div>

@@ -108,6 +108,25 @@ pxl_add_custom_widget(
                             'control_type' => 'group',
                             'selector' => '{{WRAPPER}} .pxl-breadcrumb, {{WRAPPER}} .pxl-breadcrumb a, {{WRAPPER}} .pxl-breadcrumb .br-item, {{WRAPPER}} .pxl-breadcrumb .br-divider, {{WRAPPER}} .pxl-breadcrumb .br-item',
                         ),
+                        array(
+                            'name' => 'icon_space',
+                            'label' => esc_html__('Space', 'basilico' ),
+                            'type' => \Elementor\Controls_Manager::SLIDER,
+                            'control_type' => 'responsive',
+                            'size_units' => [ 'px' ],
+                            'range' => [
+                                'px' => [
+                                    'min' => 0,
+                                    'max' => 300,
+                                ],
+                            ],
+                            'selectors' => [
+                                '{{WRAPPER}} .pxl-breadcrumb .br-divider' => 'padding-left: {{SIZE}}{{UNIT}}; padding-right: {{SIZE}}{{UNIT}};',
+                            ],
+                            'condition'        => [
+                                'layout'       => '1' 
+                            ],
+                        ),
                          
                     ),
                 ),

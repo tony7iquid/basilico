@@ -117,10 +117,15 @@ $widget->add_render_attribute( 'carousel', [
                     <?php endforeach; ?>
                 </div>
             </div>
-            <div class="pxl-swiper-arrows">
-                <div class="pxl-swiper-arrow pxl-swiper-arrow-next"><span class="pxli pxli-arrow-next"></span></div>
-                <div class="pxl-swiper-arrow pxl-swiper-arrow-prev"><span class="pxli pxli-arrow-prev"></span></div>
-            </div>
+            <?php if($arrows !== 'false'): ?>
+                <div class="pxl-swiper-arrows style-default nav-vertical-out">
+                    <div class="pxl-swiper-arrow pxl-swiper-arrow-next"><span class="pxli pxli-arrow-next"></span></div>
+                    <div class="pxl-swiper-arrow pxl-swiper-arrow-prev"><span class="pxli pxli-arrow-prev"></span></div>
+                </div>
+            <?php endif; ?>
+            <?php if($dots !== 'false'): ?>
+                <div class="pxl-swiper-dots"></div>
+            <?php endif; ?>
         </div>
     </div>
 <?php endif; ?>

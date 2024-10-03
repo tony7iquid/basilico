@@ -100,30 +100,9 @@ $slider-outer-space: 0;
 //* Pxl Swiper arrows
 .pxl-swiper-arrows {
     .pxl-swiper-arrow {
-        position: relative;
-        &.absolute {
-            position: absolute;
-        }
-    }
-    &.style-1, &.style-2, &.style-3 {
-        .pxl-swiper-arrow {
-            cursor: pointer;
-            &.swiper-button-disabled {
-                cursor: not-allowed;
-            }
-            &.default, &.center-vertical {
-                position: absolute;
-                top: 50%;
-                @include transform(translateY(-50%));
-            }
-            &.default {
-                &.pxl-swiper-arrow-prev {
-                    left: -150px;
-                }
-                &.pxl-swiper-arrow-next {
-                    right: -150px;
-                }
-            }
+        cursor: pointer;
+        &.swiper-button-disabled {
+            cursor: not-allowed;
         }
     }
     &.style-1 {
@@ -132,7 +111,6 @@ $slider-outer-space: 0;
                 font-size: 40px;
                 line-height: 1;
                 color: $primary_color;
-                @include transition(color 0.3s ease);
             }
             svg {
                 width: 40px;
@@ -185,34 +163,73 @@ $slider-outer-space: 0;
             }
         }
     }
-    &.style-4 {
+}
+
+.pxl-swiper-arrow{
+    position: relative;
+}
+.nav-vertical-in,
+.nav-vertical-out {
+    .pxl-swiper-arrow {
         position: absolute;
-        left: 50%;
-        bottom: 25px;
-        @include transform(translateX(-50%));
-        background-color: $secondary_color;
-        padding: 6px 18px;
-        @include border-radius(18px);
-        .pxl-swiper-arrow {
-            cursor: pointer;
-            + .pxl-swiper-arrow {
-                margin-left: 47px;
+        top: 50%;
+        @include transform(translateY(-50%));
+    }
+}
+.nav-vertical-in{
+    .pxl-swiper-arrow-prev {
+        left: 30px;
+    }
+    .pxl-swiper-arrow-next {
+        right: 30px;
+    }
+}
+
+.nav-vertical-out{
+    .pxl-swiper-arrow-prev {
+        left: -155px;
+        @media (max-width: $xxl_max){
+            left: -70px;
+        }
+        @media (max-width: $xl_max){
+            left: -50px;
+        }
+        @media (max-width: 1300px){
+            left: -26px;
+        }
+        @media (max-width: $lg_max){
+            left: 15px;
+            opacity: 0;
+            @include transition(all .3s linear 0s);
+        }
+    }
+
+    .pxl-swiper-arrow-next {
+        right: -155px;
+        @media (max-width: $xxl_max){
+            right: -70px;
+        }
+        @media (max-width: $xl_max){
+            right: -50px;
+        }
+        @media (max-width: 1300px){
+            right: -26px;
+        }
+        @media (max-width: $lg_max){
+            right: 15px;
+            opacity: 0;
+            @include transition(all .3s linear 0s);
+        }
+    }
+    @media (min-width: $xl_min){
+        &.arrow-on-hover{
+            .pxl-swiper-arrow-prev{
+                opacity: 0;
+                @include transition(all .3s linear 0s);
             }
-            .pxl-icon {
-                font-size: 15px;
-                line-height: 1;
-                color: rgba(255, 255, 255, 0.5);
-                @include transition(color 0.3s ease);
-            }
-            svg {
-                width: 15px;
-                fill: rgba(255, 255, 255, 0.5);
-                height: auto;
-            }
-            &:hover {
-                .pxl-icon, svg {
-                    color: #fff;
-                }
+            .pxl-swiper-arrow-next{
+                opacity: 0;
+                @include transition(all .3s linear 0s);
             }
         }
     }

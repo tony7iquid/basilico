@@ -58,6 +58,14 @@ pxl_add_custom_widget(
                                     'label' => esc_html__( 'Layout 9', 'basilico' ),
                                     'image' => get_template_directory_uri() . '/elements/assets/layout-image/pxl_tabs-9.jpg'
                                 ],
+                                '10' => [
+                                    'label' => esc_html__( 'Layout 10', 'basilico' ),
+                                    'image' => get_template_directory_uri() . '/elements/assets/layout-image/pxl_tabs-10.jpg'
+                                ],
+                                '11' => [
+                                    'label' => esc_html__( 'Layout 11', 'basilico' ),
+                                    'image' => get_template_directory_uri() . '/elements/assets/layout-image/pxl_tabs-11.jpg'
+                                ],
                             ],
                             'prefix_class' => 'pxl-tabs-layout-',
                         ),
@@ -90,6 +98,36 @@ pxl_add_custom_widget(
                             ]
                         ),
                         array(
+                            'name' => 'title_layout10',
+                            'label' => esc_html__('Title', 'basilico'),
+                            'type' => 'text',
+                            'default' => esc_html__('Categories', 'basilico'),
+                            'condition' => [
+                                'layout' => '10'
+                            ]
+                        ),
+                        array(
+                            'name' => 'title_layout10_typography',
+                            'label' => esc_html__('Title Typography', 'basilico' ),
+                            'type' => \Elementor\Group_Control_Typography::get_type(),
+                            'control_type' => 'group',
+                            'selector' => '{{WRAPPER}} .pxl-tabs.layout-10 .tabs-title .box-title',
+                            'condition' => [
+                                'layout' => '10'
+                            ]
+                        ),
+                        array(
+                            'name' => 'title_layout10_color',
+                            'label' => esc_html__('Title Color', 'basilico' ),
+                            'type' => 'color',
+                            'selectors' => [
+                                '{{WRAPPER}} .pxl-tabs.layout-10 .tabs-title .box-title' => 'color: {{VALUE}};'
+                            ],
+                            'condition' => [
+                                'layout' => '10'
+                            ]
+                        ),
+                        array(
                             'name' => 'button_text',
                             'label' => esc_html__('Button Text', 'basilico'),
                             'type' => 'text',
@@ -105,6 +143,15 @@ pxl_add_custom_widget(
                             'default' => esc_html__('#', 'basilico'),
                             'condition' => [
                                 'layout' => '2'
+                            ]
+                        ),
+                        array(
+                            'name'        => 'item_background',
+                            'label'       => esc_html__('Background Tab', 'basilico'),
+                            'type'        => 'media',
+                            'label_block' => true,
+                            'condition' => [
+                                'layout' => '11'
                             ]
                         ),
                         array(
@@ -192,7 +239,7 @@ pxl_add_custom_widget(
                                 ],
                             ],
                             'selectors' => [
-                                '{{WRAPPER}} .pxl-tabs .tabs-title .title-wrap' => 'column-gap: {{SIZE}}{{UNIT}};'
+                                '{{WRAPPER}} .pxl-tabs .tabs-title .title-wrap' => 'gap: {{SIZE}}{{UNIT}};'
                             ],
                         ),
                         array(
@@ -231,6 +278,9 @@ pxl_add_custom_widget(
                             'selectors' => [
                                 '{{WRAPPER}} .pxl-tabs .tab-title' => 'background-color: {{VALUE}};'
                             ],
+                            'condition' => [
+                                'layout!' => '10'
+                            ]
                         ),
                         array(
                             'name' => 'title_active_background',
@@ -239,6 +289,9 @@ pxl_add_custom_widget(
                             'selectors' => [
                                 '{{WRAPPER}} .pxl-tabs .tab-title.active' => 'background-color: {{VALUE}}; border-color: {{VALUE}};'
                             ],
+                            'condition' => [
+                                'layout!' => '10'
+                            ]
                         ),
                         array(
                             'name' => 'toggle_background',
@@ -247,6 +300,9 @@ pxl_add_custom_widget(
                             'selectors' => [
                                 '{{WRAPPER}} .pxl-tabs .toggle-slide' => 'background-color: {{VALUE}} !important;'
                             ],
+                            'condition' => [
+                                'layout!' => ['10','11']
+                            ]
                         ),
                         array(
                             'name' => 'title_color',
@@ -261,8 +317,8 @@ pxl_add_custom_widget(
                             'label' => esc_html__('Active Color', 'basilico' ),
                             'type' => 'color',
                             'selectors' => [
-                                '{{WRAPPER}} .pxl-tabs .tab-title.active' => 'color: {{VALUE}};',
-                                '{{WRAPPER}} .pxl-tabs.layout-1 .tab-title:after' => 'border-bottom-color: {{VALUE}};'
+                                '{{WRAPPER}} .tab-title.active' => 'color: {{VALUE}};',
+                                '{{WRAPPER}} .tab-title span:after' => 'background-color: {{VALUE}};'
                             ],
                         ),
                         array(
@@ -282,6 +338,17 @@ pxl_add_custom_widget(
                             ],
                             'condition' => [
                                 'layout' => '2'
+                            ]
+                        ),
+                        array(
+                            'name' => 'border_color',
+                            'label' => esc_html__('Border Color', 'basilico' ),
+                            'type' => 'color',
+                            'selectors' => [
+                                '{{WRAPPER}} .pxl-tabs .tabs-title' => 'border-color: {{VALUE}};'
+                            ],
+                            'condition' => [
+                                'layout' => '11'
                             ]
                         ),
                         array(

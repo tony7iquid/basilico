@@ -62,6 +62,7 @@ pxl_add_custom_widget(
                                 '4' => esc_html__('Slash Between', 'basilico'),
                                 '5' => esc_html__('Rounded', 'basilico'),
                                 '6' => esc_html__('Coffee Bean', 'basilico'),
+                                '7' => esc_html__('Creams', 'basilico'),
                             ],
                             'default' => '1',
                             'condition' => [
@@ -162,7 +163,7 @@ pxl_add_custom_widget(
                             'label' => esc_html__('Underline Color', 'basilico' ),
                             'type' => 'color',
                             'selectors' => [
-                                '{{WRAPPER}} .pxl-nav-menu .pxl-primary-menu > li:before' => 'background-color: {{VALUE}};',
+                                '{{WRAPPER}} .pxl-nav-menu .pxl-primary-menu > li:before, {{WRAPPER}} .pxl-nav-menu.pxl-nav-menu-main.style-2 .pxl-primary-menu > li a:before' => 'background-color: {{VALUE}};',
                             ],
                         ),
                         array(
@@ -246,9 +247,8 @@ pxl_add_custom_widget(
                             'label' => esc_html__('Color Hover/Active', 'basilico' ),
                             'type' => 'color',
                             'selectors' => [
-                                '{{WRAPPER}} .pxl-nav-menu .pxl-mobile-menu .sub-menu .menu-item:hover > a,
-                                 {{WRAPPER}} .pxl-nav-menu .pxl-mobile-menu .sub-menu .current-menu-item > a,
-                                 {{WRAPPER}} .pxl-nav-menu .pxl-mobile-menu .sub-menu .current-menu-ancestor > a' => 'color: {{VALUE}};',
+                                '{{WRAPPER}} .pxl-nav-menu .pxl-primary-menu li .sub-menu a:hover, {{WRAPPER}} .pxl-nav-menu .pxl-primary-menu .sub-menu > li.current-menu-item a' => 'color: {{VALUE}};',
+                                '{{WRAPPER}} .pxl-nav-menu .pxl-mobile-menu li .sub-menu a:hover' => 'color: {{VALUE}};',
                             ],
                         ),
                         array(

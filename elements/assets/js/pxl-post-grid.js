@@ -207,10 +207,6 @@
         return false;
     });
 
-    $( window ).on('resize', function() {
-        pxl_update_grid_layout_height();
-    });
-
     // Make sure you run this code under Elementor.
     $( window ).on( 'elementor/frontend/init', function() {
         elementorFrontend.hooks.addAction( 'frontend/element_ready/pxl_post_grid.default', widget_post_masonry_handler );

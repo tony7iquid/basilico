@@ -150,7 +150,7 @@ if (!class_exists('Basilico_Woo')) {
 					            </div>
 								<?php 
 							}else{
-								pxl_print_html($this->get_product_image( $product, $image_size ));
+								echo $this->get_product_image( $product, $image_size ); 
 							}
 							?>
 							<?php if( empty( $video_output) ): ?>
@@ -329,7 +329,7 @@ if (!class_exists('Basilico_Woo')) {
 				                </div>
 								<?php 
 							}else{
-								pxl_print_html($this->get_product_image( $product, $image_size )); 
+								echo $this->get_product_image( $product, $image_size ); 
 							}
 							?>
 							<?php wc_get_template( 'single-product/pxl-sale-flash.php');?>
@@ -443,7 +443,7 @@ if (!class_exists('Basilico_Woo')) {
 					            </div>
 								<?php 
 							}else{
-								pxl_print_html($this->get_product_image( $product, $image_size )); 
+								echo $this->get_product_image( $product, $image_size ); 
 							}
 							?>
 							<?php wc_get_template( 'single-product/pxl-sale-flash.php');?>
@@ -583,7 +583,7 @@ if (!class_exists('Basilico_Woo')) {
 				                </div>
 								<?php 
 							}else{
-								pxl_print_html($this->get_product_image( $product, $image_size ));
+								echo $this->get_product_image( $product, $image_size ); 
 							}
 							?>
 							<?php wc_get_template( 'single-product/pxl-sale-flash.php');?>
@@ -681,7 +681,7 @@ if (!class_exists('Basilico_Woo')) {
 				                </div>
 								<?php 
 							}else{
-								pxl_print_html($this->get_product_image( $product, $image_size )); 
+								echo $this->get_product_image( $product, $image_size ); 
 							}
 							?>
 							<?php wc_get_template( 'single-product/pxl-sale-flash.php');?>
@@ -738,7 +738,7 @@ if (!class_exists('Basilico_Woo')) {
     		<div class="thumb-wrap <?php echo esc_attr($thumb_class) ?>">
 				<?php woocommerce_template_loop_product_link_open(); ?>
 				<div class="product-main-img">
-					<?php pxl_print_html($this->get_product_image( $product, $thumbnail_size )); ?>
+					<?php echo $this->get_product_image( $product, $thumbnail_size ); ?>
 				</div>
 				<?php if ( $has_hover_thumbnail ) { ?>
 					<div class="product-hover-img pxl-absoluted">

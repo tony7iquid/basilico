@@ -479,6 +479,37 @@ if (!class_exists('Basilico_Blog')) {
                 </div>
             <?php endif;
         }
+        public function get_post_metas_creams()
+        {
+            $post_author_on = basilico()->get_theme_opt('post_author_on', true);
+            $post_date_on = basilico()->get_theme_opt('post_date_on', true);
+            $post_comments_on = basilico()->get_theme_opt('post_comments_on', true);
+            $post_categories_on = basilico()->get_theme_opt('post_categories_on', true);
+            
+            if ($post_author_on || $post_date_on || $post_categories_on || $post_comments_on) : ?>
+                <div class="post-metas hover-underline">
+                    <div class="meta-inner d-flex">
+                        <?php if ($post_author_on) : ?>
+                            <div class="post-author d-flex align-items-center">
+                                <span><?php echo esc_html__('By', 'basilico'); ?> <?php the_author_posts_link(); ?></span>
+                            </div>
+                        <?php endif; ?>
+                        <?php if ($post_categories_on && has_category()) : ?>
+                            <div class="post-category d-flex align-items-center">
+                                <i class="pxli pxli-ice-cream"></i>
+                                <span><?php the_terms(get_the_ID(), 'category', '', ', '); ?></span>
+                            </div>
+                        <?php endif; ?>
+                        <?php if ($post_date_on) : ?>
+                            <div class="post-date d-flex align-items-center">
+                                <i class="pxli pxli-ice-cream"></i>
+                                <span><?php echo get_the_date('j, M Y'); ?></span>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            <?php endif;
+        }
 
         public function get_post_tags()
         {
@@ -502,7 +533,7 @@ if (!class_exists('Basilico_Blog')) {
             $post = get_post($post_id);
             ?>
             <div class="post-shares d-flex align-items-center">
-                <span class="label"><?php echo esc_html__('Share', 'basilico') . $count_number .':'; ?></span>
+                <span class="label"><?php echo esc_html__('Share'. $count_number .':', 'basilico'); ?></span>
                 <div class="social-share">
                     <div class="d-flex">
                         <?php if (in_array('facebook', $share_icons)) : ?>
@@ -523,6 +554,11 @@ if (!class_exists('Basilico_Blog')) {
                         <?php if (in_array('pinterest', $share_icons)) : ?>
                             <div class="social-item">
                                 <a class="pxl-icon icon-pinterest pxli-pinterest-p" title="<?php echo esc_attr__('Pinterest', 'basilico'); ?>" target="_blank" href="https://pinterest.com/pin/create/button/?url=<?php echo urlencode(get_the_post_thumbnail_url($post_id, 'full')); ?>&media=&description=<?php echo urlencode(the_title_attribute(array('echo' => false, 'post' => $post))); ?>"></a>
+                            </div>
+                        <?php endif; ?>
+                        <?php if (in_array('instagram', $share_icons)) : ?>
+                            <div class="social-item">
+                                <a class="pxl-icon icon-instagram pxli-instagram1" title="<?php echo esc_attr__('Instagram', 'basilico'); ?>" target="_blank" href="https://www.instagram.com/intent/tweet?original_referer=<?php echo urldecode(home_url('/')); ?>&url=<?php echo urlencode(get_the_permalink($post_id)); ?>&text=<?php the_title(); ?>%20"></a>
                             </div>
                         <?php endif; ?>
                     </div>

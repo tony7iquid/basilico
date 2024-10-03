@@ -66,9 +66,6 @@ label[for="coupon_code"]{
 			background-color: rgba(48, 48, 48, 0.1);
 		}    
 	}
-	&:has(.pxl-cart-widget.layout-3) {
-		border-radius: 10px;
-	}
 }
 
 .pxl-cart-widget {
@@ -334,9 +331,6 @@ label[for="coupon_code"]{
 				}
 			}
 		}
-		.pxl-cart-empty {
-			padding: 0;
-		}
 		.woocommerce-mini-cart__total {
 			@include d-flex();
 			background-color: $secondary_color;
@@ -396,7 +390,6 @@ label[for="coupon_code"]{
 	}
 	&.layout-4 {
 		padding: 0;
-		border: 1px solid $divider_color;
 		.widget-title {
 			padding-left: 30px;
 			padding-right: 30px;
@@ -539,20 +532,11 @@ label[for="coupon_code"]{
 	}
 }
 
-.pxl-widget-cart-content .pxl-cart-empty {
-	padding: 0;
-}
-
-.pxl-shop-layout-2 .pxl-cart-widget .pxl-cart-empty .empty-icon i {
-	color: $primary_color;
-}
-
 .cart-content-left {
 	@media (min-width: $lg_min){
 		padding-right: 45px;
 	}
 }
-
 .cart-list-wrapper{
 	.cart-list-head{
 		font-size: 14px;
@@ -675,7 +659,7 @@ label[for="coupon_code"]{
 			color: $heading_color;
 		}
 		.remove {
-			font-size: 15px;
+			font-size: 12px;
 			color: $gray;
 			&:hover {
 				color: $link_color;
@@ -707,7 +691,7 @@ label[for="coupon_code"]{
 .coupon{
 	margin-top: 55px;
 	@media (max-width: $xs_screen){
-		padding: 18px 0 24px;
+		padding: 18px 15px 24px 15px;
 	}
 	label{
 		font-size: 20px;
@@ -755,7 +739,6 @@ label[for="coupon_code"]{
 		@media (max-width: $xs_screen){
 			margin-top: 15px;
 			width: 100%;
-			height: $input_height;
 		}
 	}
 }

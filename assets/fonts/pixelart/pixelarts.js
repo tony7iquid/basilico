@@ -232,6 +232,19 @@
 		"coffee-bean",
 		"telegram-plane",
 		"calendar3",
-		"pizza-slice"
+		"pizza-slice",
+		"ice-cream",
+		"paper-plane-solid",
+		"premium-qualityy",
+		"laurel-wreath",
+		"verified-user",
+		"mountains",
+		"collaboration1",
+		"arrow-down-solid",
+		"snowflake",
+		"package-box",
+		"quote1",
+		"flame",
+		"Left-Quote"
     ]
 }

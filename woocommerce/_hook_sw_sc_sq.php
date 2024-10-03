@@ -8,9 +8,9 @@ add_filter( 'woosw_button_position_single', function() {
 
 add_filter( 'woosw_button_html', 'basilico_change_wishlist_button_html', 10, 3 );
 function basilico_change_wishlist_button_html($output, $id, $attrs){
+
 	$key = isset( $_COOKIE['woosw_key'] ) ? $_COOKIE['woosw_key'] : '#';
 	$added_products = [];
-
 	if ( get_option( 'woosw_list_' . $key ) ) {
 		$added_products = get_option( 'woosw_list_' . $key );
 	}

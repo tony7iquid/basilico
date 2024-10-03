@@ -31,6 +31,9 @@ $custom_cls = $widget->get_setting('custom_class','');
 	    if($widget->get_setting('icon_type', 'none') == 'custom-3'){
 	    	echo '<div class="pxl-icon pxl-anchor-icon custom-3"></div>';
 	    }
+		if($widget->get_setting('icon_type', 'none') == 'custom-4'){
+	    	echo '<div class="pxl-icon pxl-anchor-icon custom-4"><span></span></div>';
+	    }
 	    if(!empty($widget->get_setting('title',''))){
 	    	echo '<span class="anchor-title d-inline-flex">'.$widget->get_setting('title', '').'</span>';
 	    } ?>

@@ -29,6 +29,10 @@ pxl_add_custom_widget(
                                     'label' => esc_html__( 'Layout 1', 'basilico' ),
                                     'image' => get_template_directory_uri() . '/elements/assets/layout-image/pxl_team_grid-1.jpg'
                                 ],
+                                '2' => [
+                                    'label' => esc_html__( 'Layout 2', 'basilico' ),
+                                    'image' => get_template_directory_uri() . '/elements/assets/layout-image/pxl_team_grid-2.jpg'
+                                ],
                             ],
                             'prefix_class' => 'pxl-team-grid-layout-',
                         ),
@@ -74,6 +78,15 @@ pxl_add_custom_widget(
                                     'label_block' => true,
                                 ),
                                 array(
+                                    'name' => 'background_color',
+                                    'label' => esc_html__('Background Color', 'basilico' ),
+                                    'type' => \Elementor\Controls_Manager::COLOR,
+                                    'description' => esc_html__('Background Use for Layout 2', 'basilico'),
+                                    'selectors' => [
+                                        '{{WRAPPER}} .pxl-team-grid.layout-2 {{CURRENT_ITEM}}' => 'background-color: {{VALUE}};',
+                                    ],
+                                ),
+                                array(
                                     'name' => 'social',
                                     'label' => esc_html__( 'Social', 'basilico' ),
                                     'type' => 'pxl_icons',
@@ -114,6 +127,7 @@ pxl_add_custom_widget(
                             'type' => \Elementor\Controls_Manager::COLOR,
                             'selectors' => [
                                 '{{WRAPPER}} .pxl-team-grid .item-title' => 'color: {{VALUE}};',
+                                '{{WRAPPER}} .pxl-team-grid.layout-2 .item-title a::before' => 'background-color: {{VALUE}};',
                             ],
                         ),
                         array(
@@ -123,6 +137,50 @@ pxl_add_custom_widget(
                             'selectors' => [
                                 '{{WRAPPER}} .pxl-team-grid .item-position' => 'color: {{VALUE}};',
                             ],
+                        ),
+                        array(
+                            'name' => 'icon_color',
+                            'label' => esc_html__('Icon Color', 'basilico' ),
+                            'type' => \Elementor\Controls_Manager::COLOR,
+                            'selectors' => [
+                                '{{WRAPPER}} .pxl-team-grid .item-social a i' => 'color: {{VALUE}};',
+                            ],
+                            'condition' => [
+                               'layout' => ['2']
+                            ]
+                        ),
+                        array(
+                            'name' => 'icon_hover_bgcolor',
+                            'label' => esc_html__('Icon Hover Color', 'basilico' ),
+                            'type' => \Elementor\Controls_Manager::COLOR,
+                            'selectors' => [
+                                '{{WRAPPER}} .pxl-team-grid .item-social a::after' => 'background-color: {{VALUE}};',
+                            ],
+                            'condition' => [
+                               'layout' => ['2']
+                            ]
+                        ),
+                        array(
+                            'name'  => 'box_height',
+                            'label' => esc_html__( 'Height (px)', 'basilico' ),
+                            'type'  => 'slider',
+                            'control_type' => 'responsive',
+                            'range' => [
+                                'px' => [
+                                    'min' => 0,
+                                    'max' => 1920,
+                                ],
+                            ],
+                            'default' => [
+                                'unit' => 'px',
+                                'size' => 423, 
+                            ],
+                            'selectors' => [
+                                '{{WRAPPER}} .pxl-team-grid .item-inner' => 'height: {{SIZE}}{{UNIT}};',
+                            ],
+                            'condition' => [
+                               'layout' => ['2']
+                            ]
                         ),
                     ),
                 ),

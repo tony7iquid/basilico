@@ -117,18 +117,6 @@ if(class_exists('WPCF7')) {
                                                      {{WRAPPER}} .pxl-contact-form7 textarea' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                                                 ],
                                             ),
-                                            array(
-                                                'name'      => 'select_style',
-                                                'type'      => \Elementor\Controls_Manager::SELECT,
-                                                'label'     => esc_html__('Select Dropdown Icon Style', 'basilico'),
-                                                'options'   => array(
-                                                    ''          => esc_html__('Default', 'basilico'),
-                                                    'select-2'  => esc_html__('Style 2', 'basilico'),
-                                                    'select-3'  => esc_html__('Style 3', 'basilico'),
-                                                    'select-4'  => esc_html__('Style 4', 'basilico'),
-                                                ),
-                                                'default' => ''
-                                            ),
                                         )
                                     ),
                                     array(
@@ -319,6 +307,7 @@ if(class_exists('WPCF7')) {
                                                 'types'             => [ 'classic' , 'gradient' ],
                                                 'selector' => '{{WRAPPER}} .wpcf7-form input[type="submit"], {{WRAPPER}} .wpcf7-form button',
                                             ),
+
                                         )
                                     ),
                                     array(
@@ -336,14 +325,10 @@ if(class_exists('WPCF7')) {
                                             ),
                                             array(
                                                 'name' => 'button_background_hover',
-                                                'label' => esc_html__('Background Color', 'basilico'),
-                                                'type' => \Elementor\Controls_Manager::COLOR,
-                                                'selectors' => [
-                                                    '{{WRAPPER}} .pxl-button-wrapper .btn:hover' => 'border-color: {{VALUE}};',
-                                                    '{{WRAPPER}} .pxl-button-wrapper .btn.btn-additional-6:hover, {{WRAPPER}} .pxl-button-wrapper .btn.btn-additional-7:hover,
-                                                     {{WRAPPER}} .pxl-button-wrapper .btn.btn-additional-5:hover, {{WRAPPER}} .pxl-button-wrapper .btn.btn-additional-8:hover' => 'background-color: {{VALUE}};',
-                                                    '{{WRAPPER}} .pxl-button-wrapper .btn:before' => 'background-color: {{VALUE}};'
-                                                ],
+                                                'type' => \Elementor\Group_Control_Background::get_type(),
+                                                'control_type' => 'group',
+                                                'types'             => [ 'classic' , 'gradient' ],
+                                                'selector' => '{{WRAPPER}} .wpcf7-form input[type="submit"]:hover, {{WRAPPER}} .wpcf7-form button:hover',
                                             ),
                                         )
                                     ),
