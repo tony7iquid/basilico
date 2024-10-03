@@ -107,7 +107,7 @@ defined( 'ABSPATH' ) || exit;
 									echo apply_filters( 
 										'woocommerce_cart_item_remove_link',
 										sprintf(
-											'<a href="%s" class="remove remove-from-cart-js" aria-label="%s" data-product_id="%s" data-product_sku="%s" data-cart_item_key="%s"><span class="lnil lnil-close" title="Remove"></span></a>',
+											'<a href="%s" class="remove remove-from-cart-js" aria-label="%s" data-product_id="%s" data-product_sku="%s" data-cart_item_key="%s"><span class="zmdi zmdi-close" title="Remove"></span></a>',
 											esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
 											 
 											esc_attr( sprintf( __( 'Remove %s from cart', 'basilico' ), $product_name ) ),
