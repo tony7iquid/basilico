@@ -4160,6 +4160,9 @@
                 visibility: hidden;
                 background-color: rgba(18, 15, 13, 0.55);
                 backdrop-filter: blur(2px);
+                @media (max-width: $sm_max) {
+                    padding: 20px;
+                }
                 .content-inner {
                     text-align: center;
                 }
