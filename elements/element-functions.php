@@ -355,7 +355,6 @@ function basilico_get_post_carousel_layout($pt_supports = []){
     if (!is_array($post_types))
         return $result;
     foreach ($post_types as $name => $label) {
-        var_dump($name);
         $result[] = array(
             'name' => 'layout_' . $name,
             'label' => sprintf(esc_html__('Select Templates of %s', 'basilico'), $label),
