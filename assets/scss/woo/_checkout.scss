@@ -573,6 +573,7 @@
 		border: 1px solid $primary_color;
 		border-radius: var(--checkout_button_radius-width);
 		font-weight: 500;
+		height: $input_height;
 		&:hover {
 			background-color: $secondary_color;
 		}
