@@ -383,3 +383,20 @@ dl {
         }
     }
 }
+
+.shake-effect{
+    transition: transform 0.2s ease-in-out;
+    animation: shakeeffect 1s ease-in-out infinite;
+    @keyframes shakeeffect {
+        0% { transform: rotate(0); }
+        25% { transform: rotate(-5deg); }
+        50% { transform: rotate(5deg); }
+        75% { transform: rotate(-5deg); }
+        100% { transform: rotate(0); }
+    }
+}
+.pxl-ringbell{
+    i{
+        animation: ringbell 1s ease-in-out infinite;
+    }
+}
